@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "NY Pilates",
+        "city": "New York, NY",
+        "type": "Reformer",
+        "price": "$$",
+        "freeTrial": true
+    },
+    {
+        "id": 2,
+        "name": "LA Mat Studio",
+        "city": "Los Angeles, CA",
+        "type": "Mat",
+        "price": "$",
+        "freeTrial": false
+    },
+    {
+        "id": 3,
+        "name": "SF Private",
+        "city": "San Francisco, CA",
+        "type": "Private Sessions",
+        "price": "$$$",
+        "freeTrial": true
+    },
+    {
+        "id": 4,
+        "name": "Chicago Core",
+        "city": "Chicago, IL",
+        "type": "Reformer",
+        "price": "$$",
+        "freeTrial": false
+    },
+    {
+        "id": 5,
+        "name": "Boston Balance",
+        "city": "Boston, MA",
+        "type": "Mat",
+        "price": "$$",
+        "freeTrial": true
+    },
+    {
+        "id": 6,
+        "name": "DC Wellness",
+        "city": "Washington, DC",
+        "type": "Private Sessions",
+        "price": "$$$",
+        "freeTrial": false
+    },
+    {
+        "id": 7,
+        "name": "Miami Flow",
+        "city": "Miami, FL",
+        "type": "Reformer",
+        "price": "$$",
+        "freeTrial": true
+    },
+    {
+        "id": 8,
+        "name": "Seattle Stretch",
+        "city": "Seattle, WA",
+        "type": "Mat",
+        "price": "$",
+        "freeTrial": false
+    },
+    {
+        "id": 9,
+        "name": "Denver Core",
+        "city": "Denver, CO",
+        "type": "Reformer",
+        "price": "$$",
+        "freeTrial": true
+    },
+    {
+        "id": 10,
+        "name": "Philly Fit",
+        "city": "Philadelphia, PA",
+        "type": "Private Sessions",
+        "price": "$$$",
+        "freeTrial": false
+    }
+]

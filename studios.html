@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilates Finder - Studio Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="studio">
+    <!-- Header Section -->
+    <header>
+        <div>
+            <h1><a href="index.html">PILATES FINDER</a></h1>
+        </div>
+    </header>
+
+    <!-- Studio Details Section -->
+    <section class="studio-details">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> / 
+            <a id="state-link" href="#">[State]</a> / 
+            <a id="city-link" href="#">[City]</a> / 
+            <span id="studio-name-breadcrumb">[Studio Name]</span>
+        </nav>
+
+        <div class="studio-background">
+            <div class="studio-content">
+                <!-- Studio Information -->
+                <div class="studio-info">
+                    <h1 id="studio-name">[Studio Name]</h1>
+                    <p id="studio-rating">Rating: [Rating]</p>
+                    <p id="studio-address"><strong>Address:</strong> [Full Address]</p>
+                    <div id="studio-features">
+                        <h3>Features</h3>
+                        <div id="studio-criteria" class="criteria">
+                            <!-- Criteria will be dynamically added here -->
+                        </div>
+                    </div>
+                    <div class="studio-row">
+                        <!-- Hours Column -->
+                        <div id="studio-hours">
+                            <h3>Operating Hours</h3>
+                            <ul id="hours-list">
+                                <!-- Hours will be dynamically added here -->
+                            </ul>
+                        </div>
+                        <!-- Contact Column -->
+                        <div id="studio-contact">
+                            <h3>Contact</h3>
+                            <p><strong><span class="icon">📞</span> </strong> <a id="studio-phone" href="#">[Phone]</a></p>
+                            <p><strong><span class="icon">🌐</span> </strong> <a id="studio-website" target="_blank">Visit Website</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <div id="studio-reviews">
+        <h3>Reviews</h3>
+        <ul id="reviews-list">
+            <!-- Reviews will be dynamically added here -->
+        </ul>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Pilates Finder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
