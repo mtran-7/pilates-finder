@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Studio Name | Pilates Finder</title>
+    <meta name="description" id="meta-description" content="">
+    <meta name="keywords" content="pilates studio, pilates classes, reformer pilates, mat pilates">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" id="og-title" content="">
+    <meta property="og:description" id="og-description" content="">
+    <meta property="og:image" id="og-image" content="">
+    <meta property="og:type" content="business.business">
+    
+    <script type="application/ld+json" id="schema-data"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    
+  <script type="module" crossorigin src="/assets/studio.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/styles.js">
+  <link rel="modulepreload" crossorigin href="/assets/global.js">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="nav-container">
+            <h1><a href="index.html">PILATES FINDER</a></h1>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="states.html" class="nav-link">States</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <nav class="breadcrumb" aria-label="breadcrumb">
+            <span id="breadcrumb-path">
+                <!-- Will be populated by JS -->
+            </span>
+        </nav>
+
+        <div class="studio-grid">
+            <!-- Left Column -->
+            <div class="studio-main">
+                <h1 id="studio-name" class="studio-title"></h1>
+                <div class="meta-row">
+                    <div class="studio-type" id="studio-type"></div>
+                    <div class="rating-container">
+                        <span class="rating">⭐</span>
+                        <span id="rating-value"></span>
+                        <span id="review-count"></span>
+                    </div>
+                </div>
+
+                <div class="studio-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span id="studio-address"></span>
+                </div>
+
+                <div class="features-section">
+                    <h2>Features</h2>
+                    <div id="studio-features" class="criteria-filters">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </div>
+
+                <div class="info-row">
+                    <div class="hours-column">
+                        <h3>Hours</h3>
+                        <div id="studio-hours" class="hours-list">
+                            <!-- Will be populated by JS -->
+                        </div>
+                    </div>
+                    <div class="contact-column">
+                        <h3>Contact</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <a id="studio-phone" href="tel:"></a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-globe"></i>
+                                <a id="studio-website" href="" target="_blank">Visit Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a id="instagram-link" href="#" class="social-icon" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a id="facebook-link" href="#" class="social-icon" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="studio-photo">
+                <img id="studio-image" src="images/placeholder.webp" alt="Studio photograph" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error-message" hidden>
+            <h2>Studio not found</h2>
+            <p>Sorry, we couldn't find the studio you're looking for.</p>
+        </div>
+
+        <!-- Related Studios -->
+        <section class="related-studios-section">
+            <div class="container">
+                <h2>More Studios Nearby</h2>
+                <div id="related-studios" class="studio-list">
+                    <!-- Will be populated by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pilates Finder</h3>
+                <p>Your trusted resource for finding Pilates studios.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="states.html">States</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@pilatesfinder.org">info@pilatesfinder.org</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

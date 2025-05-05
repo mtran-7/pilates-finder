@@ -1,7 +1,18 @@
 // ==========================
 // STATES.HTML
 // ==========================
+import { loadStudiosData } from './global.js';
+
+// Add utility function for URL formatting
+function toKebabCase(str) {
+    return str.toLowerCase()
+              .replace(/\s+/g, '-')
+              .replace(/[^a-z0-9-]/g, '');
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
+    // Remove any history or location manipulation
+
     // Get state from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const stateName = urlParams.get('state');
@@ -25,13 +36,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     };
 
     const statesContainer = document.getElementById("states-list");
+    if (!statesContainer) return;
 
     // Load the studios data
-    await loadStudiosData();
+    const data = await loadStudiosData();
+    if (!data || !Array.isArray(data)) {
+        console.error("Failed to load studios data");
+        statesContainer.innerHTML = "<p>Error loading states data. Please try again later.</p>";
+        return;
+    }
 
     // Group studios by state and sort alphabetically
     const groupedByState = {};
-    allStudiosData.forEach(state => {
+    data.forEach(state => {
         groupedByState[state.state] = state.studios;
     });
     
@@ -62,16 +79,29 @@ document.addEventListener("DOMContentLoaded", async () => {
             // Create the state card
             const stateCard = document.createElement("a");
             stateCard.classList.add("state-card");
-            stateCard.href = `cities.html?state=${encodeURIComponent(state)}`;
+            stateCard.href = `/${toKebabCase(state)}`; // Changed URL format
+            
+            const criteriaWithCounts = Object.entries(criteriaCounts)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 3)
+                .map(([key, count]) => ({
+                    name: key,
+                    count,
+                    emoji: criteriaEmojis[key]
+                }));
+
             stateCard.innerHTML = `
                 <h3>${state.replace(/[\[\]]/g, '')}</h3>
                 <p>${studios.length} pilates studios</p>
                 <div class="criteria">
-                    ${topCriteria
-                        .map(
-                            ({ emoji, criterion, count }) =>
-                                `<div class="criteria-item">${emoji} ${criterion} (${count})</div>`
-                        )
+                    ${criteriaWithCounts
+                        .map(({ emoji, name, count }) => `
+                            <div class="criteria-item">
+                                <span class="emoji">${emoji}</span>
+                                <span class="name">${name.replace('_', ' ')}</span>
+                                <span class="count">(${count})</span>
+                            </div>
+                        `)
                         .join("")}
                 </div>
             `;
@@ -80,3 +110,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             statesContainer.appendChild(stateCard);
         });
 });
+
+function getStudioUrl(studio) {
+    return `/${encodeURIComponent(studio.state)}/${encodeURIComponent(studio.city)}/${encodeURIComponent(studio.name)}`;
+}

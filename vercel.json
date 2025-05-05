@@ -1,0 +1,32 @@
+{
+  "rewrites": [
+    { "source": "/states", "destination": "/states.html" },
+    { 
+      "source": "/:state", 
+      "destination": "/cities.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "state",
+          "value": "(?<state>.*)"
+        }
+      ]
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
+    { "handle": "filesystem" },
+    {
+      "src": "/([^/]+)(?:/([^/]+))?(?:/([^/]+))?",
+      "dest": "/$1",
+      "continue": true,
+      "check": true
+    },
+    {
+      "src": "/(.*)",
+      "status": 404,
+      "dest": "/404.html"
+    }
+  ]
+}

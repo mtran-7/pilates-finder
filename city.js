@@ -85,8 +85,8 @@ function renderStudioCards(cityStudios, stateName) {
             `This establishment is offering ${activeCriteria || 'various pilates services'}.`;
             
         // Truncate description to 2 lines (roughly 200 characters)
-        const truncatedDescription = fullDescription.length > 120 
-            ? fullDescription.substring(0, 119) + '...'
+        const truncatedDescription = fullDescription.length > 110 
+            ? fullDescription.substring(0, 109) + '...'
             : fullDescription;
         
         studioCard.innerHTML = `

@@ -11,8 +11,8 @@
     "fuse.js": "^6.6.2"
   },
   "devDependencies": {
-    "vite": "^4.5.0",
+    "image-minimizer-webpack-plugin": "^3.8.3",
     "sharp": "^0.32.6",
-    "image-minimizer-webpack-plugin": "^3.8.3"
+    "vite": "^4.5.14"
   }
 }

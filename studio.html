@@ -17,18 +17,14 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script src="global.js" defer></script>
-    <script src="studio.js" defer></script>
+    <script src="global.js" type="module"></script>
+    <script src="studio.js" type="module"></script>
 </head>
 <body>
-    <a href="#main-content" class="skip-to-main">Skip to main content</a>
     <!-- Header Section -->
     <header class="main-header">
         <div class="nav-container">
             <h1><a href="index.html">PILATES FINDER</a></h1>
-            <button class="hamburger" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
             <nav class="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="states.html" class="nav-link">States</a>
@@ -40,97 +36,82 @@
 
     <!-- Main Content -->
     <main id="main-content" role="main">
-        <main id="studio-content" class="studio-details-section">
-            <nav class="breadcrumb" aria-label="breadcrumb">
-                <span id="breadcrumb-path">
-                    <!-- Will be populated by JS -->
-                </span>
-            </nav>
-            <div class="studio-grid">
+        <nav class="breadcrumb" aria-label="breadcrumb">
+            <span id="breadcrumb-path">
+                <!-- Will be populated by JS -->
+            </span>
+        </nav>
 
-                <!-- Left Column -->
-                <div class="studio-main">
-
-                    <h1 id="studio-name" class="studio-title"></h1>
-                    
-                    <div class="meta-row">
-                        <div class="studio-type" id="studio-type"></div>
-                        <div class="rating-container">
-                            <span class="rating">⭐</span>
-                            <span id="rating-value"></span>
-                            <span id="review-count"></span>
-                        </div>
+        <div class="studio-grid">
+            <!-- Left Column -->
+            <div class="studio-main">
+                <h1 id="studio-name" class="studio-title"></h1>
+                <div class="meta-row">
+                    <div class="studio-type" id="studio-type"></div>
+                    <div class="rating-container">
+                        <span class="rating">⭐</span>
+                        <span id="rating-value"></span>
+                        <span id="review-count"></span>
                     </div>
+                </div>
 
-                    <div class="studio-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span id="studio-address"></span>
+                <div class="studio-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span id="studio-address"></span>
+                </div>
+
+                <div class="features-section">
+                    <h2>Features</h2>
+                    <div id="studio-features" class="criteria-filters">
+                        <!-- Will be populated by JS -->
                     </div>
+                </div>
 
-                    <div class="features-section">
-                        <h2>Features</h2>
-                        <div id="studio-features" class="criteria-filters">
+                <div class="info-row">
+                    <div class="hours-column">
+                        <h3>Hours</h3>
+                        <div id="studio-hours" class="hours-list">
                             <!-- Will be populated by JS -->
                         </div>
                     </div>
-
-                    <div class="about-section">
-                        <h2>About <span class="studio-name-inline"></span></h2>
-                        <p id="studio-description"></p>
-                    </div>
-
-                    <div class="info-row">
-                        <div class="hours-column">
-                            <h3>Hours</h3>
-                            <div id="studio-hours" class="hours-list">
-                                <!-- Will be populated by JS -->
+                    <div class="contact-column">
+                        <h3>Contact</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <a id="studio-phone" href="tel:"></a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-globe"></i>
+                                <a id="studio-website" href="" target="_blank">Visit Website</a>
                             </div>
                         </div>
-                        <div class="contact-column">
-                            <h3>Contact</h3>
-                            <div class="contact-info">
-                                <div class="contact-item">
-                                    <i class="fas fa-phone"></i>
-                                    <a id="studio-phone" href="tel:"></a>
-                                </div>
-                                <div class="contact-item">
-                                    <i class="fas fa-globe"></i>
-                                    <a id="studio-website" href="" target="_blank">Visit Website</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="social-links">
-                        <a id="instagram-link" href="#" class="social-icon" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a id="facebook-link" href="#" class="social-icon" target="_blank">
-                            <i class="fab fa-facebook"></i>
-                        </a>
                     </div>
                 </div>
 
-                <!-- Right Column -->
-                <div class="studio-photo">
-                    <img 
-                        id="studio-image" 
-                        src="/public/images/placeholder.webp" 
-                        alt="Studio photograph" 
-                        loading="lazy"
-                        aria-label="Studio photograph"
-                        role="img"
-                    >
+                <div class="social-links">
+                    <a id="instagram-link" href="#" class="social-icon" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a id="facebook-link" href="#" class="social-icon" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
                 </div>
             </div>
-        </main>
 
+            <!-- Right Column -->
+            <div class="studio-photo">
+                <img id="studio-image" src="images/placeholder.webp" alt="Studio photograph" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Error Message -->
         <div id="error-message" hidden>
             <h2>Studio not found</h2>
             <p>Sorry, we couldn't find the studio you're looking for.</p>
         </div>
 
-        <!-- Related Studios - Moved outside main content -->
+        <!-- Related Studios -->
         <section class="related-studios-section">
             <div class="container">
                 <h2>More Studios Nearby</h2>
@@ -146,7 +127,7 @@
         <div class="footer-container">
             <div class="footer-section">
                 <h3>Pilates Finder</h3>
-                <p>Pilates Finder connects you with top studios for Reformer, Mat, and more.</p>
+                <p>Your trusted resource for finding Pilates studios.</p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
@@ -155,7 +136,6 @@
                     <li><a href="states.html">States</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><a href="index.html#types-of-pilates">Types of Pilates</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -164,14 +144,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Register service worker
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-                .then(registration => console.log('ServiceWorker registered'))
-                .catch(error => console.error('ServiceWorker error:', error));
-        }
-    </script>
 </body>
 </html>

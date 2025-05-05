@@ -9,11 +9,17 @@ const criteriaEmojis = {
     Tower: "🗼"
 };
 
+function toKebabCase(str) {
+    return str.toLowerCase()
+              .replace(/\s+/g, '-')
+              .replace(/[^a-z0-9-]/g, '');
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
     await loadStudiosData();
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const stateName = urlParams.get("state");
+    // Get state from URL path instead of query params
+    const stateName = window.location.pathname.split('/')[1];
     const cleanStateName = decodeURIComponent(stateName).replace(/[\[\]]/g, '');
 
     // Update page titles
@@ -54,26 +60,35 @@ document.addEventListener("DOMContentLoaded", async () => {
     Object.values(cities).forEach(city => {
         const cityCard = document.createElement("a");
         cityCard.classList.add("city-card");
-        cityCard.href = `city.html?state=${encodeURIComponent(stateName)}&city=${encodeURIComponent(city.name)}`;
+        cityCard.href = `/${toKebabCase(stateName)}/${toKebabCase(city.name)}`;
+       
+        // Get all studios for this city
+        const cityStudios = stateData.studios.filter(s => s.city === city.name);
         
         // Convert criteria Set to array and count occurrences
         const criteriaWithCounts = Array.from(city.criteria).map(criterion => ({
             name: criterion,
-            count: stateData.studios.filter(studio => 
-                studio.city === city.name && studio.criteria[criterion]
+            count: cityStudios.filter(studio => 
+                studio.criteria[criterion]
             ).length
         }));
 
         cityCard.innerHTML = `
-            <h3>${city.name}</h3>
-            <p>${city.totalStudios} pilates locations</p>
-            <div class="criteria">
-                ${criteriaWithCounts
-                    .slice(0, 3)
-                    .map(({name, count}) => 
-                        `<div class="criteria-item">${criteriaEmojis[name] || ''} ${name.replace('_', ' ')} (${count})</div>`
-                    )
-                    .join("")}
+            <div class="city-card-inner">
+                <h3>${city.name}</h3>
+                <p>${city.totalStudios} pilates locations</p>
+                <div class="criteria">
+                    ${criteriaWithCounts
+                        .slice(0, 3)
+                        .map(({name, count}) => 
+                            `<div class="criteria-item">
+                                <span class="emoji">${criteriaEmojis[name]}</span>
+                                <span class="name">${name.replace('_', ' ')}</span>
+                                <span class="count">(${count})</span>
+                            </div>`
+                        )
+                        .join("")}
+                </div>
             </div>
         `;
         citiesList.appendChild(cityCard);

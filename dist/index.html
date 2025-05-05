@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilates Finder | Find Top-Rated Pilates Studios Near You</title>
+    <meta name="description" content="Discover the best Pilates studios near you. Search Reformer, Mat, Barre, and Tower Pilates classes across the United States. Find your perfect studio today.">
+    <meta name="keywords" content="pilates studios, reformer pilates, mat pilates, pilates classes, find pilates, pilates near me">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Pilates Finder | Find Top-Rated Pilates Studios Near You">
+    <meta property="og:description" content="Discover the best Pilates studios near you. Search Reformer, Mat, Barre, and Tower Pilates classes across the United States.">
+    <meta property="og:image" content="https://pilatesfinder.org/images/og-home.jpg">
+    <meta property="og:url" content="https://pilatesfinder.org">
+    <meta property="og:type" content="website">
+    
+    <!-- Accessibility Skip Link -->
+    <link rel="canonical" href="https://pilatesfinder.org">
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    
+    
+  <script type="module" crossorigin src="/assets/main.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/styles.js">
+  <link rel="modulepreload" crossorigin href="/assets/global.js">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="nav-container">
+            <h1><a href="index.html">PILATES FINDER</a></h1>
+            <button class="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/states.html" class="nav-link">States</a>
+                <a href="/about.html" class="nav-link">About</a>
+                <a href="/contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section index-hero">
+            <div class="hero-content">
+                <h1>Find Pilates Near You</h1>
+                <p>Discover classical, reformer, mat pilates studios and more in your area</p>
+                <div class="search-section">
+                    <div class="search-bar-container">
+                        <div class="search-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <input 
+                            type="text" 
+                            class="search-bar" 
+                            placeholder="Search for Pilates studios or cities..." 
+                            aria-label="Search for Pilates studios or cities"
+                            role="combobox"
+                            aria-expanded="false"
+                            aria-controls="search-results"
+                            aria-autocomplete="list"
+                        >
+                    </div>
+                    <button class="search-button">
+                        <i class="fas fa-map-pin"></i> Explore Pilates Nearby
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Explore Pilates by Location Section -->
+        <section class="explore-location">
+            <div class="section-header index-page">
+                <h2>Explore Pilates by Location</h2>
+                <a href="states.html" class="view-all-link">Explore Pilates Studios by States -></a>
+            </div>
+            <div id="featured-cities-list" class="cities-list">
+                <!-- City cards will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Types of Pilates Section -->
+        <section class="types-section" aria-label="Types of Pilates">
+            <div class="section-header index-page">
+                <h2>Types of Pilates</h2>
+            </div>
+            <div class="types-grid">
+                <div class="type-card" data-aos="fade-up">
+                    <div class="type-image-wrapper">
+                        <span class="type-emoji">🏋️‍♀️</span>
+                        <img src="/assets/images/reformer-pilates.jpeg" alt="Reformer Pilates" loading="lazy">
+                    </div>
+                    <div class="type-content">
+                        <h3>Reformer Pilates</h3>
+                        <p>Equipment-based training that enhances strength, flexibility, and control using a specialized machine.</p>
+                    </div>
+                </div>
+                <div class="type-card" data-aos="fade-up">
+                    <div class="type-image-wrapper">
+                        <span class="type-emoji">🟦</span>
+                        <img src="/assets/images/mat-pilates.jpeg" alt="Mat Pilates" loading="lazy">
+                    </div>
+                    <div class="type-content">
+                        <h3>Mat Pilates</h3>
+                        <p>Classical floor exercises focusing on core strength and body awareness using your own body weight.</p>
+                    </div>
+                </div>
+                <div class="type-card" data-aos="fade-up">
+                    <div class="type-image-wrapper">
+                        <span class="type-emoji">🩰</span>
+                        <img src="/assets/images/barre-pilates.jpeg" alt="Barre Pilates" loading="lazy">
+                    </div>
+                    <div class="type-content">
+                        <h3>Barre Pilates</h3>
+                        <p>Ballet-inspired workouts combining Pilates principles with dance elements for graceful strength.</p>
+                    </div>
+                </div>
+                <div class="type-card" data-aos="fade-up">
+                    <div class="type-image-wrapper">
+                        <span class="type-emoji">🗼</span>
+                        <img src="/assets/images/tower-pilates.jpeg" alt="Tower Pilates" loading="lazy">
+                    </div>
+                    <div class="type-content">
+                        <h3>Tower Pilates</h3>
+                        <p>Vertical equipment training for advanced strength and flexibility using wall-mounted apparatus.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Pilates Section -->
+        <section class="why-pilates" aria-label="Why Choose Pilates">
+            <div class="container">
+                <div class="why-pilates-content">
+                    <div class="why-pilates-text">
+                        <h2>Why Pilates?</h2>
+                        <p>Pilates strengthens your core, improves flexibility, and enhances mind-body connection. This low-impact exercise method is suitable for all fitness levels and can help with posture, balance, and overall well-being.</p>
+                        <a href="states.html" class="primary-button">Find a Studio</a>
+                    </div>
+                    <div class="why-pilates-image">
+                        <img src="/assets/images/why-pilates.jpeg" alt="Person practicing Pilates" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" aria-label="Frequently Asked Questions">
+            <div class="container">
+                <div class="section-header index-page">
+                    <h2>Frequently Asked Questions About Pilates</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq1">
+                            What is Pilates and how does it differ from yoga?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer" id="faq1" hidden>
+                            <p>Pilates is a low-impact exercise method that focuses on core strength, posture, and controlled movements. While both Pilates and yoga promote mind-body connection, Pilates emphasizes core stability and precise movements, whereas yoga typically incorporates more flexibility, meditation, and spiritual elements. Pilates exercises are often more structured and may involve specialized equipment like reformers.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq2">
+                            What are the key benefits of practicing Pilates regularly?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer" id="faq2" hidden>
+                            <p>Regular Pilates practice offers numerous benefits including:<br>
+                            • Improved core strength and stability<br>
+                            • Better posture and body alignment<br>
+                            • Increased flexibility and joint mobility<br>
+                            • Enhanced muscle tone without bulk<br>
+                            • Reduced back pain and improved rehabilitation<br>
+                            • Better balance and coordination<br>
+                            • Stress reduction and improved mental focus</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq3">
+                            How often should I practice Pilates to see results?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer" id="faq3" hidden>
+                            <p>For optimal results, it's recommended to practice Pilates 2-3 times per week with rest days in between. Beginners might start with once a week and gradually increase frequency. Consistency is more important than frequency - regular practice, even once a week, can lead to noticeable improvements in strength, flexibility, and posture. Listen to your body and adjust your schedule accordingly.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq4">
+                            Which type of Pilates is best for beginners?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer" id="faq4" hidden>
+                            <p>For beginners, Mat Pilates classes are often the best starting point. They teach fundamental principles and movements without equipment, allowing you to focus on proper form and breathing. Once you're comfortable with the basics, you might progress to Reformer Pilates or other equipment-based classes. Many studios also offer specific "Beginners" or "Fundamentals" classes that provide detailed instruction and modifications for new practitioners.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq5">
+                            What should I wear to a Pilates class?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer" id="faq5" hidden>
+                            <p>Wear comfortable, form-fitting clothes that allow you to move freely while letting instructors see your form. Ideal options include:<br>
+                            • Leggings or fitted workout pants<br>
+                            • Fitted tank tops or t-shirts that won't ride up<br>
+                            • Grip socks (required in many studios)<br>
+                            Avoid loose clothing that might get caught in equipment or interfere with movements. Most studios prefer you exercise in socks or bare feet rather than shoes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner Section -->
+        <section class="cta-banner" role="complementary" aria-labelledby="cta-heading">
+            <div class="cta-content">
+                <h2 id="cta-heading">Start Your Pilates Journey Today!</h2>
+                <p>Find the perfect studio and begin your transformation</p>
+                <a href="states.html" class="cta-button" aria-label="Explore Pilates Studios">
+                    Find Studios Near You
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pilates Finder</h3>
+                <p>Your trusted resource for finding the perfect Pilates studio. We connect you with top-rated studios offering Reformer, Mat, Barre, and Tower Pilates across the United States.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="states.html">States</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html#types-of-pilates">Types of Pilates</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@pilatesfinder.org">info@pilatesfinder.org</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilates Finder - Cities</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    
+    
+  <script type="module" crossorigin src="/assets/cities.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/styles.js">
+  <link rel="modulepreload" crossorigin href="/assets/global.js">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body data-page="cities">
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="nav-container">
+            <h1><a href="index.html">PILATES FINDER</a></h1>
+            <button class="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/states.html" class="nav-link">States</a>
+                <a href="/about-pilates-finder" class="nav-link">About</a>
+                <a href="/contact-us" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section id="city-header" class="hero-section cities-hero">
+        <div class="hero-content">
+            <h1>Pilates Studios in [state Name]</h1>
+            <p>Discover the best pilates studios in [state Name] with our comprehensive directory</p>
+        </div>
+    </section>
+    <!-- Browse Cities Section -->
+    <section class="explore-location">
+        <div class="section-header">
+            <h2>Cities in [state Name]</h2>
+            <p>Explore pilates locations across X cities in [state Name]</p>
+        </div>
+        <div id="cities-list" class="cities-list">
+            <!-- City cards will be dynamically added here -->
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pilates Finder</h3>
+                <p>Your trusted resource for finding the perfect Pilates studio. We connect you with top-rated studios offering Reformer, Mat, Barre, and Tower Pilates across the United States.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/states.html">States</a></li>
+                    <li><a href="/about-pilates-finder">About</a></li>
+                    <li><a href="/contact-us">Contact</a></li>
+                    <li><a href="index.html#types-of-pilates">Types of Pilates</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@pilatesfinder.org">info@pilatesfinder.org</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

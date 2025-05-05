@@ -1,3 +1,7 @@
+import { loadStudiosData } from './global.js';
+
+let allStudiosData = null;
+
 document.addEventListener("DOMContentLoaded", async () => {
     const criteriaEmojis = {
         Reformer: "🏋️‍♀️",
@@ -9,6 +13,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         Barre: "🩰",
         Tower: "🗼"
     };
+
+    // Load studios data first
+    allStudiosData = await loadStudiosData();
+    if (!allStudiosData) {
+        console.error('Failed to load studios data');
+        return;
+    }
 
     // Search functionality
     const searchBar = document.querySelector(".search-bar");
@@ -46,7 +57,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // Load studios data and populate featured cities
-    await loadStudiosData();
     const featuredCitiesContainer = document.getElementById("featured-cities-list");
 
     // Define featured cities (limit to 6)
@@ -336,4 +346,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.querySelectorAll('.type-card, .why-pilates-content, .faq-item').forEach(el => {
         observer.observe(el);
     });
+    
+    // Add the new section header
+    const sectionHeader = document.createElement('div');
+    sectionHeader.className = 'section-header index-page';
+    sectionHeader.innerHTML = `
+        <h2>Explore Pilates by Location</h2>
+        <a href="/states" class="view-all-link">Explore Pilates Studios by States -></a>
+    `;
+    document.body.insertBefore(sectionHeader, document.body.firstChild);
 });
