@@ -1,17 +1,13 @@
 {
+  "framework": "vite",
+  "buildCommand": "vite build",
+  "outputDirectory": "dist",
   "rewrites": [
     { "source": "/states", "destination": "/states.html" },
-    { 
-      "source": "/:state", 
-      "destination": "/cities.html",
-      "has": [
-        {
-          "type": "query",
-          "key": "state",
-          "value": "(?<state>.*)"
-        }
-      ]
-    }
+    { "source": "/:state", "destination": "/cities.html" },
+    { "source": "/:state/:city", "destination": "/city.html" },
+    { "source": "/about-pilates-finder", "destination": "/about.html" },
+    { "source": "/contact-us", "destination": "/contact.html" }
   ],
   "cleanUrls": true,
   "trailingSlash": false,
