@@ -4,7 +4,8 @@
     { "source": "/contact-us", "destination": "/contact.html" },
     { "source": "/about-pilates-finder", "destination": "/about.html" },
     { "source": "/:state([a-z0-9-]+)", "destination": "/cities.html" },
-    { "source": "/:state([a-z0-9-]+)/:city([a-z0-9-]+)", "destination": "/city.html" }
+    { "source": "/:state([a-z0-9-]+)/:city([a-z0-9-]+)", "destination": "/city.html" },
+    { "source": "/city", "destination": "/city.html" } // Add this to handle /city?state=...
   ],
   "cleanUrls": true,
   "trailingSlash": false
