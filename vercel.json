@@ -1,19 +1,19 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "dist/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/states", "dest": "/states.html" },
-    { "src": "/about-pilates-finder", "dest": "/about.html" },
-    { "src": "/contact-us", "dest": "/contact.html" },
-    { "src": "/[state]", "dest": "/[state]/cities.html" },
-    { "src": "/[state]/[city]", "dest": "/city.html" },
-    { "src": "/[state]/[city]/[studio]", "dest": "/studio.html" },
-    { "src": "/(.*)", "dest": "/index.html" } 
-  ]
-}
+    "version": 2,
+    "builds": [
+      {
+        "src": "dist/**",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      { "src": "/", "dest": "/dist/index.html" },
+      { "src": "/states", "dest": "/dist/states.html" },
+      { "src": "/about-pilates-finder", "dest": "/dist/about.html" },
+      { "src": "/contact-us", "dest": "/dist/contact.html" },
+      { "src": "/([a-zA-Z0-9-]+)", "dest": "/dist/[state]/cities.html" },
+      { "src": "/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)", "dest": "/dist/city.html" },
+      { "src": "/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)", "dest": "/dist/studio.html" },
+      { "src": "/(.*)", "dest": "/dist/index.html" }
+    ]
+  }
