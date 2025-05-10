@@ -1,6 +1,6 @@
 
 
-import { loadStudiosData } from './global.js';
+import { loadStudiosData } from '/global.js';
 
 // Add utility function for URL formatting
 function toKebabCase(str) {
