@@ -1,29 +1,52 @@
-// ==========================
-// CITY.HTML
-// ==========================
+import { loadStudiosData } from './global.js';
+
+function toKebabCase(str) {
+    return str ? str.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') : '';
+}
+
 async function populateStudioDetails() {
-    await loadStudiosData();
-    
+    const data = await loadStudiosData();
+    if (!data || !Array.isArray(data)) {
+        document.getElementById("city-studios").innerHTML = "<p>Error loading data. Please try again later.</p>";
+        return;
+    }
+
+    let stateName = '';
+    let cityName = '';
+
+    // Check path parameters first
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    if (pathParts.length >= 2) {
+        stateName = decodeURIComponent(pathParts[0]);
+        cityName = decodeURIComponent(pathParts[1]);
+    }
+
+    // Fall back to query parameters if path parameters are not found
     const urlParams = new URLSearchParams(window.location.search);
-    const stateName = urlParams.get("state");
-    const cityName = urlParams.get("city");
+    if (!stateName && urlParams.get('state')) {
+        stateName = decodeURIComponent(urlParams.get('state'));
+    }
+    if (!cityName && urlParams.get('city')) {
+        cityName = decodeURIComponent(urlParams.get('city'));
+    }
 
     // Update city name in all places including hero section
     document.querySelectorAll('.city-name').forEach(el => {
         el.textContent = cityName || '[City Name]';
     });
 
-    const stateData = allStudiosData.find(state => state.state === stateName);
+    // Find the state data, handling case mismatch
+    const stateData = data.find(state => toKebabCase(state.state) === toKebabCase(stateName));
     if (!stateData) {
-        document.getElementById("city-studios").innerHTML = "<p>State not found.</p>";
+        document.getElementById("city-studios").innerHTML = `<p>${stateName || 'State'} not found.</p>`;
         return;
     }
 
     const cityStudiosContainer = document.getElementById("city-studios");
-    const cityStudios = stateData.studios.filter(studio => studio.city === cityName);
+    const cityStudios = stateData.studios.filter(studio => toKebabCase(studio.city) === toKebabCase(cityName));
 
     if (cityStudios.length === 0) {
-        cityStudiosContainer.innerHTML = "<p>No studios found for this city.</p>";
+        cityStudiosContainer.innerHTML = `<p>No studios found in ${cityName || 'this city'}.</p>`;
         return;
     }
 
@@ -44,7 +67,6 @@ function renderStudioCards(cityStudios, stateName) {
         Free_Trial: "🎟️"
     };
 
-    // Count studios for each criteria
     const criteriaCounts = {};
     cityStudios.forEach(studio => {
         Object.entries(studio.criteria || {}).forEach(([key, value]) => {
@@ -54,41 +76,38 @@ function renderStudioCards(cityStudios, stateName) {
         });
     });
 
-    // Update filter buttons with counts
     document.querySelectorAll('.filter-btn').forEach(button => {
         const criteria = button.dataset.criteria;
         const count = criteriaCounts[criteria] || 0;
         const [emoji, name] = button.textContent.split(' ');
         button.innerHTML = `
             ${emoji}
-                <span class="filter-name">${name}</span>
-                        <span class="filter-count">(${count})</span>
+            <span class="filter-name">${name}</span>
+            <span class="filter-count">(${count})</span>
         `;
     });
 
     cityStudios.forEach(studio => {
         const studioCard = document.createElement("a");
         studioCard.classList.add("studio-card");
-        studioCard.href = `studio.html?state=${encodeURIComponent(stateName)}&city=${encodeURIComponent(studio.city)}&name=${encodeURIComponent(studio.name)}`;
-        
+        studioCard.href = `/${toKebabCase(stateName)}/${toKebabCase(studio.city)}/${toKebabCase(studio.name)}`;
+
         const studioType = studio.criteria?.Reformer ? 'Reformer Pilates' : 'Classical Pilates';
         const reviews = studio.number_of_reviews || 0;
-        
-        // Generate the same description as studio page
+
         const activeCriteria = Object.entries(studio.criteria || {})
             .filter(([_, value]) => value)
             .map(([key]) => key.replace('_', ' '))
             .join(', ');
-        
+
         const fullDescription = `${studio.name} is a ${studioType} studio located in ${studio.city}, ${stateName} ` +
             `with a ${studio.rating || 'N/A'} star rating from ${reviews} reviews. ` +
             `This establishment is offering ${activeCriteria || 'various pilates services'}.`;
-            
-        // Truncate description to 2 lines (roughly 200 characters)
+
         const truncatedDescription = fullDescription.length > 110 
             ? fullDescription.substring(0, 109) + '...'
             : fullDescription;
-        
+
         studioCard.innerHTML = `
             <div class="studio-image">
                 <img src="${studio.photo_url || './assets/default-studio.jpg'}" alt="${studio.name}" 
@@ -127,14 +146,14 @@ function setupFilters() {
 function filterStudios() {
     const activeFilters = Array.from(document.querySelectorAll('.filter-btn.active'))
         .map(btn => btn.dataset.criteria);
-    
+
     const studioCards = document.querySelectorAll('.studio-card');
     studioCards.forEach(card => {
         if (activeFilters.length === 0) {
             card.style.display = 'flex';
             return;
         }
-        
+
         const hasAllFilters = activeFilters.every(filter => 
             card.querySelector(`.criteria-badge[title="${filter}"]`)
         );

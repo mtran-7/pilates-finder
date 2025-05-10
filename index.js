@@ -21,6 +21,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
+    const stateName = window.location.pathname.split('/')[1] || '';
+    if (stateName && !data.find(s => toKebabCase(s.state) === toKebabCase(stateName))) {
+        console.warn('Invalid state, skipping index processing:', stateName);
+        return;
+    }
+
     // Search functionality
     const searchBar = document.querySelector(".search-bar");
     const resultsSection = document.getElementById("results");

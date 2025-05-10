@@ -2,9 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 function toKebabCase(str) {
-  return str.toLowerCase()
-            .replace(/\s+/g, '-')
-            .replace(/[^a-z0-9-]/g, '');
+  return str ? str.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') : '';
 }
 
 export default defineConfig({
@@ -26,7 +24,6 @@ export default defineConfig({
       },
       output: {
         entryFileNames: (chunkInfo) => {
-          // Keep original names for specific files
           if (['city', 'studio'].includes(chunkInfo.name)) {
             return 'assets/[name].js';
           }
@@ -43,48 +40,61 @@ export default defineConfig({
       }
     }
   },
+  optimizeDeps: {
+    force: true // Fix deprecation warning
+  },
   server: {
+    port: 3000,
+    host: 'localhost',
+    strictPort: false,
     open: true,
-    port: 5173,
-    strictPort: true,
-    middlewareMode: false,
+    watch: {
+      usePolling: true
+    },
+    fs: {
+      strict: false
+    },
+    middlewareMode: true,
     middleware: [
       (req, res, next) => {
-        // Convert URL encoded spaces and format URLs
+        console.log('Original URL:', req.url);
         const originalUrl = req.url;
         const decodedUrl = decodeURIComponent(originalUrl);
         const parts = decodedUrl.split('/').filter(Boolean);
-        
+        console.log('Decoded parts:', parts);
+
         if (parts.length > 0) {
-          // Format state names
-          parts[0] = toKebabCase(parts[0]);
-          
-          // Format city names if present
-          if (parts.length > 1) {
-            parts[1] = toKebabCase(parts[1]);
-          }
-          
+          parts.forEach((part, index) => parts[index] = toKebabCase(part));
           req.url = '/' + parts.join('/');
         }
 
-        // Route handling
-        switch (req.url) {
-          case '/states':
-            req.url = '/states.html';
-            break;
-          case '/contact-us':
-            req.url = '/contact.html';
-            break;
-          case '/about-pilates-finder':
-            req.url = '/about.html';
-            break;
-          default:
-            if (req.url.match(/^\/[^/]+$/)) {
-              req.url = '/cities.html';
-            } else if (req.url.match(/^\/[^/]+\/[^/]+$/)) {
-              req.url = '/city.html';
-            }
+        console.log('Modified URL:', req.url);
+
+        if (parts.length === 2) {
+          req.url = '/city.html';
+        } else if (parts.length === 1) {
+          req.url = '/cities.html';
+        } else {
+          switch (req.url) {
+            case '/states':
+              req.url = '/states.html';
+              break;
+            case '/contact-us':
+              req.url = '/contact.html';
+              break;
+            case '/about-pilates-finder':
+              req.url = '/about.html';
+              break;
+            case '/':
+            case '/index.html':
+              req.url = '/index.html';
+              break;
+            default:
+              req.url = '/404.html'; // Ensure you have a 404.html
+          }
         }
+
+        console.log('Final URL:', req.url);
         next();
       }
     ]
