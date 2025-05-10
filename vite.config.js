@@ -16,7 +16,8 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         states: resolve(__dirname, 'states.html'),
-        cities: resolve(__dirname, 'cities.html'),
+        // Include the [state] folder entry
+        cities: resolve(__dirname, '[state]/cities.html'),
         city: resolve(__dirname, 'city.html'),
         studio: resolve(__dirname, 'studio.html'),
         about: resolve(__dirname, 'about.html'),
@@ -40,62 +41,15 @@ export default defineConfig({
       }
     }
   },
-  optimizeDeps: {
-    force: true // Fix deprecation warning
-  },
   server: {
-    port: 3000,
-    host: 'localhost',
-    strictPort: false,
     open: true,
-    watch: {
-      usePolling: true
-    },
-    fs: {
-      strict: false
-    },
-    middlewareMode: true,
+    port: 5173,
+    strictPort: true,
+    middlewareMode: false,
     middleware: [
       (req, res, next) => {
         console.log('Original URL:', req.url);
-        const originalUrl = req.url;
-        const decodedUrl = decodeURIComponent(originalUrl);
-        const parts = decodedUrl.split('/').filter(Boolean);
-        console.log('Decoded parts:', parts);
-
-        if (parts.length > 0) {
-          parts.forEach((part, index) => parts[index] = toKebabCase(part));
-          req.url = '/' + parts.join('/');
-        }
-
-        console.log('Modified URL:', req.url);
-
-        if (parts.length === 2) {
-          req.url = '/city.html';
-        } else if (parts.length === 1) {
-          req.url = '/cities.html';
-        } else {
-          switch (req.url) {
-            case '/states':
-              req.url = '/states.html';
-              break;
-            case '/contact-us':
-              req.url = '/contact.html';
-              break;
-            case '/about-pilates-finder':
-              req.url = '/about.html';
-              break;
-            case '/':
-            case '/index.html':
-              req.url = '/index.html';
-              break;
-            default:
-              req.url = '/404.html'; // Ensure you have a 404.html
-          }
-        }
-
-        console.log('Final URL:', req.url);
-        next();
+        next(); // No rewrite needed; Vercel handles [state]
       }
     ]
   },
