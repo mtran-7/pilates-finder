@@ -2,38 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/node"
+      "src": "dist/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
-    {
-      "src": "/states",
-      "dest": "/states.html"
-    },
-    {
-      "src": "/[state]",
-      "dest": "/[state]/cities.html"
-    },
-    {
-      "src": "/[state]/[city]",
-      "dest": "/city.html"
-    },
-    {
-      "src": "/[state]/[city]/[studio]",
-      "dest": "/studio.html"
-    },
-    {
-      "src": "/about-pilates-finder",
-      "dest": "/about.html"
-    },
-    {
-      "src": "/contact-us",
-      "dest": "/contact.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+    { "src": "/", "dest": "/index.html" }, // Explicitly handle root
+    { "src": "/states", "dest": "/states.html" },
+    { "src": "/about-pilates-finder", "dest": "/about.html" },
+    { "src": "/contact-us", "dest": "/contact.html" },
+    { "src": "/[state]", "dest": "/[state]/cities.html" },
+    { "src": "/[state]/[city]", "dest": "/city.html" },
+    { "src": "/[state]/[city]/[studio]", "dest": "/studio.html" },
+    { "src": "/(.*)", "dest": "/index.html" } // Catch-all as fallback
   ]
 }
