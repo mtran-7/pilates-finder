@@ -1,4 +1,4 @@
-import { loadStudiosData } from '/global.js';
+import { loadStudiosData } from './global.js';
 
 let allStudiosData = null;
 
@@ -18,12 +18,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     allStudiosData = await loadStudiosData();
     if (!allStudiosData) {
         console.error('Failed to load studios data');
-        return;
-    }
-
-    const stateName = window.location.pathname.split('/')[1] || '';
-    if (stateName && !data.find(s => toKebabCase(s.state) === toKebabCase(stateName))) {
-        console.warn('Invalid state, skipping index processing:', stateName);
         return;
     }
 

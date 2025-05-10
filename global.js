@@ -2,7 +2,7 @@ let allStudiosData = null;
 
 async function loadStudiosData() {
     try {
-        const response = await fetch("/public/pilates_studios.json");
+        const response = await fetch("pilates_studios.json");
         if (!response.ok) throw new Error("Failed to load data");
         const data = await response.json();
         
