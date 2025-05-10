@@ -8,6 +8,7 @@
   ],
   "routes": [
     { "src": "/assets/(.*)", "dest": "/dist/assets/$1" },
+    { "src": "/(pilates_studios.json", "dest": "/dist/@1" },
     { "src": "/", "dest": "/dist/index.html" },
     { "src": "/states", "dest": "/dist/states.html" },
     { "src": "/about-pilates-finder", "dest": "/dist/about.html" },
