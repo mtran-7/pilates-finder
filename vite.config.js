@@ -7,7 +7,7 @@ function toKebabCase(str) {
 
 export default defineConfig({
   root: '.',
-  base: '/',
+  base: '/', // Ensure base is root
   publicDir: 'public',
   build: {
     outDir: 'dist',
@@ -16,7 +16,6 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         states: resolve(__dirname, 'states.html'),
-        // Include the [state] folder entry
         cities: resolve(__dirname, '[state]/cities.html'),
         city: resolve(__dirname, 'city.html'),
         studio: resolve(__dirname, 'studio.html'),
@@ -24,17 +23,15 @@ export default defineConfig({
         contact: resolve(__dirname, 'contact.html')
       },
       output: {
-        entryFileNames: (chunkInfo) => {
-          if (['city', 'studio'].includes(chunkInfo.name)) {
-            return 'assets/[name].js';
-          }
-          return 'assets/[name].js';
-        },
+        entryFileNames: 'assets/[name].js', // Avoid hashing for simplicity
         chunkFileNames: 'assets/[name].js',
         assetFileNames: (assetInfo) => {
           const extType = assetInfo.name.split('.').at(1);
           if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp/i.test(extType)) {
             return 'assets/images/[name][extname]';
+          }
+          if (extType === 'css') {
+            return 'assets/[name][extname]'; // Ensure styles.css stays as styles.css
           }
           return 'assets/[name][extname]';
         }
@@ -49,7 +46,7 @@ export default defineConfig({
     middleware: [
       (req, res, next) => {
         console.log('Original URL:', req.url);
-        next(); // No rewrite needed; Vercel handles [state]
+        next();
       }
     ]
   },
