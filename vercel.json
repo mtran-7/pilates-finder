@@ -1,21 +1,11 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "dist/**",
-      "use": "@vercel/static"
-    }
+  "rewrites": [
+    { "source": "/states", "destination": "/states.html" },
+    { "source": "/contact-us", "destination": "/contact.html" },
+    { "source": "/about-pilates-finder", "destination": "/about.html" },
+    { "source": "/:state([a-z0-9-]+)", "destination": "/cities.html" },
+    { "source": "/:state([a-z0-9-]+)/:city([a-z0-9-]+)", "destination": "/city.html" }
   ],
-  "routes": [
-    { "src": "/assets/(.*)", "dest": "/dist/assets/$1" },
-    { "src": "/(pilates_studios.json", "dest": "/dist/@1" },
-    { "src": "/", "dest": "/dist/index.html" },
-    { "src": "/states", "dest": "/dist/states.html" },
-    { "src": "/about-pilates-finder", "dest": "/dist/about.html" },
-    { "src": "/contact-us", "dest": "/dist/contact.html" },
-    { "src": "/([a-zA-Z0-9-]+)", "dest": "/dist/[state]/cities.html" },
-    { "src": "/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)", "dest": "/dist/city.html" },
-    { "src": "/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)", "dest": "/dist/studio.html" },
-    { "src": "/(.*)", "dest": "/dist/index.html" }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }
