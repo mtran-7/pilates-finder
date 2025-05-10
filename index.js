@@ -1,4 +1,4 @@
-import { loadStudiosData } from './global.js';
+import { loadStudiosData } from '/global.js';
 
 let allStudiosData = null;
 
