@@ -1,4 +1,4 @@
-import { loadStudiosData } from './global.js';
+import { loadStudiosData } from '/global.js';
 
 function toKebabCase(str) {
     return str ? str.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') : '';
