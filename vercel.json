@@ -11,9 +11,9 @@
     { "src": "/states", "dest": "/dist/states.html" },
     { "src": "/contact-us", "dest": "/dist/contact.html" },
     { "src": "/about-pilates-finder", "dest": "/dist/about.html" },
-    { "src": "/([a-zA-Z0-9-]+)", "dest": "/dist/cities.html" },
-    { "src": "/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)", "dest": "/dist/city.html" },
-    { "src": "/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)/([a-zA-Z0-9-]+)", "dest": "/dist/studio.html" },
+    { "src": "^/([^/]+/[^/]+/[^/]+)$", "dest": "/dist/studio.html" },
+    { "src": "^/([^/]+/[^/]+)$", "dest": "/dist/city.html" },
+    { "src": "^/([^/]+)$", "dest": "/dist/cities.html" },
     { "src": "/assets/(.*)", "dest": "/dist/assets/$1" },
     { "src": "/(.*)", "dest": "/dist/index.html", "status": 200 },
     { "src": "/.*", "dest": "/dist/404.html", "status": 404 }
