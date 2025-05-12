@@ -1,104 +1,110 @@
-import { loadStudiosData } from '/global.js';
+import { loadStudiosData } from './global.js';
 
 function toKebabCase(str) {
     return str ? str.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') : '';
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
-    // Load the studios data
-    const data = await loadStudiosData();
-    console.log('Loaded data:', data); // Debug
-    if (!data || !Array.isArray(data)) {
-        document.getElementById("cities-list").innerHTML = "<p>Error loading data. Please try again later.</p>";
-        return;
-    }
+function getUrlParameters() {
+    // Check query parameters first
+    const urlParams = new URLSearchParams(window.location.search);
+    let state = urlParams.get('state');
 
-    // Get state from URL path
-    const stateName = window.location.pathname.split('/')[1] || '';
-    const cleanStateName = decodeURIComponent(stateName).replace(/[\[\]]/g, '');
-    console.log('Extracted stateName:', stateName, 'Clean stateName:', cleanStateName); // Debug
-
-    // Update page titles
-    if (cleanStateName) {
-        document.querySelector('.hero-content h1').textContent = `Pilates Studios in ${cleanStateName}`;
-        document.querySelector('.hero-content p').textContent = `Discover the best pilates studios in ${cleanStateName} with our comprehensive directory`;
-        document.querySelector('.section-header h2').textContent = `Cities in ${cleanStateName}`;
-    }
-
-    const criteriaEmojis = {
-        Reformer: "🏋️‍♀️",
-        Mat: "🟦",
-        Private: "🔒",
-        Group: "👥",
-        Online: "🌐",
-        Free_Trial: "🎟️",
-        Barre: "🩰",
-        Tower: "🗼"
-    };
-
-    const citiesList = document.getElementById("cities-list");
-    if (!citiesList) {
-        console.error("Cities list container not found.");
-        return;
-    }
-
-    // Find the state data, handling case mismatch
-    const stateData = data.find(state => toKebabCase(state.state) === toKebabCase(stateName));
-    console.log('State data found:', stateData); // Debug
-    if (!stateData) {
-        citiesList.innerHTML = `<p>${cleanStateName || 'State'} not found.</p>`;
-        return;
-    }
-
-    const cities = {};
-    stateData.studios.forEach(studio => {
-        if (!cities[studio.city]) {
-            cities[studio.city] = {
-                name: studio.city,
-                totalStudios: 0,
-                criteria: new Set()
-            };
+    // If not found in query params, try to extract from path
+    if (!state) {
+        const pathParts = window.location.pathname.split('/').filter(Boolean);
+        if (pathParts.length >= 1) {
+            state = decodeURIComponent(pathParts[0]);
         }
-        cities[studio.city].totalStudios++;
-        Object.entries(studio.criteria).forEach(([key, value]) => {
-            if (value) cities[studio.city].criteria.add(key);
-        });
+    }
+
+    return { state };
+}
+
+async function populateStateCities() {
+    const data = await loadStudiosData();
+    if (!data || !Array.isArray(data)) {
+        document.getElementById("state-cities").innerHTML = "<p>Error loading data. Please try again later.</p>";
+        return;
+    }
+
+    // Get state from URL
+    const { state: stateName } = getUrlParameters();
+
+    if (!stateName) {
+        console.error('State parameter missing');
+        // Redirect to states page
+        window.location.href = '/states';
+        return;
+    }
+
+    // Update all elements with the state-name class
+    document.querySelectorAll('.state-name').forEach(el => {
+        el.textContent = stateName;
     });
 
-    const totalCities = Object.keys(cities).length;
-    document.querySelector('.section-header p').textContent = 
-        `Explore pilates locations across ${totalCities} cities in ${cleanStateName || 'this state'}`;
+    // Update page title
+    document.title = `Pilates Finder - ${stateName}`;
 
-    Object.values(cities).forEach(city => {
-        const cityCard = document.createElement("a");
-        cityCard.classList.add("city-card");
-        cityCard.href = `/${toKebabCase(stateName)}/${toKebabCase(city.name)}`;
+    // Process and display city data
+    const stateData = data.find(state => toKebabCase(state.state) === toKebabCase(stateName));
+    if (!stateData) {
+        document.getElementById("state-cities").innerHTML = `<p>${stateName} not found.</p>`;
+        return;
+    }
 
-        const cityStudios = stateData.studios.filter(s => s.city === city.name);
-        
-        const criteriaWithCounts = Array.from(city.criteria).map(criterion => ({
-            name: criterion,
-            count: cityStudios.filter(studio => studio.criteria[criterion]).length
-        }));
+    // Get unique cities from the studios
+    const uniqueCities = [...new Set(stateData.studios.map(studio => studio.city))];
+    
+    // Create city objects with studio counts
+    const cities = uniqueCities.map(cityName => {
+        const studioCount = stateData.studios.filter(studio => studio.city === cityName).length;
+        return {
+            name: cityName,
+            studioCount: studioCount,
+            // You might want to add city images later
+            imageUrl: `/assets/cities/${toKebabCase(cityName)}.jpg` 
+        };
+    });
 
-        cityCard.innerHTML = `
-            <div class="city-card-inner">
-                <h3>${city.name}</h3>
-                <p>${city.totalStudios} pilates locations</p>
-                <div class="criteria">
-                    ${criteriaWithCounts
-                        .slice(0, 3)
-                        .map(({name, count}) => 
-                            `<div class="criteria-item">
-                                <span class="emoji">${criteriaEmojis[name] || ''}</span>
-                                <span class="name">${name.replace('_', ' ')}</span>
-                                <span class="count">(${count})</span>
-                            </div>`
-                        )
-                        .join("")}
-                </div>
+    renderCities(cities, stateName);
+}
+
+function renderCities(cities, stateName) {
+    const stateContainer = document.getElementById('state-cities');
+    stateContainer.innerHTML = '';
+
+    if (!cities || cities.length === 0) {
+        stateContainer.innerHTML = `
+            <div class="no-cities">
+                <p>No cities with studios found in ${stateName}.</p>
             </div>
         `;
-        citiesList.appendChild(cityCard);
+        return;
+    }
+
+    cities.forEach(city => {
+        const cityElement = document.createElement('div');
+        cityElement.className = 'city-card';
+        
+        // Build the city URL using clean URLs
+        const cityUrl = `/${toKebabCase(stateName)}/${toKebabCase(city.name)}`;
+
+        cityElement.innerHTML = `
+            <div class="city-image">
+                <img src="${city.imageUrl || '/assets/city-placeholder.jpg'}" alt="${city.name}"
+                     onerror="this.src='/assets/city-placeholder.jpg'">
+            </div>
+            <div class="city-info">
+                <h3><a href="${cityUrl}">${city.name}</a></h3>
+                <p>${city.studioCount} Pilates ${city.studioCount === 1 ? 'studio' : 'studios'}</p>
+                <a href="${cityUrl}" class="btn-view">Explore Studios</a>
+            </div>
+        `;
+        
+        stateContainer.appendChild(cityElement);
     });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    populateStateCities();
 });

@@ -15,6 +15,8 @@
     { "src": "^/([^/]+)/([^/]+)$", "dest": "/dist/city.html?state=$1&city=$2" },
     { "src": "^/([^/]+)$", "dest": "/dist/cities.html?state=$1" },
     { "src": "/assets/(.*)", "dest": "/dist/assets/$1" },
+    { "src": "/(.*)\\.js", "dest": "/dist/$1.js" },
+    { "src": "/(.*)\\.css", "dest": "/dist/$1.css" },
     { "src": "/(.*)", "dest": "/dist/index.html" },
     { "src": "/.*", "dest": "/dist/404.html", "status": 404 }
   ],
