@@ -8,9 +8,12 @@
   ],
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/states", "dest": "/dist/states.html" },
     { "src": "/contact-us", "dest": "/dist/contact.html" },
     { "src": "/about-pilates-finder", "dest": "/dist/about.html" },
+    { "src": "/states", "dest": "/dist/states.html" },
+    { "src": "/city", "dest": "/dist/city.html" },
+    { "src": "/cities", "dest": "/dist/cities.html" },
+    { "src": "/studio", "dest": "/dist/studio.html" },
     { "src": "^/([^/]+)/([^/]+)/([^/]+)$", "dest": "/dist/studio.html?state=$1&city=$2&studio=$3" },
     { "src": "^/([^/]+)/([^/]+)$", "dest": "/dist/city.html?state=$1&city=$2" },
     { "src": "^/([^/]+)$", "dest": "/dist/cities.html?state=$1" },
