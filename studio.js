@@ -1,21 +1,11 @@
 document.addEventListener('DOMContentLoaded', async () => {
     await loadStudiosData();
 
-    // Get studio info from URL
-    const pathParts = window.location.pathname.split('/').filter(Boolean);
-    let stateParam, cityParam, studioParam;
-
-    if (pathParts.length === 3) {
-        [stateParam, cityParam, studioParam] = pathParts;
-        stateParam = decodeURIComponent(stateParam);
-        cityParam = decodeURIComponent(cityParam);
-        studioParam = decodeURIComponent(studioParam);
-    } else {
-        const params = new URLSearchParams(window.location.search);
-        stateParam = params.get('state');
-        cityParam = params.get('city');
-        studioParam = params.get('name');
-    }
+    // Get studio info from URL query parameters
+    const params = new URLSearchParams(window.location.search);
+    const stateParam = params.get('state');
+    const cityParam = params.get('city');
+    const studioParam = params.get('name');
 
     console.log('Looking for studio:', { stateParam, cityParam, studioParam });
     console.log('Available data:', allStudiosData);
@@ -69,16 +59,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Update breadcrumb
     document.getElementById('breadcrumb-path').innerHTML = `
-        <a href="index.html">Home</a> <span>&nbsp;&gt;&nbsp;</span> 
-        <a href="states.html">States</a> <span>&nbsp;&gt;&nbsp;</span> 
-        <a href="cities.html?state=${encodeURIComponent(stateParam)}">${stateParam}</a> <span>&nbsp;&gt;&nbsp;</span>
-        <a href="city.html?state=${encodeURIComponent(stateParam)}&city=${encodeURIComponent(cityParam)}">${cityParam}</a> <span>&nbsp;&gt;&nbsp;</span>
+        <a href="/">Home</a> <span> > </span> 
+        <a href="/states">States</a> <span> > </span> 
+        <a href="/cities?state=${encodeURIComponent(stateParam)}">${stateParam}</a> <span> > </span>
+        <a href="/city?state=${encodeURIComponent(stateParam)}&city=${encodeURIComponent(cityParam)}">${cityParam}</a> <span> > </span>
         ${studio.name}
     `;
 
     updateStudioContent(studio);
     
-    // Update related studios to use same URL pattern
+    // Update related studios to use query parameters
     const relatedStudios = stateData.studios
         .filter(s => s.city === cityParam && s.name !== studioParam)
         .slice(0, 3);
@@ -125,7 +115,7 @@ function updateStudioContent(studio) {
         if (value) {
             const badge = document.createElement('div');
             badge.className = 'criteria-badge';
-            badge.setAttribute('title', key); // This matches the CSS selector .criteria-badge[title="Reformer"]
+            badge.setAttribute('title', key);
             badge.innerHTML = `
                 <span class="emoji">${criteriaEmojis[key]}</span>
             `;
@@ -155,16 +145,9 @@ function updateStudioContent(studio) {
            This establishment is offering ${activeCriteria.join(', ') || 'various pilates services'}.</p>
     `;
     
-    // Insert About section after Features
     featuresContainer.parentNode.insertBefore(aboutSection, featuresContainer.nextSibling);
 
     // Contact Info
-    if (studio.phone) {
-        const phoneLink = document.getElementById('studio-phone');
-        phoneLink.href = `tel:${studio.phone.replace(/\D/g, '')}`;
-        phoneLink.textContent = studio.phone;
-    }
-    
     if (studio.website) {
         const websiteLink = document.getElementById('studio-website');
         websiteLink.href = studio.website;
@@ -173,8 +156,7 @@ function updateStudioContent(studio) {
 
     // Hours formatting
     const hoursContainer = document.getElementById('studio-hours');
-    
-    if (studio.opening_hours) {  // Changed from "Opening Hours" to opening_hours
+    if (studio.opening_hours) {
         const hours = studio.opening_hours
             .replace(/[\u202f\u2009\u2013]/g, ' ')
             .split('\n')
@@ -202,9 +184,9 @@ function updateStudioContent(studio) {
     
     document.getElementById('studio-description').textContent = description;
 
-    // Image - Fix photo_url property name
+    // Image
     const studioImage = document.getElementById('studio-image');
-    studioImage.src = studio.photo_url || './assets/default-studio.jpg';
+    studioImage.src = studio.photo_url || '/assets/default-studio.jpg';
     studioImage.alt = studio.name;
 
     // Social Links
@@ -226,16 +208,16 @@ function updateStudioContent(studio) {
 function updateRelatedStudios(studios, stateName) {
     const container = document.getElementById('related-studios');
     container.innerHTML = studios.map(studio => `
-        <a href="/${encodeURIComponent(stateName)}/${encodeURIComponent(studio.city)}/${encodeURIComponent(studio.name)}" class="studio-card">
+        <a href="/studio?state=${encodeURIComponent(stateName)}&city=${encodeURIComponent(studio.city)}&name=${encodeURIComponent(studio.name)}" class="studio-card">
             <div class="studio-image">
-                <img src="${studio.photo_url || './assets/default-studio.jpg'}" alt="${studio.name}">
+                <img src="${studio.photo_url || '/assets/default-studio.jpg'}" alt="${studio.name}">
                 <div class="rating-container">
                     ⭐ ${studio.rating || "N/A"} (${studio.number_of_reviews || 0})
                 </div>
             </div>
             <div class="studio-info">
                 <h3>${studio.name}</h3>
-                <div class="studio-type">${studio.type || 'Traditional Pilates'}</div>
+                <div class="studio-type">${studio.criteria?.Reformer ? 'Reformer Pilates' : 'Traditional Pilates'}</div>
                 <div class="criteria">
                     ${Object.entries(studio.criteria || {})
                         .filter(([key, value]) => value)
@@ -249,50 +231,34 @@ function updateRelatedStudios(studios, stateName) {
     `).join('');
 }
 
-function addSchemaMarkup(studio) {
-    const schema = {
-        "@context": "https://schema.org",
-        "@type": "FitnessCenter",
-        "name": studio.name,
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": studio.address,
-            "addressLocality": studio.city,
-            "addressRegion": studio.state
-        },
-        "telephone": studio.phone,
-        "url": studio.website,
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": studio.rating || 4.5,
-            "reviewCount": studio.reviewCount || 10
-        }
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify(schema);
-    document.head.appendChild(script);
-}
-
 function updateMetadata(studio) {
     // Update page title and meta description
     document.title = `${studio.name} - Pilates Studio in ${studio.city} | Pilates Finder`;
-    document.getElementById('meta-description').content = 
-        `${studio.name} offers ${Object.keys(studio.criteria || {}).filter(k => studio.criteria[k]).join(', ')} ` +
-        `Pilates classes in ${studio.city}. ${studio.rating} stars from ${studio.number_of_reviews} reviews.`;
-    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+        metaDescription.content = 
+            `${studio.name} offers ${Object.keys(studio.criteria || {}).filter(k => studio.criteria[k]).join(', ')} ` +
+            `Pilates classes in ${studio.city}. ${studio.rating} stars from ${studio.number_of_reviews} reviews.`;
+    }
+
     // Update Open Graph tags
-    document.getElementById('og-title').content = `${studio.name} - Pilates Studio in ${studio.city}`;
-    document.getElementById('og-description').content = document.getElementById('meta-description').content;
-    document.getElementById('og-image').content = studio.photo_url;
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.content = `${studio.name} - Pilates Studio in ${studio.city}`;
+    
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) ogDescription.content = metaDescription?.content;
+    
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    if (ogImage) ogImage.content = studio.photo_url || '/assets/default-studio.jpg';
 
     // Update Schema.org data
+    const schemaScript = document.createElement('script');
+    schemaScript.type = 'application/ld+json';
     const schemaData = {
         "@context": "https://schema.org",
         "@type": "FitnessCenter",
         "name": studio.name,
-        "image": studio.photo_url,
+        "image": studio.photo_url || '/assets/default-studio.jpg',
         "address": {
             "@type": "PostalAddress",
             "streetAddress": studio.address,
@@ -301,9 +267,10 @@ function updateMetadata(studio) {
         },
         "aggregateRating": {
             "@type": "AggregateRating",
-            "ratingValue": studio.rating,
-            "reviewCount": studio.number_of_reviews
+            "ratingValue": studio.rating || 0,
+            "reviewCount": studio.number_of_reviews || 0
         }
     };
-    document.getElementById('schema-data').textContent = JSON.stringify(schemaData);
+    schemaScript.textContent = JSON.stringify(schemaData);
+    document.head.appendChild(schemaScript);
 }

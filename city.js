@@ -105,6 +105,28 @@ function renderCities(cities, stateName) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+    // Get state and city from URL query parameters instead of path
+    const urlParams = new URLSearchParams(window.location.search);
+    const state = urlParams.get('state');
+    const city = urlParams.get('city');
+    
+    console.log('State:', state, 'City:', city);
+
+    // Load the studios data
+    const data = await loadStudiosData();
+    
+    if (!data || !Array.isArray(data)) {
+        document.getElementById("studios-list").innerHTML = "<p>Error loading data</p>";
+        return;
+    }
+
+    // Find matching state and city
+    const stateData = data.find(s => s.state === state);
+    if (!stateData) {
+        document.getElementById("studios-list").innerHTML = `<p>No studios found in ${state}</p>`;
+        return;
+    }
+
     populateStateCities();
 });

@@ -5,18 +5,8 @@ function toKebabCase(str) {
 }
 
 function getUrlParameters() {
-    // Check query parameters first
     const urlParams = new URLSearchParams(window.location.search);
-    let state = urlParams.get('state');
-
-    // If not found in query params, try to extract from path
-    if (!state) {
-        const pathParts = window.location.pathname.split('/').filter(Boolean);
-        if (pathParts.length >= 1) {
-            state = decodeURIComponent(pathParts[0]);
-        }
-    }
-
+    const state = urlParams.get('state');
     return { state };
 }
 
@@ -27,12 +17,11 @@ async function populateStateCities() {
         return;
     }
 
-    // Get state from URL
+    // Get state from URL query parameters
     const { state: stateName } = getUrlParameters();
 
     if (!stateName) {
         console.error('State parameter missing');
-        // Redirect to states page
         window.location.href = '/states';
         return;
     }
@@ -61,7 +50,6 @@ async function populateStateCities() {
         return {
             name: cityName,
             studioCount: studioCount,
-            // You might want to add city images later
             imageUrl: `/assets/cities/${toKebabCase(cityName)}.jpg` 
         };
     });
@@ -86,8 +74,8 @@ function renderCities(cities, stateName) {
         const cityElement = document.createElement('div');
         cityElement.className = 'city-card';
         
-        // Build the city URL using clean URLs
-        const cityUrl = `/${toKebabCase(stateName)}/${toKebabCase(city.name)}`;
+        // Build the city URL using query parameters
+        const cityUrl = `/city?state=${encodeURIComponent(stateName)}&city=${encodeURIComponent(city.name)}`;
 
         cityElement.innerHTML = `
             <div class="city-image">
