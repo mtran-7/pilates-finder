@@ -1,18 +1,22 @@
 import { loadStudiosData } from './global.js';
 
-function toKebabCase(str) {
-    return str ? str.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') : '';
+function normalizeString(str) {
+    return str ? str.toLowerCase().trim() : '';
 }
 
 function getUrlParameters() {
     const urlParams = new URLSearchParams(window.location.search);
     const state = urlParams.get('state');
+    console.log('URL Parameters - State:', state);
     return { state };
 }
 
 async function populateStateCities() {
+    console.log('Starting to populate state cities...');
     const data = await loadStudiosData();
+    console.log('Data received from loadStudiosData:', data);
     if (!data || !Array.isArray(data)) {
+        console.error('No valid data received');
         document.getElementById("state-cities").innerHTML = "<p>Error loading data. Please try again later.</p>";
         return;
     }
@@ -35,7 +39,9 @@ async function populateStateCities() {
     document.title = `Pilates Finder - ${stateName}`;
 
     // Process and display city data
-    const stateData = data.find(state => toKebabCase(state.state) === toKebabCase(stateName));
+    console.log('Looking for state:', stateName);
+    const stateData = data.find(state => normalizeString(state.state) === normalizeString(stateName));
+    console.log('State data found:', stateData);
     if (!stateData) {
         document.getElementById("state-cities").innerHTML = `<p>${stateName} not found.</p>`;
         return;
@@ -43,6 +49,7 @@ async function populateStateCities() {
 
     // Get unique cities from the studios
     const uniqueCities = [...new Set(stateData.studios.map(studio => studio.city))];
+    console.log('Unique cities:', uniqueCities);
     
     // Create city objects with studio counts
     const cities = uniqueCities.map(cityName => {
@@ -50,9 +57,10 @@ async function populateStateCities() {
         return {
             name: cityName,
             studioCount: studioCount,
-            imageUrl: `/assets/cities/${toKebabCase(cityName)}.jpg` 
+            imageUrl: `/assets/cities/${normalizeString(cityName).replace(/\s+/g, '-')}.jpg`
         };
     });
+    console.log('Cities to render:', cities);
 
     renderCities(cities, stateName);
 }
