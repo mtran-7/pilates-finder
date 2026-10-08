@@ -9,3 +9,6 @@ node_modules/
 
 # Env files
 .env
+
+# Build output (Vercel builds from source via vercel.json buildCommand)
+dist/

@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const stateName = new URLSearchParams(window.location.search).get('state');
 
     if (!stateName) {
-        window.location.href = '/states';
+        window.location.href = '/';
         return;
     }
 

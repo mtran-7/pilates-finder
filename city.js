@@ -1,4 +1,4 @@
-import { loadStudiosData } from './global.js';
+import { loadStudiosData, getStudioOffer } from './global.js';
 
 const criteriaEmojis = {
     Reformer: "🏋️‍♀️",
@@ -23,7 +23,7 @@ async function populateCityStudios() {
     const cityName = urlParams.get("city");
 
     if (!stateName || !cityName) {
-        window.location.href = '/states';
+        window.location.href = '/';
         return;
     }
 
@@ -104,8 +104,11 @@ function renderStudioCards(cityStudios, stateName) {
             ? fullDescription.substring(0, 109) + '...'
             : fullDescription;
 
+        const offer = getStudioOffer(studio);
+
         studioCard.innerHTML = `
             <div class="studio-image">
+                ${offer ? `<span class="offer-badge">✦ ${offer}</span>` : ''}
                 <img src="${studio.photo_url || '/assets/default-studio.jpg'}" alt="${studio.name}"
                      onerror="this.onerror=null;this.src='/assets/default-studio.jpg'">
                 <div class="rating-container">

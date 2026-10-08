@@ -3,6 +3,9 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/states", "destination": "/", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/contact-us", "destination": "/contact" },
     { "source": "/about-pilates-finder", "destination": "/about" }

@@ -4,7 +4,6 @@ import { resolve } from 'path';
 // Mirror Vercel's cleanUrls + rewrites so `npm run dev` matches production routing
 function cleanUrlsDevPlugin() {
   const routeMap = {
-    '/states': '/states.html',
     '/cities': '/cities.html',
     '/city': '/city.html',
     '/studio': '/studio.html',
@@ -39,7 +38,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        states: resolve(__dirname, 'states.html'),
         cities: resolve(__dirname, 'cities.html'),
         city: resolve(__dirname, 'city.html'),
         studio: resolve(__dirname, 'studio.html'),

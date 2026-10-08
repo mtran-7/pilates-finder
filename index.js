@@ -1,4 +1,73 @@
-import { loadStudiosData } from './global.js';
+import { loadStudiosData, getStudioOffer } from './global.js';
+
+const OFFER_CRITERIA_EMOJIS = {
+    Reformer: "🏋️‍♀️", Mat: "🟦", Private: "🔒", Group: "👥",
+    Online: "🌐", Free_Trial: "🎟️", Barre: "🩰", Tower: "🗼"
+};
+
+function populateIntroOffers(allStudiosData) {
+    const container = document.getElementById('intro-offers-list');
+    if (!container) return;
+
+    // Collect studios with a known intro offer, best-rated first, max one per city
+    const candidates = [];
+    allStudiosData.forEach(state => {
+        state.studios.forEach(studio => {
+            const offer = getStudioOffer(studio);
+            if (offer && studio.rating && studio.photo_url) {
+                candidates.push({ studio, offer, state: state.state });
+            }
+        });
+    });
+
+    candidates.sort((a, b) =>
+        (b.studio.rating * Math.log10((b.studio.number_of_reviews || 0) + 1)) -
+        (a.studio.rating * Math.log10((a.studio.number_of_reviews || 0) + 1))
+    );
+
+    const seenCities = new Set();
+    const picks = [];
+    for (const c of candidates) {
+        const cityKey = `${c.state}|${c.studio.city}`;
+        if (seenCities.has(cityKey)) continue;
+        seenCities.add(cityKey);
+        picks.push(c);
+        if (picks.length === 8) break;
+    }
+
+    picks.forEach(({ studio, offer, state }) => {
+        const studioUrl = `/studio?state=${encodeURIComponent(state)}&city=${encodeURIComponent(studio.city)}&name=${encodeURIComponent(studio.name)}`;
+        const tags = Object.entries(studio.criteria || {})
+            .filter(([key, value]) => value && OFFER_CRITERIA_EMOJIS[key])
+            .slice(0, 3)
+            .map(([key]) => `<span class="offer-tag">${OFFER_CRITERIA_EMOJIS[key]} ${key.replace('_', ' ')}</span>`)
+            .join('');
+
+        const card = document.createElement('a');
+        card.className = 'studio-card offer-card';
+        card.href = studioUrl;
+        card.innerHTML = `
+            <div class="studio-image">
+                <span class="offer-badge">✦ ${offer}</span>
+                <img src="${studio.photo_url}" alt="${studio.name}" loading="lazy"
+                     onerror="this.onerror=null;this.src='/assets/default-studio.jpg'">
+                <div class="rating-container">⭐ ${studio.rating} (${studio.number_of_reviews || 0})</div>
+            </div>
+            <div class="studio-info">
+                <h3>${studio.name}</h3>
+                <p class="offer-location">📍 ${studio.city}, ${state}</p>
+                <div class="offer-tags">${tags}</div>
+                <span class="btn-view">View Studio</span>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+
+    // Hide the section if nothing qualified
+    if (!picks.length) {
+        document.querySelector('.offers-section')?.setAttribute('hidden', '');
+    }
+}
 
 let allStudiosData = null;
 
@@ -22,6 +91,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const searchBar = document.querySelector(".search-bar");
+
+    // First-Timer Offers section (homepage only)
+    populateIntroOffers(allStudiosData);
 
     // Load studios data and populate featured cities
     const featuredCitiesContainer = document.getElementById("featured-cities-list");
@@ -315,14 +387,4 @@ document.addEventListener("DOMContentLoaded", async () => {
         observer.observe(el);
     });
     
-    // Add the new section header (homepage only)
-    if (featuredCitiesContainer) {
-        const sectionHeader = document.createElement('div');
-        sectionHeader.className = 'section-header index-page';
-        sectionHeader.innerHTML = `
-            <h2>Explore Pilates by Location</h2>
-            <a href="/states" class="view-all-link">Explore Pilates Studios by States -></a>
-        `;
-        document.body.insertBefore(sectionHeader, document.body.firstChild);
-    }
 });

@@ -17,6 +17,7 @@ import os
 import re
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -45,43 +46,43 @@ def slugify(*parts):
     return text.strip("-")[:120]
 
 
-def api_get(url):
-    with urllib.request.urlopen(url, timeout=30) as resp:
-        return json.load(resp)
-
-
-def find_photo_reference(api_key, studio):
+def find_photo_name(api_key, studio):
+    """Look the studio up via Places API (New) Text Search; return its first photo resource name."""
     query = " ".join(
         p for p in [studio.get("Name"), studio.get("Address") or "", studio.get("City"), studio.get("State")] if p
     )
-    params = urllib.parse.urlencode(
-        {
-            "input": query,
-            "inputtype": "textquery",
-            "fields": "photos,place_id",
-            "key": api_key,
-        }
+    body = json.dumps({"textQuery": query, "pageSize": 1}).encode()
+    req = urllib.request.Request(
+        "https://places.googleapis.com/v1/places:searchText",
+        data=body,
+        headers={
+            "Content-Type": "application/json",
+            "X-Goog-Api-Key": api_key,
+            "X-Goog-FieldMask": "places.photos",
+        },
     )
-    data = api_get(f"https://maps.googleapis.com/maps/api/place/findplacefromtext/json?{params}")
-    status = data.get("status")
-    if status == "OVER_QUERY_LIMIT":
-        raise RuntimeError("Google reports OVER_QUERY_LIMIT - stopping so we don't burn quota.")
-    if status == "REQUEST_DENIED":
-        raise RuntimeError(f"REQUEST_DENIED from Google: {data.get('error_message', '')}")
-    candidates = data.get("candidates") or []
-    if not candidates:
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            data = json.load(resp)
+    except urllib.error.HTTPError as e:
+        detail = e.read().decode(errors="replace")[:300]
+        if e.code in (401, 403):
+            raise RuntimeError(f"Google rejected the request ({e.code}): {detail}")
+        if e.code == 429:
+            raise RuntimeError("Google reports rate/quota limit (429) - stopping so we don't burn quota.")
+        raise
+    places = data.get("places") or []
+    if not places:
         return None
-    photos = candidates[0].get("photos") or []
+    photos = places[0].get("photos") or []
     if not photos:
         return None
-    return photos[0].get("photo_reference")
+    return photos[0].get("name")  # e.g. "places/ChIJ.../photos/AUac..."
 
 
-def download_photo(api_key, photo_reference, dest_path):
-    params = urllib.parse.urlencode(
-        {"maxwidth": PHOTO_MAX_WIDTH, "photo_reference": photo_reference, "key": api_key}
-    )
-    url = f"https://maps.googleapis.com/maps/api/place/photo?{params}"
+def download_photo(api_key, photo_name, dest_path):
+    params = urllib.parse.urlencode({"maxWidthPx": PHOTO_MAX_WIDTH, "key": api_key})
+    url = f"https://places.googleapis.com/v1/{photo_name}/media?{params}"
     with urllib.request.urlopen(url, timeout=60) as resp:
         content_type = resp.headers.get("Content-Type", "")
         body = resp.read()
@@ -106,10 +107,16 @@ def main():
 
     todo = studios[: args.limit] if args.limit else studios
     fetched = skipped = missing = 0
+    used_slugs = {}
 
     try:
         for i, studio in enumerate(todo, 1):
             slug = slugify(studio.get("State"), studio.get("City"), studio.get("Name"))
+            # Same-name studios in one city (e.g. two "Club Pilates") must not share a file.
+            # Processing order is fixed, so suffixes stay stable across resumed runs.
+            used_slugs[slug] = used_slugs.get(slug, 0) + 1
+            if used_slugs[slug] > 1:
+                slug = f"{slug}-{used_slugs[slug]}"
             filename = f"{slug}.jpg"
             dest = os.path.join(PHOTO_DIR, filename)
             local_url = f"/studio-photos/{filename}"
@@ -120,7 +127,7 @@ def main():
                 continue
 
             try:
-                ref = find_photo_reference(api_key, studio)
+                ref = find_photo_name(api_key, studio)
                 if ref and download_photo(api_key, ref, dest):
                     studio["Photo URL"] = local_url
                     fetched += 1

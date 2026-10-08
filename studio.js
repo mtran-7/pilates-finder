@@ -75,8 +75,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Update breadcrumb
     document.getElementById('breadcrumb-path').innerHTML = `
-        <a href="/">Home</a> <span> > </span> 
-        <a href="/states">States</a> <span> > </span> 
+        <a href="/">Home</a> <span> > </span>
         <a href="/cities?state=${encodeURIComponent(stateParam)}">${stateParam}</a> <span> > </span>
         <a href="/city?state=${encodeURIComponent(stateParam)}&city=${encodeURIComponent(cityParam)}">${cityParam}</a> <span> > </span>
         ${studio.name}
