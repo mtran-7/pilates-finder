@@ -30,6 +30,7 @@ async function loadStudiosData() {
                 address: studio.Address,
                 price_single: studio["Price Single"] || null,
                 price_intro: studio["Price Intro"] || null,
+                intro_offer: studio["Intro Offer"] || null,
                 criteria: {
                     Reformer: Boolean(studio.Reformer),
                     Mat: Boolean(studio.Mat),
@@ -166,10 +167,14 @@ const CHAIN_OFFERS = [
 ];
 
 // Returns the intro-offer label for a studio, or null if none is known.
+// Precedence: offer text scraped from the studio's own website, then
+// verified chain-wide offers, then a plain intro price, then the Free Trial flag.
 function getStudioOffer(studio) {
+    if (studio.intro_offer) return studio.intro_offer;
     for (const { pattern, label } of CHAIN_OFFERS) {
         if (pattern.test(studio.name || '')) return label;
     }
+    if (studio.price_intro) return `Intro class $${studio.price_intro}`;
     if (studio.criteria?.Free_Trial) return 'Free Trial';
     return null;
 }
