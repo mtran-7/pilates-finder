@@ -28,6 +28,8 @@ async function loadStudiosData() {
                 website: studio.Website,
                 photo_url: studio["Photo URL"], // Changed to match expected property
                 address: studio.Address,
+                price_single: studio["Price Single"] || null,
+                price_intro: studio["Price Intro"] || null,
                 criteria: {
                     Reformer: Boolean(studio.Reformer),
                     Mat: Boolean(studio.Mat),

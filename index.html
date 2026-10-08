@@ -35,6 +35,7 @@
             </button>
             <nav class="nav-menu">
                 <a href="/" class="nav-link">Home</a>
+                <a href="/studios" class="nav-link">Browse Studios</a>
                 <div id="nav-location" class="nav-location"></div>
                 <a href="/about.html" class="nav-link">About</a>
                 <a href="/contact.html" class="nav-link">Contact</a>
@@ -64,9 +65,9 @@
                             aria-autocomplete="list"
                         >
                     </div>
-                    <button class="search-button">
-                        <i class="fas fa-map-pin"></i> Explore Pilates Nearby
-                    </button>
+                    <a href="/studios" class="search-button">
+                        <i class="fas fa-map-pin"></i> Browse All Studios
+                    </a>
                 </div>
             </div>
         </section>
@@ -86,7 +87,7 @@
         <section class="offers-section" aria-label="First-Timer Offers">
             <div class="section-header index-page">
                 <h2>First-Timer Offers</h2>
-                <p>Studios with free or discounted intro classes for new clients</p>
+                <a href="/studios?offer=1" class="view-all-link">See all intro offers -></a>
             </div>
             <div id="intro-offers-list" class="offers-list">
                 <!-- Offer cards added by JS -->
@@ -99,7 +100,7 @@
                 <h2>Types of Pilates</h2>
             </div>
             <div class="types-grid">
-                <div class="type-card" data-aos="fade-up">
+                <a class="type-card" data-aos="fade-up" href="/studios?type=Reformer">
                     <div class="type-image-wrapper">
                         <span class="type-emoji">🏋️‍♀️</span>
                         <img src="./src/assets/images/reformer-pilates.jpeg" alt="Reformer Pilates" loading="lazy">
@@ -108,8 +109,8 @@
                         <h3>Reformer Pilates</h3>
                         <p>Equipment-based training that enhances strength, flexibility, and control using a specialized machine.</p>
                     </div>
-                </div>
-                <div class="type-card" data-aos="fade-up">
+                </a>
+                <a class="type-card" data-aos="fade-up" href="/studios?type=Mat">
                     <div class="type-image-wrapper">
                         <span class="type-emoji">🟦</span>
                         <img src="./src/assets/images/mat-pilates.jpeg" alt="Mat Pilates" loading="lazy">
@@ -118,8 +119,8 @@
                         <h3>Mat Pilates</h3>
                         <p>Classical floor exercises focusing on core strength and body awareness using your own body weight.</p>
                     </div>
-                </div>
-                <div class="type-card" data-aos="fade-up">
+                </a>
+                <a class="type-card" data-aos="fade-up" href="/studios?type=Barre">
                     <div class="type-image-wrapper">
                         <span class="type-emoji">🩰</span>
                         <img src="./src/assets/images/barre-pilates.jpeg" alt="Barre Pilates" loading="lazy">
@@ -128,8 +129,8 @@
                         <h3>Barre Pilates</h3>
                         <p>Ballet-inspired workouts combining Pilates principles with dance elements for graceful strength.</p>
                     </div>
-                </div>
-                <div class="type-card" data-aos="fade-up">
+                </a>
+                <a class="type-card" data-aos="fade-up" href="/studios?type=Tower">
                     <div class="type-image-wrapper">
                         <span class="type-emoji">🗼</span>
                         <img src="/src/assets/images/tower-pilates.jpeg" alt="Tower Pilates" loading="lazy">
@@ -138,7 +139,7 @@
                         <h3>Tower Pilates</h3>
                         <p>Vertical equipment training for advanced strength and flexibility using wall-mounted apparatus.</p>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
 
@@ -149,7 +150,7 @@
                     <div class="why-pilates-text">
                         <h2>Why Pilates?</h2>
                         <p>Pilates strengthens your core, improves flexibility, and enhances mind-body connection. This low-impact exercise method is suitable for all fitness levels and can help with posture, balance, and overall well-being.</p>
-                        <a href="#" class="primary-button" data-open-location>Find a Studio</a>
+                        <a href="/studios" class="primary-button">Find a Studio</a>
                     </div>
                     <div class="why-pilates-image">
                         <img src="./src/assets/images/why-pilates.jpeg" alt="Person practicing Pilates" loading="lazy">
@@ -230,7 +231,7 @@
             <div class="cta-content">
                 <h2 id="cta-heading">Start Your Pilates Journey Today!</h2>
                 <p>Find the perfect studio and begin your transformation</p>
-                <a href="#" class="cta-button" data-open-location aria-label="Explore Pilates Studios">
+                <a href="/studios" class="cta-button" aria-label="Explore Pilates Studios">
                     Find Studios Near You
                     <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
