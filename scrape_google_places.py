@@ -1,4 +1,6 @@
 import json
+import os
+import sys
 import time
 import requests
 import pandas as pd
@@ -10,8 +12,10 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from concurrent.futures import ThreadPoolExecutor
 
-# Google Places API key
-API_KEY = 'AIzaSyAQDmCEpeHw4L9RThWaKkpGuoZHq4jjwkg'
+# Google Places API key (never hardcode; set GOOGLE_MAPS_API_KEY in .env or the shell)
+API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY')
+if not API_KEY:
+    sys.exit('Error: GOOGLE_MAPS_API_KEY environment variable is not set.')
 
 # Updated Criteria Keywords
 CRITERIA_KEYWORDS = {
