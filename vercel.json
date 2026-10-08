@@ -4,7 +4,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/contact-us", "destination": "/contact.html" },
-    { "source": "/about-pilates-finder", "destination": "/about.html" }
+    { "source": "/contact-us", "destination": "/contact" },
+    { "source": "/about-pilates-finder", "destination": "/about" }
   ]
 }
