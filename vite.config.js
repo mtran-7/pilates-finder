@@ -1,16 +1,38 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
-function toKebabCase(str) {
-  return str.toLowerCase()
-            .replace(/\s+/g, '-')
-            .replace(/[^a-z0-9-]/g, '');
+// Mirror Vercel's cleanUrls + rewrites so `npm run dev` matches production routing
+function cleanUrlsDevPlugin() {
+  const routeMap = {
+    '/states': '/states.html',
+    '/cities': '/cities.html',
+    '/city': '/city.html',
+    '/studio': '/studio.html',
+    '/about': '/about.html',
+    '/about-pilates-finder': '/about.html',
+    '/contact': '/contact.html',
+    '/contact-us': '/contact.html'
+  };
+
+  return {
+    name: 'clean-urls-dev',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        const [path, query] = req.url.split('?');
+        if (routeMap[path]) {
+          req.url = routeMap[path] + (query ? '?' + query : '');
+        }
+        next();
+      });
+    }
+  };
 }
 
 export default defineConfig({
   root: '.',
   base: '/',
   publicDir: 'public',
+  plugins: [cleanUrlsDevPlugin()],
   build: {
     outDir: 'dist',
     emptyOutDir: true,
@@ -25,13 +47,7 @@ export default defineConfig({
         contact: resolve(__dirname, 'contact.html')
       },
       output: {
-        entryFileNames: (chunkInfo) => {
-          // Keep original names for specific files
-          if (['city', 'studio'].includes(chunkInfo.name)) {
-            return 'assets/[name].js';
-          }
-          return 'assets/[name].js';
-        },
+        entryFileNames: 'assets/[name].js',
         chunkFileNames: 'assets/[name].js',
         assetFileNames: (assetInfo) => {
           const extType = assetInfo.name.split('.').at(1);
@@ -46,48 +62,7 @@ export default defineConfig({
   server: {
     open: true,
     port: 5173,
-    strictPort: true,
-    middlewareMode: false,
-    middleware: [
-      (req, res, next) => {
-        // Convert URL encoded spaces and format URLs
-        const originalUrl = req.url;
-        const decodedUrl = decodeURIComponent(originalUrl);
-        const parts = decodedUrl.split('/').filter(Boolean);
-        
-        if (parts.length > 0) {
-          // Format state names
-          parts[0] = toKebabCase(parts[0]);
-          
-          // Format city names if present
-          if (parts.length > 1) {
-            parts[1] = toKebabCase(parts[1]);
-          }
-          
-          req.url = '/' + parts.join('/');
-        }
-
-        // Route handling
-        switch (req.url) {
-          case '/states':
-            req.url = '/states.html';
-            break;
-          case '/contact-us':
-            req.url = '/contact.html';
-            break;
-          case '/about-pilates-finder':
-            req.url = '/about.html';
-            break;
-          default:
-            if (req.url.match(/^\/[^/]+$/)) {
-              req.url = '/cities.html';
-            } else if (req.url.match(/^\/[^/]+\/[^/]+$/)) {
-              req.url = '/city.html';
-            }
-        }
-        next();
-      }
-    ]
+    strictPort: true
   },
   resolve: {
     alias: {

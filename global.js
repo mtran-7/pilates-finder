@@ -2,7 +2,7 @@ let allStudiosData = null;
 
 async function loadStudiosData() {
     try {
-        const response = await fetch("pilates_studios.json");
+        const response = await fetch("/pilates_studios.json");
         if (!response.ok) throw new Error("Failed to load data");
         const data = await response.json();
         
@@ -51,26 +51,6 @@ async function loadStudiosData() {
     }
 }
 
-// Helper function to generate clean URLs
-function getStudioUrl(studio) {
-    return `/${encodeURIComponent(studio.state)}/${encodeURIComponent(studio.city)}/${encodeURIComponent(studio.name)}`;
-}
-
-// Helper function to generate city URLs
-function getCityUrl(state, city) {
-    return `/${encodeURIComponent(state)}/${encodeURIComponent(city)}`;
-}
-
-// Helper function to get state path
-function getStatePath(state) {
-    return `/${encodeURIComponent(state)}`;
-}
-
-// Helper function to get city path
-function getCityPath(state, city) {
-    return `/${encodeURIComponent(state)}/${encodeURIComponent(city)}`;
-}
-
 // Update all navigation links to use clean URLs
 document.addEventListener('DOMContentLoaded', () => {
     // Update nav menu links
@@ -81,21 +61,27 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (href === 'contact.html') {
             link.setAttribute('href', '/contact-us');
         }
-        // Remove states.html transformation
     });
     document.querySelectorAll('a[href="states.html"]').forEach(link => {
         link.href = '/states';
     });
-});
 
-// Function to get path parameters
-function getPathParams() {
-    const parts = window.location.pathname.split('/').filter(Boolean);
-    return {
-        state: parts[0] ? decodeURIComponent(parts[0]) : null,
-        city: parts[1] ? decodeURIComponent(parts[1]) : null
-    };
-}
+    // Hamburger menu (shared across all pages)
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-container')) {
+                navMenu.classList.remove('active');
+            }
+        });
+    }
+});
 
 // Add export statement for loadStudiosData
 export { loadStudiosData };

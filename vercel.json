@@ -1,17 +1,10 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "*.html", "use": "@vercel/static" },
-    { "src": "*.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/states", "dest": "/states.html" },
-    { "src": "/contact-us", "dest": "/contact.html" },
-    { "src": "/about-pilates-finder", "dest": "/about.html" },
-
-    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
-  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/contact-us", "destination": "/contact.html" },
+    { "source": "/about-pilates-finder", "destination": "/about.html" }
+  ]
 }

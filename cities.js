@@ -1,106 +1,87 @@
 import { loadStudiosData } from './global.js';
 
+const criteriaEmojis = {
+    Reformer: "🏋️‍♀️",
+    Mat: "🟦",
+    Private: "🔒",
+    Group: "👥",
+    Online: "🌐",
+    Free_Trial: "🎟️",
+    Barre: "🩰",
+    Tower: "🗼"
+};
+
 function normalizeString(str) {
     return str ? str.toLowerCase().trim() : '';
 }
 
-function getUrlParameters() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const state = urlParams.get('state');
-    console.log('URL Parameters - State:', state);
-    return { state };
-}
-
-async function populateStateCities() {
-    console.log('Starting to populate state cities...');
-    const data = await loadStudiosData();
-    console.log('Data received from loadStudiosData:', data);
-    if (!data || !Array.isArray(data)) {
-        console.error('No valid data received');
-        document.getElementById("state-cities").innerHTML = "<p>Error loading data. Please try again later.</p>";
-        return;
-    }
-
-    // Get state from URL query parameters
-    const { state: stateName } = getUrlParameters();
+document.addEventListener("DOMContentLoaded", async () => {
+    const container = document.getElementById("cities-list");
+    const stateName = new URLSearchParams(window.location.search).get('state');
 
     if (!stateName) {
-        console.error('State parameter missing');
         window.location.href = '/states';
         return;
     }
 
-    // Update all elements with the state-name class
-    document.querySelectorAll('.state-name').forEach(el => {
-        el.textContent = stateName;
-    });
+    const data = await loadStudiosData();
+    if (!data || !Array.isArray(data)) {
+        container.innerHTML = "<p>Error loading data. Please try again later.</p>";
+        return;
+    }
 
-    // Update page title
-    document.title = `Pilates Finder - ${stateName}`;
-
-    // Process and display city data
-    console.log('Looking for state:', stateName);
-    const stateData = data.find(state => normalizeString(state.state) === normalizeString(stateName));
-    console.log('State data found:', stateData);
+    const stateData = data.find(s => normalizeString(s.state) === normalizeString(stateName));
     if (!stateData) {
-        document.getElementById("state-cities").innerHTML = `<p>${stateName} not found.</p>`;
+        container.innerHTML = `<p>${stateName} not found.</p>`;
         return;
     }
 
-    // Get unique cities from the studios
-    const uniqueCities = [...new Set(stateData.studios.map(studio => studio.city))];
-    console.log('Unique cities:', uniqueCities);
-    
-    // Create city objects with studio counts
-    const cities = uniqueCities.map(cityName => {
-        const studioCount = stateData.studios.filter(studio => studio.city === cityName).length;
-        return {
-            name: cityName,
-            studioCount: studioCount,
-            imageUrl: `/assets/cities/${normalizeString(cityName).replace(/\s+/g, '-')}.jpg`
-        };
+    const displayName = stateData.state;
+    document.title = `Pilates Finder - ${displayName}`;
+    document.querySelector('.hero-content h1').textContent = `Pilates Studios in ${displayName}`;
+    document.querySelector('.hero-content p').textContent =
+        `Discover the best pilates studios in ${displayName} with our comprehensive directory`;
+    document.querySelector('.section-header h2').textContent = `Cities in ${displayName}`;
+
+    // Group studios by city and tally criteria
+    const cityMap = {};
+    stateData.studios.forEach(studio => {
+        if (!cityMap[studio.city]) {
+            cityMap[studio.city] = { name: studio.city, totalStudios: 0, criteriaCounts: {} };
+        }
+        const entry = cityMap[studio.city];
+        entry.totalStudios++;
+        Object.entries(studio.criteria || {}).forEach(([key, value]) => {
+            if (value && criteriaEmojis[key]) {
+                entry.criteriaCounts[key] = (entry.criteriaCounts[key] || 0) + 1;
+            }
+        });
     });
-    console.log('Cities to render:', cities);
 
-    renderCities(cities, stateName);
-}
-
-function renderCities(cities, stateName) {
-    const stateContainer = document.getElementById('state-cities');
-    stateContainer.innerHTML = '';
-
-    if (!cities || cities.length === 0) {
-        stateContainer.innerHTML = `
-            <div class="no-cities">
-                <p>No cities with studios found in ${stateName}.</p>
-            </div>
-        `;
-        return;
-    }
+    const cities = Object.values(cityMap).sort((a, b) => a.name.localeCompare(b.name));
+    document.querySelector('.section-header p').textContent =
+        `Explore pilates locations across ${cities.length} cities in ${displayName}`;
 
     cities.forEach(city => {
-        const cityElement = document.createElement('div');
-        cityElement.className = 'city-card';
-        
-        // Build the city URL using query parameters
-        const cityUrl = `/city?state=${encodeURIComponent(stateName)}&city=${encodeURIComponent(city.name)}`;
+        const topCriteria = Object.entries(city.criteriaCounts)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 3);
 
-        cityElement.innerHTML = `
-            <div class="city-image">
-                <img src="${city.imageUrl || '/assets/city-placeholder.jpg'}" alt="${city.name}"
-                     onerror="this.src='/assets/city-placeholder.jpg'">
-            </div>
-            <div class="city-info">
-                <h3><a href="${cityUrl}">${city.name}</a></h3>
-                <p>${city.studioCount} Pilates ${city.studioCount === 1 ? 'studio' : 'studios'}</p>
-                <a href="${cityUrl}" class="btn-view">Explore Studios</a>
+        const card = document.createElement('a');
+        card.classList.add('city-card');
+        card.href = `/city?state=${encodeURIComponent(displayName)}&city=${encodeURIComponent(city.name)}`;
+        card.innerHTML = `
+            <h3>${city.name}</h3>
+            <p>${city.totalStudios} pilates ${city.totalStudios === 1 ? 'location' : 'locations'}</p>
+            <div class="criteria">
+                ${topCriteria.map(([key, count]) => `
+                    <div class="criteria-item">
+                        <span class="emoji">${criteriaEmojis[key]}</span>
+                        <span class="name">${key.replace('_', ' ')}</span>
+                        <span class="count">(${count})</span>
+                    </div>`).join('')}
             </div>
         `;
-        
-        stateContainer.appendChild(cityElement);
+        container.appendChild(card);
     });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    populateStateCities();
 });

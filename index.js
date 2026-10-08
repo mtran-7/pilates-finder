@@ -21,40 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
-    // Search functionality
     const searchBar = document.querySelector(".search-bar");
-    const resultsSection = document.getElementById("results");
-
-    if (searchBar) {
-        searchBar.addEventListener("input", () => {
-            const query = searchBar.value.toLowerCase();
-            const results = [];
-
-            allStudiosData.forEach(state => {
-                state.studios.forEach(studio => {
-                    if (
-                        studio.name.toLowerCase().includes(query) ||
-                        studio.city.toLowerCase().includes(query) ||
-                        state.state.toLowerCase().includes(query)
-                    ) {
-                        results.push(studio);
-                    }
-                });
-            });
-
-            if (resultsSection) {
-                resultsSection.innerHTML = results.length
-                    ? results.map(studio => `
-                        <div class="studio-card">
-                            <h3>${studio.name}</h3>
-                            <p>${studio.city}, ${studio.state}</p>
-                            <a href="studios.html?id=${studio.id}" class="view-details-link">View Details</a>
-                        </div>
-                    `).join("")
-                    : "<p>No results found.</p>";
-            }
-        });
-    }
 
     // Load studios data and populate featured cities
     const featuredCitiesContainer = document.getElementById("featured-cities-list");
@@ -102,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Create and append the city card
         const cityCard = document.createElement("a");
         cityCard.classList.add("city-card");
-        cityCard.href = `city.html?state=${encodeURIComponent(state)}&city=${encodeURIComponent(city)}`;
+        cityCard.href = `/city?state=${encodeURIComponent(state)}&city=${encodeURIComponent(city)}`;
         cityCard.innerHTML = `
             <h3>${city}</h3>
             <p>${totalStudios} pilates locations</p>
@@ -150,7 +117,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 });
 
                 if (nearestStudio) {
-                    window.location.href = `city.html?state=${nearestStudio.state}&city=${nearestStudio.city}`;
+                    window.location.href = `/city?state=${encodeURIComponent(nearestStudio.state)}&city=${encodeURIComponent(nearestStudio.city)}`;
                 } else {
                     alert("No nearby studios found.");
                 }
@@ -159,7 +126,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // CTA Button ripple effect
-    document.querySelector('.cta-button').addEventListener('click', function(e) {
+    document.querySelector('.cta-button')?.addEventListener('click', function(e) {
         const button = this;
         const ripple = document.createElement('span');
         const rect = button.getBoundingClientRect();
@@ -231,33 +198,33 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
 
-    // Enhanced Search functionality with Fuse.js
+    // Enhanced Search functionality with Fuse.js (homepage only)
+    if (searchBar && typeof Fuse !== 'undefined') {
     const searchDropdown = document.createElement('div');
     searchDropdown.className = 'search-results-dropdown';
     searchBar.parentNode.appendChild(searchDropdown);
 
-    // Load and initialize Fuse.js
-    const response = await fetch('/pilates_studios.json');
-    const studiosData = await response.json();
-    
-    // Prepare data for Fuse.js
-    const searchData = studiosData.flatMap(state => [
-        // Add cities
-        { 
-            type: 'city',
-            city: state.city,
-            state: state.state,
-            url: `cities.html?state=${encodeURIComponent(state.state)}&city=${encodeURIComponent(state.city)}`
-        },
-        // Add studios
-        ...state.studios.map(studio => ({
-            type: 'studio',
-            name: studio.name,
-            city: state.city,
-            state: state.state,
-            url: `studio.html?studio=${studio.id}`
-        }))
-    ]);
+    // Prepare data for Fuse.js from the already-loaded studios data
+    const searchData = allStudiosData.flatMap(state => {
+        const cityNames = [...new Set(state.studios.map(studio => studio.city))];
+        return [
+            // Add cities
+            ...cityNames.map(city => ({
+                type: 'city',
+                city,
+                state: state.state,
+                url: `/city?state=${encodeURIComponent(state.state)}&city=${encodeURIComponent(city)}`
+            })),
+            // Add studios
+            ...state.studios.map(studio => ({
+                type: 'studio',
+                name: studio.name,
+                city: studio.city,
+                state: state.state,
+                url: `/studio?state=${encodeURIComponent(state.state)}&city=${encodeURIComponent(studio.city)}&name=${encodeURIComponent(studio.name)}`
+            }))
+        ];
+    });
 
     const fuseOptions = {
         keys: ['name', 'city', 'state'],
@@ -326,6 +293,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
         }
     });
+    }
 
     // Intersection Observer for fade-in animations
     const observerOptions = {
@@ -347,12 +315,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         observer.observe(el);
     });
     
-    // Add the new section header
-    const sectionHeader = document.createElement('div');
-    sectionHeader.className = 'section-header index-page';
-    sectionHeader.innerHTML = `
-        <h2>Explore Pilates by Location</h2>
-        <a href="/states" class="view-all-link">Explore Pilates Studios by States -></a>
-    `;
-    document.body.insertBefore(sectionHeader, document.body.firstChild);
+    // Add the new section header (homepage only)
+    if (featuredCitiesContainer) {
+        const sectionHeader = document.createElement('div');
+        sectionHeader.className = 'section-header index-page';
+        sectionHeader.innerHTML = `
+            <h2>Explore Pilates by Location</h2>
+            <a href="/states" class="view-all-link">Explore Pilates Studios by States -></a>
+        `;
+        document.body.insertBefore(sectionHeader, document.body.firstChild);
+    }
 });

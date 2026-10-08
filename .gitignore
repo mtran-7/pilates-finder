@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Python virtualenv
+.venv/
+
+# OS files
+.DS_Store
+
+# Env files
+.env

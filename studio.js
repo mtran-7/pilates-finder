@@ -1,5 +1,18 @@
+import { loadStudiosData } from './global.js';
+
+const criteriaEmojis = {
+    Reformer: "🏋️‍♀️",
+    Mat: "🟦",
+    Private: "🔒",
+    Group: "👥",
+    Online: "🌐",
+    Barre: "🩰",
+    Tower: "🗼",
+    Free_Trial: "🎟️"
+};
+
 document.addEventListener('DOMContentLoaded', async () => {
-    await loadStudiosData();
+    const allStudiosData = await loadStudiosData();
 
     // Get studio info from URL query parameters
     const params = new URLSearchParams(window.location.search);
@@ -7,11 +20,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     const cityParam = params.get('city');
     const studioParam = params.get('name');
 
-    console.log('Looking for studio:', { stateParam, cityParam, studioParam });
-    console.log('Available data:', allStudiosData);
+    if (!allStudiosData || !stateParam || !cityParam || !studioParam) {
+        console.error('Missing data or URL parameters:', { stateParam, cityParam, studioParam });
+        showError();
+        return;
+    }
 
     // Find matching studio
-    const stateData = allStudiosData.find(state => 
+    const stateData = allStudiosData.find(state =>
         state.state.toLowerCase() === stateParam.toLowerCase()
     );
 
@@ -67,33 +83,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     `;
 
     updateStudioContent(studio);
-    
+
     // Update related studios to use query parameters
     const relatedStudios = stateData.studios
         .filter(s => s.city === cityParam && s.name !== studioParam)
         .slice(0, 3);
     updateRelatedStudios(relatedStudios, stateParam);
-    
-    document.getElementById('studio-content').hidden = false;
 });
 
 function showError() {
     document.getElementById('error-message').hidden = false;
-    document.getElementById('studio-content').hidden = true;
+    document.querySelector('.studio-grid')?.setAttribute('hidden', '');
+    document.querySelector('.related-studios-section')?.setAttribute('hidden', '');
 }
 
 function updateStudioContent(studio) {
-    const criteriaEmojis = {
-        Reformer: "🏋️‍♀️",
-        Mat: "🟦",
-        Private: "🔒",
-        Group: "👥",
-        Online: "🌐",
-        Barre: "🩰",
-        Tower: "🗼",
-        Free_Trial: "🎟️"
-    };
-
     // Basic Info
     document.getElementById('studio-name').textContent = studio.name;
     
@@ -171,18 +175,6 @@ function updateStudioContent(studio) {
     } else {
         hoursContainer.innerHTML = '<p>Hours not available</p>';
     }
-
-    // Generate formatted description
-    const activeCriteriaDesc = Object.entries(studio.criteria || {})
-        .filter(([_, value]) => value)
-        .map(([key]) => key.replace('_', ' '))
-        .join(', ');
-    
-    const description = `${studio.name} is a ${studioType} studio located in ${studio.city}, ${studio.state} ` +
-        `with a ${studio.rating || 'N/A'} star rating from ${studio.number_of_reviews || 0} reviews. ` +
-        `This establishment is offering ${activeCriteriaDesc || 'various pilates services'}.`;
-    
-    document.getElementById('studio-description').textContent = description;
 
     // Image
     const studioImage = document.getElementById('studio-image');
