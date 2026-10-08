@@ -1319,9 +1319,9 @@ margin-left: auto;
 .breadcrumb {
     font-size: 0.9rem;
     color: black;
-    margin: 0;  /* Reduced from margin: 20px 0 */
+    margin: 0;
     background-color: var(--secondary-color);
-    padding: 0px 60px 0 80px;
+    padding: 32px 60px 0 80px;
     background-color: transparent;
     letter-spacing: 1px;
 }

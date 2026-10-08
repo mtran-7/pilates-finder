@@ -118,7 +118,7 @@ function updateStudioContent(studio) {
         if (value) {
             const badge = document.createElement('div');
             badge.className = 'criteria-badge';
-            badge.setAttribute('title', key);
+            badge.setAttribute('title', key.replace('_', ' '));
             badge.innerHTML = `
                 <span class="emoji">${criteriaEmojis[key]}</span>
             `;
@@ -196,6 +196,18 @@ function updateStudioContent(studio) {
     updateMetadata(studio);
 }
 
+function relatedStudioDescription(studio, stateName) {
+    const studioType = studio.criteria?.Reformer ? 'Reformer Pilates' : 'Classical Pilates';
+    const activeCriteria = Object.entries(studio.criteria || {})
+        .filter(([_, value]) => value)
+        .map(([key]) => key.replace('_', ' '))
+        .join(', ');
+    const text = `${studio.name} is a ${studioType} studio located in ${studio.city}, ${stateName} ` +
+        `with a ${studio.rating || 'N/A'} star rating from ${studio.number_of_reviews || 0} reviews. ` +
+        `This establishment is offering ${activeCriteria || 'various pilates services'}.`;
+    return text.length > 110 ? text.substring(0, 109) + '...' : text;
+}
+
 function updateRelatedStudios(studios, stateName) {
     const container = document.getElementById('related-studios');
     container.innerHTML = studios.map(studio => `
@@ -215,7 +227,7 @@ function updateRelatedStudios(studios, stateName) {
                         .map(([key]) => `<span class="criteria-badge" title="${key}">${criteriaEmojis[key]}</span>`)
                         .join("")}
                 </div>
-                <p class="description">${studio.description || "No description available."}</p>
+                <p class="description">${relatedStudioDescription(studio, stateName)}</p>
                 <span class="view-details-link">View details</span>
             </div>
         </a>
