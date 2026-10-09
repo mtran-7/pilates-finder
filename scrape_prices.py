@@ -160,12 +160,16 @@ def extract_prices(text):
 
 
 def scrape_studio(website):
-    """Return dict of price fields found for one studio website."""
+    """Return dict of price fields found for one studio website.
+
+    Returns None when the homepage itself could not be fetched, so the
+    caller can leave the studio unmarked and retry on a later run.
+    """
     pages = [website]
     try:
         home_html = fetch(website)
     except Exception:
-        return {}
+        return None
     if not home_html:
         return {}
     pages += pricing_page_urls(website, home_html)
@@ -195,6 +199,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=0, help="only process the first N studios with websites")
     parser.add_argument("--force", action="store_true", help="re-scrape studios already marked as scraped")
+    parser.add_argument("--retry-empty", action="store_true",
+                        help="also re-scrape studios marked scraped that yielded no price fields (recovers transient fetch failures)")
     args = parser.parse_args()
 
     socket.setdefaulttimeout(TIMEOUT)
@@ -202,9 +208,15 @@ def main():
     with open(DATA_FILES[0]) as f:
         studios = json.load(f)
 
+    def is_empty(s):
+        return not (s.get("Price Single") or s.get("Price Intro") or s.get("Intro Offer"))
+
     todo = [s for s in studios if s.get("Website")]
     if not args.force:
-        todo = [s for s in todo if not s.get("Price Scraped")]
+        if args.retry_empty:
+            todo = [s for s in todo if not s.get("Price Scraped") or is_empty(s)]
+        else:
+            todo = [s for s in todo if not s.get("Price Scraped")]
     if args.limit:
         todo = todo[: args.limit]
 
@@ -213,6 +225,10 @@ def main():
         for studio in todo:
             processed += 1
             result = scrape_studio(studio["Website"].strip())
+            if result is None:
+                # Homepage fetch failed: leave unmarked so a later run retries it
+                studio.pop("Price Scraped", None)
+                continue
             studio["Price Scraped"] = True
             if result.get("Price Single"):
                 studio["Price Single"] = result["Price Single"]
