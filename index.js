@@ -95,36 +95,24 @@ document.addEventListener("DOMContentLoaded", async () => {
     // First-Timer Offers section (homepage only)
     populateIntroOffers(allStudiosData);
 
-    // Load studios data and populate featured cities, grouped by region
+    // Load studios data and populate the region cards
     const featuredCitiesContainer = document.getElementById("featured-cities-list");
 
-    // Regions with no studios in the data yet render a "coming soon" card
+    // One card per region; regions with no studios in the data yet show "coming soon"
     const featuredRegions = [
-        {
-            region: "USA",
-            cities: [
-                { city: "San Diego", state: "California" },
-                { city: "Reno", state: "Nevada" },
-                { city: "Los Angeles", state: "California" },
-                { city: "Miami", state: "Florida" },
-                { city: "Wilmington", state: "Delaware" },
-                { city: "New York City", state: "New York" }
-            ]
-        },
-        { region: "Bali", cities: [] },
-        { region: "London", cities: [] }
+        { region: "USA", studios: allStudiosData.flatMap(s => s.studios) },
+        { region: "Bali", studios: [] },
+        { region: "London", studios: [] }
     ];
 
-    function cityCardHtml({ city, state }) {
-        const stateData = allStudiosData.find(s => s.state === state);
-        if (!stateData) return "";
-
-        const cityStudios = stateData.studios.filter(studio => studio.city === city);
-        if (!cityStudios.length) return "";
+    function regionCardHtml({ region, studios }) {
+        if (!studios.length) {
+            return `<div class="city-card coming-soon"><h3>${region}</h3><p>Studios coming soon</p></div>`;
+        }
 
         // Count occurrences of each criterion and keep the top 3
         const criteriaCounts = {};
-        cityStudios.forEach(studio => {
+        studios.forEach(studio => {
             Object.entries(studio.criteria).forEach(([key, value]) => {
                 if (criteriaEmojis[key] && value) {
                     criteriaCounts[key] = (criteriaCounts[key] || 0) + 1;
@@ -140,25 +128,15 @@ document.addEventListener("DOMContentLoaded", async () => {
             .join("");
 
         return `
-            <a class="city-card" href="/city?state=${encodeURIComponent(state)}&city=${encodeURIComponent(city)}">
-                <h3>${city}</h3>
-                <p>${cityStudios.length} pilates locations</p>
+            <a class="city-card" href="/studios">
+                <h3>${region}</h3>
+                <p>${studios.length} pilates locations</p>
                 <div class="criteria">${topCriteria}</div>
             </a>`;
     }
 
     if (featuredCitiesContainer) {
-        featuredRegions.forEach(({ region, cities }) => {
-            const cards = cities.map(cityCardHtml).filter(Boolean).join("");
-            const group = document.createElement("div");
-            group.classList.add("region-group");
-            group.innerHTML = `
-                <h3 class="region-title">${region}</h3>
-                <div class="cities-list">
-                    ${cards || `<div class="city-card coming-soon"><h3>${region}</h3><p>Studios coming soon</p></div>`}
-                </div>`;
-            featuredCitiesContainer.appendChild(group);
-        });
+        featuredCitiesContainer.innerHTML = featuredRegions.map(regionCardHtml).join("");
     }
 
     // "Find Studios Near Me" functionality
@@ -347,11 +325,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Keyboard navigation
     searchBar.addEventListener('keydown', (e) => {
         if (!searchDropdown.classList.contains('active')) return;
-        
+
         const items = searchDropdown.querySelectorAll('.search-result-item');
         const current = searchDropdown.querySelector('.search-result-item:focus');
-        
-        if (e.key === 'ArrowDown') {
+
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const target = current || searchDropdown.querySelector('a.search-result-item');
+            if (target?.href) window.location.href = target.href;
+        } else if (e.key === 'Escape') {
+            searchDropdown.classList.remove('active');
+        } else if (e.key === 'ArrowDown') {
             e.preventDefault();
             if (!current) {
                 items[0]?.focus();
