@@ -5,11 +5,34 @@ const OFFER_CRITERIA_EMOJIS = {
     Online: "🌐", Free_Trial: "🎟️", Barre: "🩰", Tower: "🗼"
 };
 
-function populateIntroOffers(allStudiosData) {
+// Approximate visitor location (US state/city) from their IP, for localizing
+// the offers section. Returns null outside the US or when the lookup fails.
+async function getVisitorRegion() {
+    try {
+        const cached = sessionStorage.getItem('visitor-region');
+        if (cached) return JSON.parse(cached);
+    } catch { /* storage unavailable; just look it up */ }
+    try {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 3000);
+        const resp = await fetch('https://ipwho.is/', { signal: controller.signal });
+        clearTimeout(timer);
+        const data = await resp.json();
+        const region = (data.success && data.country_code === 'US')
+            ? { state: data.region || '', city: data.city || '' }
+            : null;
+        try { sessionStorage.setItem('visitor-region', JSON.stringify(region)); } catch { /* ignore */ }
+        return region;
+    } catch {
+        return null;
+    }
+}
+
+function populateIntroOffers(allStudiosData, visitorRegion) {
     const container = document.getElementById('intro-offers-list');
     if (!container) return;
 
-    // Collect studios with a known intro offer, best-rated first, max one per city
+    // Collect studios with a known intro offer
     const candidates = [];
     allStudiosData.forEach(state => {
         state.studios.forEach(studio => {
@@ -20,16 +43,20 @@ function populateIntroOffers(allStudiosData) {
         });
     });
 
-    candidates.sort((a, b) =>
-        (b.studio.rating * Math.log10((b.studio.number_of_reviews || 0) + 1)) -
-        (a.studio.rating * Math.log10((a.studio.number_of_reviews || 0) + 1))
-    );
+    // Visitor's city first, then their state, then the rest — best-rated within each tier
+    const tier = c => {
+        if (!visitorRegion || c.state !== visitorRegion.state) return 0;
+        return c.studio.city === visitorRegion.city ? 2 : 1;
+    };
+    const score = c => c.studio.rating * Math.log10((c.studio.number_of_reviews || 0) + 1);
+    candidates.sort((a, b) => tier(b) - tier(a) || score(b) - score(a));
 
+    // Max one offer per city, except in the visitor's own state
     const seenCities = new Set();
     const picks = [];
     for (const c of candidates) {
         const cityKey = `${c.state}|${c.studio.city}`;
-        if (seenCities.has(cityKey)) continue;
+        if (tier(c) === 0 && seenCities.has(cityKey)) continue;
         seenCities.add(cityKey);
         picks.push(c);
         if (picks.length === 8) break;
@@ -92,8 +119,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const searchBar = document.querySelector(".search-bar");
 
-    // First-Timer Offers section (homepage only)
-    populateIntroOffers(allStudiosData);
+    // First-Timer Offers section (homepage only), localized to the visitor's area when known.
+    // Fire-and-forget so a slow IP lookup never delays the rest of the page.
+    getVisitorRegion().then(region => populateIntroOffers(allStudiosData, region));
 
     // Load studios data and populate the region cards
     const featuredCitiesContainer = document.getElementById("featured-cities-list");
