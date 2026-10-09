@@ -43,6 +43,11 @@ FIELD_MASK = ",".join([
     "nextPageToken",
 ])
 
+# Pilates / pilates-inspired chains that don't say "pilates" in their name and
+# that Google often omits from generic "pilates studios in CITY" queries.
+# Searched explicitly per city with --chains.
+KNOWN_CHAINS = ["solidcore", "SLT pilates", "BODYROK", "Lagree"]
+
 CRITERIA_KEYWORDS = {
     "Reformer": ["reformer"],
     "Mat": ["mat pilates", "mat class", "mat work"],
@@ -71,11 +76,11 @@ def load_api_key():
     return key
 
 
-def search_city(api_key, city, state):
-    """All Text Search results for a city, following pagination (max 3 pages)."""
+def search_city(api_key, city, state, query=None, max_pages=3):
+    """All Text Search results for a query (default: pilates studios in city)."""
     places, token = [], None
-    for _ in range(3):
-        body = {"textQuery": f"pilates studios in {city}, {state}", "pageSize": 20}
+    for _ in range(max_pages):
+        body = {"textQuery": query or f"pilates studios in {city}, {state}", "pageSize": 20}
         if token:
             body["pageToken"] = token
         req = urllib.request.Request(
@@ -130,6 +135,8 @@ def website_criteria(url, name):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit-cities", type=int, default=0)
+    parser.add_argument("--chains", action="store_true",
+                        help="search KNOWN_CHAINS by name per city instead of the generic pilates query")
     args = parser.parse_args()
 
     api_key = load_api_key()
@@ -147,7 +154,18 @@ def main():
     try:
         for i, (state, city) in enumerate(cities, 1):
             try:
-                places = search_city(api_key, city, state)
+                if args.chains:
+                    places = []
+                    for chain in KNOWN_CHAINS:
+                        chain_token = normalize(chain.split()[0])
+                        for p in search_city(api_key, city, state,
+                                             query=f"{chain} in {city}, {state}", max_pages=1):
+                            name = (p.get("displayName") or {}).get("text", "")
+                            # Only results that actually belong to the chain
+                            if chain_token in normalize(name):
+                                places.append(p)
+                else:
+                    places = search_city(api_key, city, state)
             except RuntimeError as e:
                 print(f"  {city}, {state}: {e}")
                 if "429" in str(e):
@@ -168,7 +186,8 @@ def main():
 
                 hours = (p.get("regularOpeningHours") or {}).get("weekdayDescriptions") or []
                 website = p.get("websiteUri") or ""
-                obviously_pilates = "pilates_studio" in types or "pilates" in name.lower()
+                # Chain mode already matched the curated chain name - no further proof needed
+                obviously_pilates = args.chains or "pilates_studio" in types or "pilates" in name.lower()
                 criteria, site_mentions_pilates = website_criteria(website, name)
                 # Keep non-obvious names (BODYROK, etc.) only when their own site confirms pilates
                 if not obviously_pilates and not site_mentions_pilates:

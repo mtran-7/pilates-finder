@@ -477,19 +477,31 @@ body.index-page #featured-cities-list {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
-/* Index page specific city grid */
-#featured-cities-list.cities-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
+/* Index page: region groups inside the featured cities section */
+#featured-cities-list {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+#featured-cities-list .region-title {
+    margin: 25px 0 0;
+    font-size: var(--font-size-large);
+    color: var(--text);
 }
 
 /* Keep city cards wider on index page */
 #featured-cities-list .city-card {
     width: 100%;
+}
+
+.city-card.coming-soon {
+    cursor: default;
+    opacity: 0.65;
+}
+
+.city-card.coming-soon:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: none;
 }
 
 .state-card {
@@ -1684,14 +1696,13 @@ margin-left: auto;
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-    #featured-cities-list.cities-list {
+    #featured-cities-list .cities-list {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
     }
 }
 
 @media (max-width: 768px) {
-    #featured-cities-list.cities-list {
+    #featured-cities-list .cities-list {
         grid-template-columns: 1fr;
         padding: 20px;
     }

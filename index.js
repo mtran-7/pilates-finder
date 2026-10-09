@@ -95,30 +95,34 @@ document.addEventListener("DOMContentLoaded", async () => {
     // First-Timer Offers section (homepage only)
     populateIntroOffers(allStudiosData);
 
-    // Load studios data and populate featured cities
+    // Load studios data and populate featured cities, grouped by region
     const featuredCitiesContainer = document.getElementById("featured-cities-list");
 
-    // Define featured cities (limit to 6)
-    const featuredCities = [
-        { city: "San Diego", state: "California" },
-        { city: "Reno", state: "Nevada" },
-        { city: "Los Angeles", state: "California" },
-        { city: "Miami", state: "Florida" },
-        { city: "Wilmington", state: "Delaware" },
-        { city: "New York City", state: "New York" }
-    ].slice(0, 6); // Ensure only 6 cities are displayed
+    // Regions with no studios in the data yet render a "coming soon" card
+    const featuredRegions = [
+        {
+            region: "USA",
+            cities: [
+                { city: "San Diego", state: "California" },
+                { city: "Reno", state: "Nevada" },
+                { city: "Los Angeles", state: "California" },
+                { city: "Miami", state: "Florida" },
+                { city: "Wilmington", state: "Delaware" },
+                { city: "New York City", state: "New York" }
+            ]
+        },
+        { region: "Bali", cities: [] },
+        { region: "London", cities: [] }
+    ];
 
-    // Process each featured city
-    featuredCities.forEach(({ city, state }) => {
-        // Find the state data first
+    function cityCardHtml({ city, state }) {
         const stateData = allStudiosData.find(s => s.state === state);
-        if (!stateData) return;
+        if (!stateData) return "";
 
-        // Filter studios for this city
         const cityStudios = stateData.studios.filter(studio => studio.city === city);
-        const totalStudios = cityStudios.length;
+        if (!cityStudios.length) return "";
 
-        // Count occurrences of each criterion
+        // Count occurrences of each criterion and keep the top 3
         const criteriaCounts = {};
         cityStudios.forEach(studio => {
             Object.entries(studio.criteria).forEach(([key, value]) => {
@@ -127,37 +131,35 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
             });
         });
-
-        // Sort criteria by count and select the top 3
         const topCriteria = Object.entries(criteriaCounts)
             .sort((a, b) => b[1] - a[1])
             .slice(0, 3)
-            .map(([criterion, count]) => ({
-                criterion: criterion.replace('_', ' '),
-                count,
-                emoji: criteriaEmojis[criterion] || ""
-            }));
+            .map(([criterion, count]) =>
+                `<div class="criteria-item">${criteriaEmojis[criterion] || ""} ${criterion.replace('_', ' ')} (${count})</div>`
+            )
+            .join("");
 
-        // Create and append the city card
-        const cityCard = document.createElement("a");
-        cityCard.classList.add("city-card");
-        cityCard.href = `/city?state=${encodeURIComponent(state)}&city=${encodeURIComponent(city)}`;
-        cityCard.innerHTML = `
-            <h3>${city}</h3>
-            <p>${totalStudios} pilates locations</p>
-            <div class="criteria">
-                ${topCriteria
-                    .map(({ emoji, criterion, count }) =>
-                        `<div class="criteria-item">${emoji} ${criterion} (${count})</div>`
-                    )
-                    .join("")}
-            </div>
-        `;
-        
-        if (featuredCitiesContainer) {
-            featuredCitiesContainer.appendChild(cityCard);
-        }
-    });
+        return `
+            <a class="city-card" href="/city?state=${encodeURIComponent(state)}&city=${encodeURIComponent(city)}">
+                <h3>${city}</h3>
+                <p>${cityStudios.length} pilates locations</p>
+                <div class="criteria">${topCriteria}</div>
+            </a>`;
+    }
+
+    if (featuredCitiesContainer) {
+        featuredRegions.forEach(({ region, cities }) => {
+            const cards = cities.map(cityCardHtml).filter(Boolean).join("");
+            const group = document.createElement("div");
+            group.classList.add("region-group");
+            group.innerHTML = `
+                <h3 class="region-title">${region}</h3>
+                <div class="cities-list">
+                    ${cards || `<div class="city-card coming-soon"><h3>${region}</h3><p>Studios coming soon</p></div>`}
+                </div>`;
+            featuredCitiesContainer.appendChild(group);
+        });
+    }
 
     // "Find Studios Near Me" functionality
     const findNearMeButton = document.querySelector(".find-near-me");
