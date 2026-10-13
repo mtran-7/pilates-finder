@@ -1,11 +1,6 @@
-import { loadStudiosData, getStudioOffer } from './global.js';
+import { loadStudiosData, getStudioOffer, studioCardHtml } from './global.js';
 
 const PAGE_SIZE = 24;
-
-const criteriaEmojis = {
-    Reformer: "🏋️‍♀️", Mat: "🟦", Private: "🔒", Group: "👥",
-    Online: "🌐", Barre: "🩰", Tower: "🗼", Free_Trial: "🎟️"
-};
 
 // Price buckets from price_single: 1 = under $25, 2 = $25–40, 3 = over $40
 function priceBucket(studio) {
@@ -79,46 +74,6 @@ function applyFilters() {
     return results;
 }
 
-function studioCardHtml({ studio, stateName, offer }) {
-    const studioType = studio.criteria?.Reformer ? 'Reformer Pilates' : 'Classical Pilates';
-    const reviews = studio.number_of_reviews || 0;
-    const activeCriteria = Object.entries(studio.criteria || {})
-        .filter(([_, v]) => v)
-        .map(([key]) => key.replace('_', ' '))
-        .join(', ');
-    const fullDescription = `${studio.name} is a ${studioType} studio located in ${studio.city}, ${stateName} ` +
-        `with a ${studio.rating || 'N/A'} star rating from ${reviews} reviews. ` +
-        `This establishment is offering ${activeCriteria || 'various pilates services'}.`;
-    const description = fullDescription.length > 110 ? fullDescription.substring(0, 109) + '...' : fullDescription;
-
-    const priceLine = studio.price_single
-        ? `<p class="price-line">From $${studio.price_single}/class</p>`
-        : (studio.price_intro ? `<p class="price-line">Intro from $${studio.price_intro}</p>` : '');
-
-    return `
-        <a class="studio-card" href="/studio?state=${encodeURIComponent(stateName)}&city=${encodeURIComponent(studio.city)}&name=${encodeURIComponent(studio.name)}">
-            <div class="studio-image">
-                ${offer ? `<span class="offer-badge">✦ ${offer}</span>` : ''}
-                <img src="${studio.photo_url || '/assets/default-studio.jpg'}" alt="${studio.name}" loading="lazy"
-                     onerror="this.onerror=null;this.src='/assets/default-studio.jpg'">
-                <div class="rating-container">⭐ ${studio.rating || "N/A"} (${reviews})</div>
-            </div>
-            <div class="studio-info">
-                <h3>${studio.name}</h3>
-                <p class="offer-location">📍 ${studio.city}, ${stateName}</p>
-                ${priceLine}
-                <div class="criteria">
-                    ${Object.entries(studio.criteria || {})
-                        .filter(([_, v]) => v)
-                        .map(([key]) => `<span class="criteria-badge city-criteria" title="${key}">${criteriaEmojis[key]}</span>`)
-                        .join('')}
-                </div>
-                <p class="description">${description}</p>
-                <span class="view-details-link">View details</span>
-            </div>
-        </a>`;
-}
-
 function render() {
     const chooser = document.getElementById('type-chooser');
     const browse = document.getElementById('browse-section');
@@ -150,7 +105,9 @@ function render() {
 
     const results = applyFilters();
     countEl.textContent = `${results.length} ${results.length === 1 ? 'studio' : 'studios'} found`;
-    resultsEl.innerHTML = results.slice(0, state.shown).map(studioCardHtml).join('');
+    resultsEl.innerHTML = results.slice(0, state.shown)
+        .map(({ studio, stateName }) => studioCardHtml(studio, stateName))
+        .join('');
     showMoreBtn.hidden = results.length <= state.shown;
 }
 

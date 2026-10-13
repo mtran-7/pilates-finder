@@ -1,15 +1,6 @@
-import { loadStudiosData } from './global.js';
+import { loadStudiosData, getStudioOffer, studioCardHtml, CRITERIA_EMOJIS } from './global.js';
 
-const criteriaEmojis = {
-    Reformer: "🏋️‍♀️",
-    Mat: "🟦",
-    Private: "🔒",
-    Group: "👥",
-    Online: "🌐",
-    Barre: "🩰",
-    Tower: "🗼",
-    Free_Trial: "🎟️"
-};
+const criteriaEmojis = CRITERIA_EMOJIS;
 
 document.addEventListener('DOMContentLoaded', async () => {
     const allStudiosData = await loadStudiosData();
@@ -127,6 +118,24 @@ function updateStudioContent(studio) {
         }
     });
 
+    // Pricing: intro offer plus any scraped prices; section stays hidden when nothing is known
+    const offer = getStudioOffer(studio);
+    const pricingRows = [];
+    if (offer) {
+        pricingRows.push(`<div class="pricing-offer">✦ ${offer}</div>`);
+    }
+    // Skip the intro-price row when the offer label already states that price
+    if (studio.price_intro && !(offer && offer.includes(`$${studio.price_intro}`))) {
+        pricingRows.push(`<div class="pricing-row"><span>Intro price</span><span class="pricing-value">$${studio.price_intro}</span></div>`);
+    }
+    if (studio.price_single) {
+        pricingRows.push(`<div class="pricing-row"><span>Single class</span><span class="pricing-value">$${studio.price_single}</span></div>`);
+    }
+    if (pricingRows.length) {
+        document.getElementById('studio-pricing').innerHTML = pricingRows.join('');
+        document.getElementById('pricing-section').hidden = false;
+    }
+
     // Phone number
     const phoneLink = document.getElementById('studio-phone');
     if (studio.phone) {
@@ -196,42 +205,9 @@ function updateStudioContent(studio) {
     updateMetadata(studio);
 }
 
-function relatedStudioDescription(studio, stateName) {
-    const studioType = studio.criteria?.Reformer ? 'Reformer Pilates' : 'Classical Pilates';
-    const activeCriteria = Object.entries(studio.criteria || {})
-        .filter(([_, value]) => value)
-        .map(([key]) => key.replace('_', ' '))
-        .join(', ');
-    const text = `${studio.name} is a ${studioType} studio located in ${studio.city}, ${stateName} ` +
-        `with a ${studio.rating || 'N/A'} star rating from ${studio.number_of_reviews || 0} reviews. ` +
-        `This establishment is offering ${activeCriteria || 'various pilates services'}.`;
-    return text.length > 110 ? text.substring(0, 109) + '...' : text;
-}
-
 function updateRelatedStudios(studios, stateName) {
     const container = document.getElementById('related-studios');
-    container.innerHTML = studios.map(studio => `
-        <a href="/studio?state=${encodeURIComponent(stateName)}&city=${encodeURIComponent(studio.city)}&name=${encodeURIComponent(studio.name)}" class="studio-card">
-            <div class="studio-image">
-                <img src="${studio.photo_url || '/assets/default-studio.jpg'}" alt="${studio.name}">
-                <div class="rating-container">
-                    ⭐ ${studio.rating || "N/A"} (${studio.number_of_reviews || 0})
-                </div>
-            </div>
-            <div class="studio-info">
-                <h3>${studio.name}</h3>
-                <div class="studio-type">${studio.criteria?.Reformer ? 'Reformer Pilates' : 'Traditional Pilates'}</div>
-                <div class="criteria">
-                    ${Object.entries(studio.criteria || {})
-                        .filter(([key, value]) => value)
-                        .map(([key]) => `<span class="criteria-badge" title="${key}">${criteriaEmojis[key]}</span>`)
-                        .join("")}
-                </div>
-                <p class="description">${relatedStudioDescription(studio, stateName)}</p>
-                <span class="view-details-link">View details</span>
-            </div>
-        </a>
-    `).join('');
+    container.innerHTML = studios.map(studio => studioCardHtml(studio, stateName)).join('');
 }
 
 function updateMetadata(studio) {

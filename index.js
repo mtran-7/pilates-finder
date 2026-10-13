@@ -1,9 +1,4 @@
-import { loadStudiosData, getStudioOffer } from './global.js';
-
-const OFFER_CRITERIA_EMOJIS = {
-    Reformer: "🏋️‍♀️", Mat: "🟦", Private: "🔒", Group: "👥",
-    Online: "🌐", Free_Trial: "🎟️", Barre: "🩰", Tower: "🗼"
-};
+import { loadStudiosData, getStudioOffer, studioCardHtml } from './global.js';
 
 // Approximate visitor location (US state/city) from their IP, for localizing
 // the offers section. Returns null outside the US or when the lookup fails.
@@ -62,32 +57,9 @@ function populateIntroOffers(allStudiosData, visitorRegion) {
         if (picks.length === 8) break;
     }
 
-    picks.forEach(({ studio, offer, state }) => {
-        const studioUrl = `/studio?state=${encodeURIComponent(state)}&city=${encodeURIComponent(studio.city)}&name=${encodeURIComponent(studio.name)}`;
-        const tags = Object.entries(studio.criteria || {})
-            .filter(([key, value]) => value && OFFER_CRITERIA_EMOJIS[key])
-            .slice(0, 3)
-            .map(([key]) => `<span class="offer-tag">${OFFER_CRITERIA_EMOJIS[key]} ${key.replace('_', ' ')}</span>`)
-            .join('');
-
-        const card = document.createElement('a');
-        card.className = 'studio-card offer-card';
-        card.href = studioUrl;
-        card.innerHTML = `
-            <div class="studio-image">
-                <span class="offer-badge">✦ ${offer}</span>
-                <img src="${studio.photo_url}" alt="${studio.name}" loading="lazy"
-                     onerror="this.onerror=null;this.src='/assets/default-studio.jpg'">
-                <div class="rating-container">⭐ ${studio.rating} (${studio.number_of_reviews || 0})</div>
-            </div>
-            <div class="studio-info">
-                <h3>${studio.name}</h3>
-                <p class="offer-location">📍 ${studio.city}, ${state}</p>
-                <div class="offer-tags">${tags}</div>
-                <span class="btn-view">View Studio</span>
-            </div>
-        `;
-        container.appendChild(card);
+    picks.forEach(({ studio, state }) => {
+        container.insertAdjacentHTML('beforeend', studioCardHtml(studio, state));
+        container.lastElementChild.classList.add('offer-card');
     });
 
     // Hide the section if nothing qualified

@@ -160,10 +160,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // - Club Pilates: free 30-min intro class at participating studios (clubpilates.com)
 // - BODYBAR Pilates: first class free (bodybarpilates.com/first-time)
 // - JETSET Pilates: discounted new-client intro offers, price varies by studio (jetsetpilates.com/new)
+// - BODYROK: $20 first class intro offer (bodyrok.com studio pages)
+// - HOTWORX: one complimentary session for local first-time guests (hotworx.net studio pages)
 const CHAIN_OFFERS = [
     { pattern: /club pilates/i, label: 'Free Intro Class' },
     { pattern: /bodybar/i, label: 'First Class Free' },
-    { pattern: /jetset/i, label: 'Intro Offer' }
+    { pattern: /jetset/i, label: 'Intro Offer' },
+    { pattern: /bodyrok/i, label: 'First Class $20' },
+    { pattern: /hotworx/i, label: 'Free First Session' }
 ];
 
 // Returns the intro-offer label for a studio, or null if none is known.
@@ -174,9 +178,92 @@ function getStudioOffer(studio) {
     for (const { pattern, label } of CHAIN_OFFERS) {
         if (pattern.test(studio.name || '')) return label;
     }
-    if (studio.price_intro) return `Intro class $${studio.price_intro}`;
-    if (studio.criteria?.Free_Trial) return 'Free Trial';
+    if (studio.price_intro) return `New client intro offer for $${studio.price_intro}`;
+    if (studio.criteria?.Free_Trial) return 'Free trial for new clients';
     return null;
 }
 
-export { loadStudiosData, getStudioOffer };
+// ===== Shared studio card (used on home, browse, city and studio pages) =====
+
+const CRITERIA_EMOJIS = {
+    Reformer: "🏋️‍♀️", Mat: "🟦", Private: "🔒", Group: "👥",
+    Online: "🌐", Barre: "🩰", Tower: "🗼", Free_Trial: "🎟️"
+};
+
+const FAVORITES_KEY = 'pf-favorites';
+
+function loadFavorites() {
+    try {
+        return new Set(JSON.parse(localStorage.getItem(FAVORITES_KEY)) || []);
+    } catch {
+        return new Set();
+    }
+}
+
+function favoriteId(stateName, studio) {
+    return `${stateName}|${studio.city}|${studio.name}`;
+}
+
+const PIN_ICON = `<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-5.75-7-11a7 7 0 1 1 14 0c0 5.25-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>`;
+const HEART_ICON = `<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`;
+
+function escapeHtml(str) {
+    return String(str ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function studioCardHtml(studio, stateName) {
+    const offer = getStudioOffer(studio);
+    const reviews = studio.number_of_reviews || 0;
+    const favId = favoriteId(stateName, studio);
+    const isFav = loadFavorites().has(favId);
+
+    const metaParts = [];
+    if (studio.rating) metaParts.push(`<span class="studio-rating">★ ${studio.rating} <span class="review-count">(${reviews})</span></span>`);
+    if (studio.price_single) metaParts.push(`<span class="studio-price">From $${studio.price_single}/class</span>`);
+
+    const chips = Object.entries(studio.criteria || {})
+        .filter(([key, value]) => value && CRITERIA_EMOJIS[key])
+        .map(([key]) => `<span class="criteria-badge" title="${key}" data-label="${key.replace('_', ' ')}">${CRITERIA_EMOJIS[key]}</span>`)
+        .join('');
+
+    return `
+        <a class="studio-card" href="/studio?state=${encodeURIComponent(stateName)}&city=${encodeURIComponent(studio.city)}&name=${encodeURIComponent(studio.name)}">
+            <div class="studio-image">
+                <img src="${escapeHtml(studio.photo_url) || '/assets/default-studio.jpg'}" alt="${escapeHtml(studio.name)}" loading="lazy"
+                     onerror="this.onerror=null;this.src='/assets/default-studio.jpg'">
+                ${offer ? `<span class="offer-banner" title="${escapeHtml(offer)}"><span class="offer-plus">+</span><span class="offer-text">${escapeHtml(offer)}</span></span>` : ''}
+                <button type="button" class="fav-btn${isFav ? ' active' : ''}" data-fav-id="${escapeHtml(favId)}"
+                        aria-label="${isFav ? 'Remove' : 'Save'} ${escapeHtml(studio.name)}" aria-pressed="${isFav}">${HEART_ICON}</button>
+            </div>
+            <div class="studio-info">
+                <h3 class="studio-name">${escapeHtml(studio.name)}</h3>
+                <p class="studio-location">${PIN_ICON}<span>${escapeHtml(studio.city)}, ${escapeHtml(stateName)}</span></p>
+                ${metaParts.length ? `<div class="studio-meta">${metaParts.join('<span class="meta-dot">·</span>')}</div>` : ''}
+                ${chips ? `<div class="criteria">${chips}</div>` : ''}
+            </div>
+        </a>`;
+}
+
+// One delegated listener covers hearts on every card, including ones rendered later
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.fav-btn');
+    if (!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+
+    const favorites = loadFavorites();
+    const id = btn.dataset.favId;
+    const nowFav = !favorites.has(id);
+    if (nowFav) favorites.add(id); else favorites.delete(id);
+    try { localStorage.setItem(FAVORITES_KEY, JSON.stringify([...favorites])); } catch { /* ignore */ }
+
+    // Keep every rendered copy of this studio's heart in sync
+    document.querySelectorAll('.fav-btn').forEach(el => {
+        if (el.dataset.favId !== id) return;
+        el.classList.toggle('active', nowFav);
+        el.setAttribute('aria-pressed', String(nowFav));
+    });
+});
+
+export { loadStudiosData, getStudioOffer, studioCardHtml, CRITERIA_EMOJIS };

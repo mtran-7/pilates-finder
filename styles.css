@@ -1999,8 +1999,39 @@ margin-left: auto;
 }
 
 .features-section h2,
+.pricing-section h2,
 .about-section h2 {
     margin-bottom: 10px;  /* Reduced from default */
+}
+
+/* Studio page pricing section */
+
+.pricing-section {
+    margin-top: 20px;
+}
+
+.pricing-offer {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.pricing-row {
+    display: flex;
+    justify-content: space-between;
+    max-width: 260px;
+    padding: 4px 0;
+    color: #444444;
+}
+
+.pricing-value {
+    font-weight: bold;
+    color: var(--primary-color);
 }
 
 /* Studio page text styles */
@@ -2657,4 +2688,177 @@ a.type-card {
     background: var(--primary-color);
     color: #fff;
     border-color: var(--primary-color);
+}
+
+/* ===========================
+   Studio Cards — detailed design
+   (offer banner, save heart, serif name, pin location)
+=========================== */
+.studio-card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.studio-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+}
+
+.studio-card .studio-image img {
+    height: 240px;
+    display: block;
+}
+
+/* Detailed intro-offer banner across the top of the photo */
+.studio-card .offer-banner {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: calc(100% - 82px); /* keep clear of the heart button */
+    padding: 9px 16px;
+    background: #b96a45;
+    color: #fff;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+}
+
+.studio-card .offer-plus {
+    font-size: 1.15rem;
+    font-weight: 800;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.studio-card .offer-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Save-to-favorites heart */
+.studio-card .fav-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 3;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    transition: transform 0.15s ease;
+    padding: 0;
+}
+
+.studio-card .fav-btn:hover {
+    transform: scale(1.08);
+}
+
+.studio-card .fav-btn svg {
+    fill: none;
+    stroke: #242424;
+    stroke-width: 2;
+    display: block;
+}
+
+.studio-card .fav-btn.active svg {
+    fill: #d6453d;
+    stroke: #d6453d;
+}
+
+.studio-card .studio-info {
+    padding: 16px 18px 18px;
+    gap: 6px;
+}
+
+.studio-card .studio-info > * {
+    margin: 0;
+}
+
+.studio-card h3.studio-name {
+    font-family: 'Lora', Georgia, 'Times New Roman', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--text);
+    padding: 0;
+    margin: 0;
+}
+
+.studio-card .studio-location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    color: #4a4a4a;
+}
+
+.studio-card .studio-location svg {
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+.studio-card .studio-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.studio-card .studio-meta .studio-rating {
+    font-weight: 700;
+}
+
+.studio-card .studio-meta .review-count {
+    font-weight: 400;
+    opacity: 0.65;
+}
+
+.studio-card .studio-meta .studio-price {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.studio-card .studio-meta .meta-dot {
+    opacity: 0.4;
+}
+
+/* Chip text comes from data-label ("Free Trial"), while title keeps the
+   raw criteria key that the city-page filters match against */
+.studio-card .criteria-badge[data-label]::after {
+    content: attr(data-label);
+}
+
+/* Wider tracks so the bigger cards breathe */
+.browse-results {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.offers-list .offer-card {
+    flex: 0 0 340px;
+}
+
+@media (max-width: 600px) {
+    .studio-card .studio-image img {
+        height: 200px;
+    }
+
+    .offers-list .offer-card {
+        flex-basis: 300px;
+    }
 }
