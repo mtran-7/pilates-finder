@@ -662,7 +662,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "The Pilates Cave",
@@ -1644,7 +1645,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Single": 42,
+        "Price Source URL": "http://www.nicepilates.studio/price-list-%2F-purchase",
+        "Price Intro": 99
     },
     {
         "Name": "The Pilates School SF",
@@ -1686,7 +1691,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "True Pilates San Francisco",
@@ -1792,7 +1798,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Active Pilates",
@@ -2025,7 +2032,8 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Sonya Lo Pilates & Posture",
@@ -3427,7 +3435,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Balance Pilates /Private Studio",
@@ -3697,7 +3706,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -3825,7 +3835,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -4235,7 +4246,9 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Intro": 5
     },
     {
         "Name": "Club Pilates",
@@ -4364,7 +4377,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": true,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -4934,7 +4948,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "IM=X Pilates NYC",
@@ -5042,7 +5057,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Core Pilates NYC",
@@ -5307,7 +5323,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Classical Pilates NYC",
@@ -5743,7 +5760,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Mindful Pilates NYC",
@@ -6129,7 +6147,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "El Sol Pilates Studio",
@@ -6472,7 +6491,10 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Single": 40,
+        "Price Source URL": "http://freemovementpilates.com/"
     },
     {
         "Name": "Absolute Pilates",
@@ -6778,7 +6800,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "PosturFIT Pilates",
@@ -6907,7 +6930,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Haus of Pilates Studio",
@@ -7399,7 +7423,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "AK Pilates",
@@ -7524,7 +7549,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "The Core Lab | Creekside Pilates",
@@ -7651,7 +7677,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -8047,7 +8074,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Pilates Connection",
@@ -8851,7 +8879,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "BODYBAR Pilates",
@@ -8871,7 +8900,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Fit N Pilates",
@@ -10345,7 +10375,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "The Pilates Place Studios",
@@ -10999,7 +11030,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Single": 40,
+        "Price Source URL": "http://www.experiencesensory.com/",
+        "Intro Offer": "Free intro class"
     },
     {
         "Name": "Pilates Miami Shores",
@@ -11019,7 +11054,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "JETSET Pilates - NoMi (North Miami)",
@@ -11060,7 +11096,9 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Intro": 20
     },
     {
         "Name": "Glow Pilates Reformer",
@@ -11381,7 +11419,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "JETSET Pilates - Edgewater",
@@ -12706,7 +12745,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Pilates Pods",
@@ -13052,7 +13092,10 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Single": 94,
+        "Price Source URL": "http://www.crossmanpilates.com/pricing/"
     },
     {
         "Name": "The Pilates Krewe - Westchase",
@@ -13360,7 +13403,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "The Pilates Room and Bodies In Motion Studio",
@@ -13466,7 +13510,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "IMX Pilates & Fitness South Shore",
@@ -13574,7 +13619,9 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Intro": 78
     },
     {
         "Name": "Cue Pilates",
@@ -13657,7 +13704,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Studio West Pilates",
@@ -13873,7 +13921,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -14297,7 +14346,9 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Intro": 60
     },
     {
         "Name": "LRO Fitness -Pilates & Posture Alignment",
@@ -14514,7 +14565,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Emerson Pilates",
@@ -14534,7 +14586,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Single": 30,
+        "Price Source URL": "http://emersonpilates.com/pricing%2Fclasses",
+        "Price Intro": 119
     },
     {
         "Name": "Be Studio Pilates",
@@ -14969,7 +15025,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -15032,7 +15089,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "CORE Pilates",
@@ -15222,7 +15280,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Studio M Pilates",
@@ -15284,7 +15343,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -15565,7 +15625,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Bloom Pilates",
@@ -15849,7 +15910,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Pilates King Llc",
@@ -15869,7 +15931,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Personalized Pilates",
@@ -16062,7 +16125,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -16148,7 +16212,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Remedy Pilates & Barre | Arcadia",
@@ -16433,7 +16498,9 @@
         "Tower": false,
         "Free Trial": false,
         "Address": "No Address Provided",
-        "Price Scraped": true
+        "Price Scraped": true,
+        "Price Single": 120,
+        "Price Source URL": "http://deltapilates.com/classes"
     },
     {
         "Name": "The Workshop Pilates",
@@ -16519,7 +16586,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Pilates By Eda",
@@ -16623,7 +16691,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Downtown Pilates Studio",
@@ -16839,7 +16908,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Muse Pilates",
@@ -16859,7 +16929,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "The Workshop Pilates",
@@ -16925,7 +16996,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Ulisgold Pilates",
@@ -17480,7 +17552,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "TruForm Pilates",
@@ -17756,7 +17829,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Camp Yoga & Pilates",
@@ -17776,7 +17850,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Single": 20,
+        "Price Source URL": "http://www.campyogaandpilates.com/pricing-%26-packages",
+        "Price Intro": 99
     },
     {
         "Name": "Catherine Gilchrist Pilates",
@@ -18875,7 +18953,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Single": 15,
+        "Price Source URL": "http://pilatesevolutioncolorado.com/",
+        "Price Intro": 15
     },
     {
         "Name": "Pharonik Pilates Bungee Fitness",
@@ -19199,7 +19281,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Snake Twist Pilates",
@@ -19990,7 +20073,9 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Intro Offer": "Free intro class"
     },
     {
         "Name": "LatJohns Pilates",
@@ -20202,7 +20287,8 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -20354,7 +20440,9 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Intro": 110
     },
     {
         "Name": "Body Connection Pilates",
@@ -20595,7 +20683,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Black Star Pilates",
@@ -20638,7 +20727,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Core Health Pilates and Physical Therapy - Atlanta",
@@ -20658,7 +20748,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Pilates by May",
@@ -20720,7 +20811,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "A.L.L. Pilates Studios",
@@ -20972,7 +21064,9 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Intro Offer": "Free intro class"
     },
     {
         "Name": "Club Pilates",
@@ -21230,7 +21324,8 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Upside-Down Pilates and Nourishment",
@@ -21292,7 +21387,8 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Aware Aligned Awake A Pilates",
@@ -21357,7 +21453,8 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Kailua to the Core Pilates & Fitness",
@@ -21398,7 +21495,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Sunset Beach Pilates",
@@ -21596,7 +21694,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Sage In Motion LLC - Pilates, Healing and Wellness",
@@ -21659,7 +21758,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": true,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Kheya Pilates",
@@ -21870,7 +21970,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Couture Pilates",
@@ -21914,7 +22015,9 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Intro": 20
     },
     {
         "Name": "Pink Moon Pilates",
@@ -22106,7 +22209,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Single": 25,
+        "Price Source URL": "http://www.justbreathepilates.com/pricing",
+        "Price Intro": 45
     },
     {
         "Name": "Eclipse Classical Pilates",
@@ -22147,7 +22254,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Reforming Indy Pilates Studio",
@@ -22232,7 +22340,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "CircleStudio Pilates",
@@ -22448,7 +22557,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Single": 85,
+        "Price Source URL": "http://www.innerbalancepiyo.com/pricing",
+        "Price Intro": 32
     },
     {
         "Name": "Re-Form Movement Pilates",
@@ -22491,7 +22604,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Gigi's Pilates Studio",
@@ -22829,7 +22943,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Bodhi Body Pilates",
@@ -22870,7 +22985,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Highway 54 Pilates",
@@ -23090,7 +23206,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -23449,7 +23566,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Downtown Pilates",
@@ -23601,7 +23719,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Uncle Joe's Pilates Studio",
@@ -24816,7 +24935,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Boston Body Pilates - Newbury Street",
@@ -25076,7 +25196,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Core Pilates & Pelvic Floor Health",
@@ -25141,7 +25262,8 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -25358,7 +25480,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Align Pilates Brookline",
@@ -25445,7 +25568,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Beyond Fitness Pilates Studio",
@@ -25486,7 +25610,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Boston Body Pilates Natick",
@@ -25745,7 +25870,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Katie Lowe Pilates",
@@ -25874,7 +26000,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "LYON Pilates",
@@ -25980,7 +26107,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Passion & Pilates",
@@ -26064,7 +26192,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "The Body Center Pilates Studio",
@@ -26435,7 +26564,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Pilates fitness & Physical therapy center",
@@ -26476,7 +26606,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Marvel Pilates Studio",
@@ -26606,7 +26737,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Equilibrium Pilates Studio",
@@ -26626,7 +26758,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Wellness Group Yoga Pilates Massage",
@@ -26709,7 +26842,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Warehouse Pilates",
@@ -26753,7 +26887,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": true,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "New Center Pilates",
@@ -26813,7 +26948,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "BC Pilates Wellness & Recovery",
@@ -27651,7 +27787,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Single": 29,
+        "Price Source URL": "http://www.corestudiostpaul.com/reformer-classes",
+        "Intro Offer": "3 classes for $66"
     },
     {
         "Name": "Studio 6 Pilates and Wellness",
@@ -28086,7 +28226,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -28325,7 +28466,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Pilates of Kansas City",
@@ -28433,7 +28575,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Pilates of Kansas City",
@@ -28499,7 +28642,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -28675,7 +28819,9 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Intro": 15
     },
     {
         "Name": "Inspire Pilates Center",
@@ -28889,7 +29035,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": true,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Paradiso Pilates",
@@ -28979,7 +29126,8 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Kline Pilates and Wellness",
@@ -29103,7 +29251,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Kinesphere Pilates",
@@ -29165,7 +29314,9 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Intro": 15
     },
     {
         "Name": "Freeman Pilates",
@@ -29418,7 +29569,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -29482,7 +29634,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Flow Yoga & Pilates",
@@ -29522,7 +29675,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Performance Pilates",
@@ -30040,7 +30194,9 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Intro Offer": "Free intro class"
     },
     {
         "Name": "Club Pilates",
@@ -30304,7 +30460,8 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "The Pilates Firm",
@@ -30879,7 +31036,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Pink Salt Pilates",
@@ -31310,7 +31468,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "IM=X Pilates and Fitness, Reno",
@@ -31372,7 +31531,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -31479,7 +31639,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -31583,7 +31744,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Pulse Pilates",
@@ -31799,7 +31961,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Pilates4Fitness",
@@ -32216,7 +32379,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -32299,7 +32463,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "CORR Pilates + Cycle Studio",
@@ -32453,7 +32618,9 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Intro Offer": "Free intro class"
     },
     {
         "Name": "Body Rehab Pilates",
@@ -33433,7 +33600,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Alternative Fitness Pilates",
@@ -33908,7 +34076,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Single": 25,
+        "Price Source URL": "http://www.moxiepilatesandbarre.com/pricing-1",
+        "Price Intro": 14
     },
     {
         "Name": "Alyssa Light Pilates, LLC",
@@ -33928,7 +34100,8 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -33970,7 +34143,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Prevailing Pilates",
@@ -34080,7 +34254,8 @@
         "Group": false,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Carolina Core Pilates",
@@ -34713,7 +34888,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Light Pilates and Yoga",
@@ -35060,7 +35236,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Pilates By Tay",
@@ -35295,7 +35472,10 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Single": 37,
+        "Price Source URL": "http://www.calliespilates.com/pricing"
     },
     {
         "Name": "Cleveland Pilates",
@@ -35691,7 +35871,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -35975,7 +36156,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "MVMNT Lab Pilates & Wellness",
@@ -36238,7 +36420,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Pilates LaLa",
@@ -36587,7 +36770,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Kinespirit Circle Gyrotonic and Pilates Studio",
@@ -36628,7 +36812,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Springwater Pilates",
@@ -36887,7 +37072,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -37400,7 +37586,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Pilates With Danii",
@@ -37676,7 +37863,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Drexel Pilates",
@@ -37743,7 +37931,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Together Pilates + Aerobics",
@@ -37763,7 +37952,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "CenterSpace Pilates",
@@ -38416,7 +38606,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -38567,7 +38758,8 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "At the Wall Pilates, Inc -ZERO AFFILIATION WITH STREAMING SERVICES THAT INVOLVE PILATES DONE AT A WALL. TRY US IN PERSON!",
@@ -38587,7 +38779,10 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Single": 50,
+        "Price Source URL": "http://www.atthewallpilates.com/pricing"
     },
     {
         "Name": "Club Pilates",
@@ -38714,7 +38909,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -39164,7 +39360,8 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -39247,7 +39444,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Providence Pilates",
@@ -39288,7 +39486,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Personal Pilates R.I.",
@@ -39375,7 +39574,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Single": 12,
+        "Price Source URL": "http://thepilatespointstudio.com/pricing",
+        "Price Intro": 20,
+        "Intro Offer": "Free intro class"
     },
     {
         "Name": "Club Pilates",
@@ -39968,7 +40172,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -40433,7 +40638,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Frame Pilates",
@@ -40696,7 +40902,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Structural Integrity Pilates",
@@ -41111,7 +41318,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "BODYROK Pilates- Brentwood",
@@ -41463,7 +41671,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Streamline Pilates",
@@ -41699,7 +41908,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Intermountain Pilates Training",
@@ -41762,7 +41972,8 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "KnockOut Pilates",
@@ -41873,7 +42084,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Streamline Pilates",
@@ -42003,8 +42215,7 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "No Address Provided"
     },
     {
         "Name": "Mountain Peak Pilates",
@@ -42111,7 +42322,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Atomic Pilates & Chiropractic",
@@ -42711,7 +42923,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Mary Delk Pilates & Fitness",
@@ -42751,7 +42964,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Parkside Pilates",
@@ -42771,7 +42985,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Libellula Pilates",
@@ -42791,7 +43006,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Dawn Pilates Studio",
@@ -42811,7 +43027,9 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Intro Offer": "Free intro class"
     },
     {
         "Name": "Club Pilates - Greenbrier",
@@ -42915,7 +43133,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Single": 79,
+        "Price Source URL": "http://harmonyhealthyoga.com/",
+        "Price Intro": 45
     },
     {
         "Name": "PureCore Pilates",
@@ -43108,7 +43330,10 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true,
+        "Price Single": 80,
+        "Price Source URL": "http://www.thepilatesfitnessstudio.com/"
     },
     {
         "Name": "Club Pilates",
@@ -43988,7 +44213,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Backcountry Pilates",
@@ -44029,7 +44255,8 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Brace Point Pilates",
@@ -44616,7 +44843,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Christina Sauer Pilates",
@@ -44741,7 +44969,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Bend & Stretch Pilates Physical Therapy",
@@ -45087,7 +45316,8 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Absolute Pilates",
@@ -45172,7 +45402,8 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "IMX Pilates & Fitness",
@@ -45192,7 +45423,8 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "No Address Provided",
+        "Price Scraped": true
     },
     {
         "Name": "Club Pilates",
@@ -45389,7 +45621,10 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true,
+        "Price Intro": 60,
+        "Intro Offer": "3 classes for $60"
     },
     {
         "Name": "Studio 3 Pilates",
@@ -45740,7 +45975,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Triumph Pilates & Neuro Studio",
@@ -45846,7 +46082,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Pilates by Hannah",
@@ -46149,7 +46386,12 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true,
+        "Price Single": 36,
+        "Price Source URL": "https://commongroundpilates.net/pricing.html",
+        "Price Intro": 77,
+        "Intro Offer": "3 classes for $77"
     },
     {
         "Name": "Forte Pilates",
@@ -46355,7 +46597,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Bodyline Pilates",
@@ -46615,7 +46858,8 @@
         "Online": false,
         "Private": false,
         "Group": true,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Reformer Well Pilates Studio",
@@ -46786,7 +47030,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Empowering Pilates",
@@ -47598,7 +47843,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "MAGMA BY PILATES BY RILEY",
@@ -47886,7 +48132,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Revive Pilates",
@@ -48242,7 +48489,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Pilates Addiction Dr. Phillips",
@@ -48502,7 +48750,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "BODYROK Tampa Sparkman Wharf Pilates",
@@ -48701,7 +48950,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "BODYBAR Pilates - Westchase",
@@ -48721,7 +48971,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "JETSET Pilates Westchase",
@@ -48983,7 +49234,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Inspire Health - Pilates, Wellness, & Physical Therapy",
@@ -49049,7 +49301,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Stretch ATL Pilates Studio",
@@ -49348,7 +49601,9 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true,
+        "Intro Offer": "Free intro class"
     },
     {
         "Name": "Harmony Pilates & Physical Therapy",
@@ -49412,7 +49667,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "GRAE Pilates Co. Boise",
@@ -49453,7 +49709,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Strong Pilates Boise",
@@ -49642,7 +49899,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Lincoln Park Pilates & Events",
@@ -49750,7 +50008,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Half Moon Yoga & Pilates Studio",
@@ -49858,7 +50117,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Prairie View Pilates",
@@ -50246,7 +50506,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Motion Lab | Lagree Pilates Ankeny",
@@ -50309,7 +50570,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "BODYBAR Pilates - Auburn Hills",
@@ -50329,7 +50591,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "BODYBAR Pilates - East Wichita",
@@ -50349,7 +50612,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Limitless Yoga and Pilates Studio",
@@ -50391,7 +50655,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "B.YOU Fitness | Infared Pilates | Air Reformer | Barre | Rebounding | Yoga",
@@ -50457,7 +50722,10 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true,
+        "Price Single": 40,
+        "Price Source URL": "http://paradigmpilates.com/rates"
     },
     {
         "Name": "Be the Light Pilates & Yoga",
@@ -51269,7 +51537,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Play Pilates",
@@ -51705,7 +51974,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "P31 Pilates",
@@ -51748,7 +52018,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Selah Pilates Studio",
@@ -51768,7 +52039,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Pure Pilates by Elaine",
@@ -51808,7 +52080,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "BODYBAR Pilates - Lenexa",
@@ -51828,7 +52101,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "The Body Lab Spectrum- Lagree | Yoga | Pilates | Barre | Infrared Sauna",
@@ -52393,8 +52667,7 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false,
-        "Price Scraped": true
+        "Free Trial": false
     },
     {
         "Name": "Valance Pilates studio",
@@ -52481,8 +52754,7 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false,
-        "Price Scraped": true
+        "Free Trial": false
     },
     {
         "Name": "HOTWORX Bedford, NH | Hot Yoga, Pilates & Barre Workouts",
@@ -52596,7 +52868,10 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true,
+        "Price Single": 100,
+        "Price Source URL": "http://www.pilatesloftvt.com/rates"
     },
     {
         "Name": "Windham Pilates Studio",
@@ -52661,7 +52936,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "KALA Pilates - Hot Pilates & Hot Yoga Boutique",
@@ -52726,7 +53002,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Be Kind Yoga + Pilates Albuquerque",
@@ -53483,7 +53760,8 @@
         "Online": false,
         "Private": true,
         "Group": true,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "The Spot Pilates",
@@ -53608,7 +53886,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "BK Pilates Optimist Park",
@@ -53785,7 +54064,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "JETSET Pilates - Holly Springs",
@@ -54048,7 +54328,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Be Pilates by Be Fitness",
@@ -54216,7 +54497,8 @@
         "Online": false,
         "Private": true,
         "Group": true,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Studio Sol Pilates",
@@ -54278,7 +54560,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "JETSET Pilates - Upper Arlington Columbus",
@@ -54381,7 +54664,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Four Graces Pilates",
@@ -54507,7 +54791,8 @@
         "Online": false,
         "Private": false,
         "Group": true,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Pilates By Jodi",
@@ -54964,7 +55249,10 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true,
+        "Price Single": 28,
+        "Price Source URL": "http://www.pilates-with-courtney.com/pricing"
     },
     {
         "Name": "JETSET Pilates - Shadyside",
@@ -55046,7 +55334,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Temple Pilates",
@@ -55272,7 +55561,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Integr8 Pilates Sudio",
@@ -55473,7 +55763,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Somos Pilates Nashville",
@@ -55758,7 +56049,8 @@
         "Online": false,
         "Private": true,
         "Group": true,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Pilates Addiction Hendersonville",
@@ -55801,7 +56093,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "BE Fit Modern Pilates",
@@ -55821,7 +56114,8 @@
         "Online": false,
         "Private": false,
         "Group": true,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "JETSET Pilates South Austin",
@@ -55865,7 +56159,11 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true,
+        "Price Single": 50,
+        "Price Source URL": "http://www.goodpilatesatx.com/pricing",
+        "Price Intro": 100
     },
     {
         "Name": "VITA Well Pilates Studio",
@@ -56211,7 +56509,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "YTX Yoga, Strength, Pilates, & Recovery",
@@ -56318,7 +56617,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "BODYBAR Pilates - Preston Hollow",
@@ -56338,7 +56638,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "JETSET Pilates - Preston Hollow",
@@ -56730,7 +57031,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "ALIGN Pilates Studios Sawyer Yards",
@@ -56860,8 +57162,7 @@
         "Online": false,
         "Private": false,
         "Group": true,
-        "Free Trial": false,
-        "Price Scraped": true
+        "Free Trial": false
     },
     {
         "Name": "CR\u00c8ME Pilates | River Oaks",
@@ -57012,8 +57313,7 @@
         "Online": false,
         "Private": true,
         "Group": true,
-        "Free Trial": false,
-        "Price Scraped": true
+        "Free Trial": false
     },
     {
         "Name": "JETSET Pilates League City",
@@ -57123,7 +57423,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Keel Pilates Studio",
@@ -59504,8 +59805,7 @@
         "Online": false,
         "Private": false,
         "Group": true,
-        "Free Trial": false,
-        "Price Scraped": true
+        "Free Trial": false
     },
     {
         "Name": "BODYROK MISSION Studio",
@@ -60815,7 +61115,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "ActiveSoul Wellness Studio",
@@ -61254,7 +61555,8 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "HILI FITNESS",
@@ -63716,7 +64018,8 @@
         "Online": false,
         "Private": false,
         "Group": true,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Spiral Studio Louisville",
@@ -64318,7 +64621,8 @@
         "Online": false,
         "Private": false,
         "Group": true,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Mome Studios",
@@ -64963,7 +65267,8 @@
         "Online": true,
         "Private": false,
         "Group": true,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "BREATHE Cambridge",
@@ -73624,7 +73929,12 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true,
+        "Price Single": 35,
+        "Price Source URL": "http://www.balletandpilates.com/pricing",
+        "Price Intro": 39,
+        "Intro Offer": "3 classes for $39"
     },
     {
         "Name": "WellHouse Studio",
@@ -73730,7 +74040,8 @@
         "Online": false,
         "Private": false,
         "Group": true,
-        "Free Trial": false
+        "Free Trial": false,
+        "Price Scraped": true
     },
     {
         "Name": "Maven STRONG",

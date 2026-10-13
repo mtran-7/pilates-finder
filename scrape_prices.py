@@ -21,12 +21,10 @@ import argparse
 import html as htmllib
 import json
 import re
-import socket
-import ssl
+import subprocess
+import tempfile
 import time
-import urllib.error
 import urllib.parse
-import urllib.request
 
 DATA_FILES = ["pilates_studios.json", "public/pilates_studios.json"]
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36"
@@ -50,18 +48,22 @@ PCT_RE = re.compile(r"(\d{1,2})\s?%\s?off", re.I)
 FREE_RE = re.compile(r"free\s+(?:intro(?:ductory)?|first|trial)\s*(?:class|session|week)?|first\s+(?:class|session)\s+(?:is\s+)?free", re.I)
 TAG_RE = re.compile(r"<script[\s\S]*?</script>|<style[\s\S]*?</style>|<[^>]+>")
 
-ssl_ctx = ssl.create_default_context()
-ssl_ctx.check_hostname = False
-ssl_ctx.verify_mode = ssl.CERT_NONE  # many small-studio sites have broken cert chains
-
-
 def fetch(url):
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "text/html"})
-    with urllib.request.urlopen(req, timeout=TIMEOUT, context=ssl_ctx) as resp:
-        ctype = resp.headers.get("Content-Type", "")
-        if "html" not in ctype:
+    """Fetch a page via curl: the system Python's LibreSSL fails TLS negotiation
+    on many modern hosts and urllib does not follow 308 redirects; -k because
+    many small-studio sites have broken cert chains."""
+    with tempfile.NamedTemporaryFile(suffix=".html") as tmp:
+        proc = subprocess.run(
+            ["curl", "-sSLk", "--compressed", "--max-time", str(TIMEOUT),
+             "-A", USER_AGENT, "-H", "Accept: text/html",
+             "-o", tmp.name, "-w", "%{content_type}", url],
+            capture_output=True, text=True, timeout=TIMEOUT * 3)
+        if proc.returncode != 0:
+            raise RuntimeError(proc.stderr.strip() or f"curl exit {proc.returncode}")
+        if "html" not in proc.stdout:
             return None
-        return resp.read(1_500_000).decode("utf-8", errors="replace")
+        with open(tmp.name, "rb") as f:
+            return f.read(1_500_000).decode("utf-8", errors="replace")
 
 
 def strip_tags(page_html):
@@ -202,8 +204,6 @@ def main():
     parser.add_argument("--retry-empty", action="store_true",
                         help="also re-scrape studios marked scraped that yielded no price fields (recovers transient fetch failures)")
     args = parser.parse_args()
-
-    socket.setdefaulttimeout(TIMEOUT)
 
     with open(DATA_FILES[0]) as f:
         studios = json.load(f)
