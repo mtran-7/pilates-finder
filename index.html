@@ -23,6 +23,7 @@
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
     <script src="/global.js" type="module"></script>
     <script src="/index.js" type="module"></script>
+    <script src="/waitlist.js" type="module"></script>
 </head>
 <body>
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
@@ -235,6 +236,24 @@
                     Find Studios Near You
                     <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
+            </div>
+        </section>
+
+        <!-- Waitlist Section (coming-soon regions) -->
+        <section id="waitlist" class="waitlist-section" aria-labelledby="waitlist-heading">
+            <div class="waitlist-content">
+                <h2 id="waitlist-heading">Coming Soon: Bali &amp; London</h2>
+                <p>We're curating studio lists for new destinations. Leave your email and we'll let you know the moment your city is ready.</p>
+                <form id="waitlist-form" class="waitlist-form" novalidate>
+                    <select name="region" aria-label="Which city are you interested in?">
+                        <option value="Bali">Bali</option>
+                        <option value="London">London</option>
+                        <option value="general">Somewhere else</option>
+                    </select>
+                    <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+                    <button type="submit" class="primary-button">Notify me</button>
+                </form>
+                <p id="waitlist-status" class="waitlist-status" role="status"></p>
             </div>
         </section>
     </main>

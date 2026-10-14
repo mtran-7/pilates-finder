@@ -44,7 +44,84 @@ async function populateCityStudios() {
     }
 
     renderStudioCards(cityStudios, stateData.state);
+    renderDistrictFilters(cityStudios, urlParams.get("district"));
     setupFilters();
+}
+
+// NYC boroughs always get their own chip, however few studios they hold
+const NYC_BOROUGHS = ["Manhattan", "Brooklyn", "Queens", "The Bronx", "Staten Island"];
+const MIN_CHIP_STUDIOS = 3;
+
+// Group a city's studios into chip buckets: named districts big enough to
+// stand alone, everything else (small or unknown) pooled as "Other areas".
+function buildDistrictBuckets(cityStudios) {
+    const counts = {};
+    cityStudios.forEach(studio => {
+        const district = studio.district || '';
+        counts[district] = (counts[district] || 0) + 1;
+    });
+
+    const named = Object.keys(counts).filter(Boolean)
+        .sort((a, b) => counts[b] - counts[a] || a.localeCompare(b));
+    if (!named.length) return [];
+
+    const buckets = [];
+    const other = { label: 'Other areas', districts: [], count: 0 };
+    named.forEach(district => {
+        if (counts[district] >= MIN_CHIP_STUDIOS || NYC_BOROUGHS.includes(district)) {
+            buckets.push({ label: district, districts: [district], count: counts[district] });
+        } else {
+            other.districts.push(district);
+            other.count += counts[district];
+        }
+    });
+    if (counts['']) {
+        other.districts.push('');
+        other.count += counts[''];
+    }
+    if (other.count) buckets.push(other);
+
+    return buckets.length >= 2 ? buckets : [];
+}
+
+function renderDistrictFilters(cityStudios, districtParam) {
+    const buckets = buildDistrictBuckets(cityStudios);
+    if (!buckets.length) return;
+
+    const row = document.getElementById('district-filters');
+    // districts joined with "|" (never part of a name); a trailing "" marks
+    // the unknown-district studios pooled into "Other areas"
+    row.innerHTML = [
+        `<button class="district-btn active">All areas <span class="filter-count">(${cityStudios.length})</span></button>`,
+        ...buckets.map(b => `
+            <button class="district-btn" data-label="${b.label}" data-districts="${b.districts.join('|')}">
+                ${b.label} <span class="filter-count">(${b.count})</span>
+            </button>`)
+    ].join('');
+    document.getElementById('district-filter-group').hidden = false;
+
+    row.addEventListener('click', (e) => {
+        const btn = e.target.closest('.district-btn');
+        if (!btn) return;
+        row.querySelectorAll('.district-btn').forEach(b => b.classList.toggle('active', b === btn));
+
+        const params = new URLSearchParams(window.location.search);
+        if (btn.dataset.label) params.set('district', btn.dataset.label);
+        else params.delete('district');
+        history.replaceState(null, '', `${window.location.pathname}?${params}`);
+
+        filterStudios();
+    });
+
+    // Deep link: /city?...&district=Brooklyn preselects that chip
+    if (districtParam) {
+        const match = Array.from(row.querySelectorAll('.district-btn'))
+            .find(btn => normalizeString(btn.dataset.label) === normalizeString(districtParam));
+        if (match) {
+            row.querySelectorAll('.district-btn').forEach(b => b.classList.toggle('active', b === match));
+            filterStudios();
+        }
+    }
 }
 
 function renderStudioCards(cityStudios, stateName) {
@@ -61,7 +138,7 @@ function renderStudioCards(cityStudios, stateName) {
     });
 
     // Update filter buttons with counts
-    document.querySelectorAll('.filter-btn').forEach(button => {
+    document.querySelectorAll('.criteria-filters .filter-btn').forEach(button => {
         const criteria = button.dataset.criteria;
         const count = criteriaCounts[criteria] || 0;
         const [emoji, ...nameParts] = button.textContent.trim().split(' ');
@@ -78,7 +155,7 @@ function renderStudioCards(cityStudios, stateName) {
 }
 
 function setupFilters() {
-    document.querySelectorAll('.filter-btn').forEach(button => {
+    document.querySelectorAll('.criteria-filters .filter-btn').forEach(button => {
         button.addEventListener('click', function () {
             this.classList.toggle('active');
             filterStudios();
@@ -87,19 +164,20 @@ function setupFilters() {
 }
 
 function filterStudios() {
-    const activeFilters = Array.from(document.querySelectorAll('.filter-btn.active'))
+    const activeFilters = Array.from(document.querySelectorAll('.criteria-filters .filter-btn.active'))
         .map(btn => btn.dataset.criteria);
 
-    document.querySelectorAll('.studio-card').forEach(card => {
-        if (activeFilters.length === 0) {
-            card.style.display = 'flex';
-            return;
-        }
+    const activeDistrictBtn = document.querySelector('.district-btn.active[data-districts]');
+    const allowedDistricts = activeDistrictBtn
+        ? new Set(activeDistrictBtn.dataset.districts.split('|'))
+        : null;
 
+    document.querySelectorAll('.studio-card').forEach(card => {
+        const inDistrict = !allowedDistricts || allowedDistricts.has(card.dataset.district || '');
         const hasAllFilters = activeFilters.every(filter =>
             card.querySelector(`.criteria-badge[title="${filter}"]`)
         );
-        card.style.display = hasAllFilters ? 'flex' : 'none';
+        card.style.display = (inDistrict && hasAllFilters) ? 'flex' : 'none';
     });
 }
 

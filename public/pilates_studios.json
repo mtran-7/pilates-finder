@@ -17,12 +17,16 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "5650 W 3rd St, Los Angeles, CA 90036, USA",
         "Price Scraped": true,
         "Price Single": 50,
         "Price Source URL": "https://mindandmotionpilates.com/rates/",
         "Price Intro": 90,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Central LA",
+        "Place ID": "ChIJkZwRdSy5woAR9jhIVWRgn7U",
+        "Latitude": 34.068767699999995,
+        "Longitude": -118.34313230000001
     },
     {
         "Name": "WundaBar Pilates - Los Feliz",
@@ -42,9 +46,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": true,
-        "Address": "No Address Provided",
+        "Address": "1864, 1/2 N Vermont Ave, Los Angeles, CA 90027, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Central LA",
+        "Place ID": "ChIJCcqrHK_AwoARw-SH41qcHio",
+        "Latitude": 34.104923,
+        "Longitude": -118.2913554
     },
     {
         "Name": "Natural Pilates - West Hollywood",
@@ -64,12 +72,16 @@
         "Group": true,
         "Tower": false,
         "Free Trial": true,
-        "Address": "No Address Provided",
+        "Address": "8436 W 3rd St Ste 602, Los Angeles, CA 90048, USA",
         "Price Scraped": true,
         "Price Single": 99,
         "Price Source URL": "http://naturalpilates.com/",
         "Price Intro": 99,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Central LA",
+        "Place ID": "ChIJ2YCktsG5woARrAt4sf8RIJs",
+        "Latitude": 34.0728913,
+        "Longitude": -118.3745582
     },
     {
         "Name": "Club Pilates",
@@ -89,9 +101,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "200 S Los Angeles St Suite E, Los Angeles, CA 90012, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Downtown Los Angeles",
+        "Place ID": "ChIJ1a1GVkjGwoARH9JOP9LMhO0",
+        "Latitude": 34.0498112,
+        "Longitude": -118.2434881
     },
     {
         "Name": "West Adams Pilates Adams Studio",
@@ -111,7 +127,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "4505 W Jefferson Blvd Ste 103, Los Angeles, CA 90016, USA",
+        "District": "South Los Angeles",
+        "Place ID": "ChIJA2BQthW5woARRBSxmhjGuO8",
+        "Latitude": 34.0258718,
+        "Longitude": -118.3451846
     },
     {
         "Name": "Hills & Heights Pilates",
@@ -131,8 +151,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "5124 W Adams Blvd Spc 102, Los Angeles, CA 90016, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJwSjiImi5woARjd5uZnMw8Bw",
+        "Latitude": 34.0321196,
+        "Longitude": -118.3532891
     },
     {
         "Name": "Club Pilates",
@@ -152,9 +176,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "200 S Los Angeles St Suite E, Los Angeles, CA 90012, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Downtown Los Angeles",
+        "Place ID": "ChIJ1a1GVkjGwoARH9JOP9LMhO0",
+        "Latitude": 34.0498112,
+        "Longitude": -118.2434881
     },
     {
         "Name": "dr pilates Los Angeles",
@@ -174,8 +202,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "5665 Melrose Ave #109, Los Angeles, CA 90038, USA",
+        "Price Scraped": true,
+        "District": "Central LA",
+        "Place ID": "ChIJB7GR8Me4woARTfaBwq9RTtU",
+        "Latitude": 34.083672899999996,
+        "Longitude": -118.3238705
     },
     {
         "Name": "Reform Pilates LA",
@@ -195,11 +227,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "8250 W 3rd St #202, Los Angeles, CA 90048, USA",
         "Price Scraped": true,
         "Price Single": 29,
         "Price Source URL": "https://www.reformpilates.la/",
-        "Price Intro": 29
+        "Price Intro": 29,
+        "District": "Central LA",
+        "Place ID": "ChIJNbjNAB-5woAReO3G1S4TRqM",
+        "Latitude": 34.0723737,
+        "Longitude": -118.36976299999999
     },
     {
         "Name": "KORE PILATES",
@@ -219,11 +255,15 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "3500 W 6th St Ste 307, Los Angeles, CA 90020, USA",
         "Price Scraped": true,
         "Price Single": 45,
         "Price Source URL": "http://www.korepilates.com/pricing",
-        "Price Intro": 90
+        "Price Intro": 90,
+        "District": "Koreatown",
+        "Place ID": "ChIJV78tDqXHwoARU11113fNgUo",
+        "Latitude": 34.063123499999996,
+        "Longitude": -118.29861290000001
     },
     {
         "Name": "West Adams Pilates Jefferson Studio",
@@ -243,7 +283,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "4505 W Jefferson Blvd Ste 103, Los Angeles, CA 90016, USA",
+        "District": "South Los Angeles",
+        "Place ID": "ChIJA2BQthW5woARRBSxmhjGuO8",
+        "Latitude": 34.0258718,
+        "Longitude": -118.3451846
     },
     {
         "Name": "Sapphire Pilates",
@@ -263,8 +307,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "1629 Silver Lake Blvd, Los Angeles, CA 90026, USA",
+        "Price Scraped": true,
+        "District": "Silver Lake",
+        "Place ID": "ChIJ18IUKz_HwoARkr8k55IGcz0",
+        "Latitude": 34.0888045,
+        "Longitude": -118.2691343
     },
     {
         "Name": "Club Pilates",
@@ -284,9 +332,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "200 S Los Angeles St Suite E, Los Angeles, CA 90012, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Downtown Los Angeles",
+        "Place ID": "ChIJ1a1GVkjGwoARH9JOP9LMhO0",
+        "Latitude": 34.0498112,
+        "Longitude": -118.2434881
     },
     {
         "Name": "Love for Pilates - West Hollywood",
@@ -306,9 +358,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "7926 Beverly Blvd, Los Angeles, CA 90048, USA",
         "Price Scraped": true,
-        "Price Intro": 20
+        "Price Intro": 20,
+        "District": "Central LA",
+        "Place ID": "ChIJHd-NlzO5woARxDriAaK9_Y0",
+        "Latitude": 34.0759365,
+        "Longitude": -118.36243119999997
     },
     {
         "Name": "Los Feliz Pilates",
@@ -328,11 +384,15 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "1947 1/2 Hillhurst Ave, Los Angeles, CA 90027, USA",
         "Price Scraped": true,
         "Price Single": 40,
         "Price Source URL": "http://www.losfelizpilates.com/rates",
-        "Price Intro": 20
+        "Price Intro": 20,
+        "District": "Central LA",
+        "Place ID": "ChIJ3QlJoLDBwoARHrgCJhPrV8k",
+        "Latitude": 34.106931599999996,
+        "Longitude": -118.2877276
     },
     {
         "Name": "Made By Pilates",
@@ -352,11 +412,15 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "117 N Ave 59, Los Angeles, CA 90042, USA",
         "Price Scraped": true,
         "Price Single": 39,
         "Price Source URL": "http://www.madebypilates.com/",
-        "Price Intro": 39
+        "Price Intro": 39,
+        "District": "Highland Park",
+        "Place ID": "ChIJXfywrabFwoAR14EjB5tWBE0",
+        "Latitude": 34.111028,
+        "Longitude": -118.1909558
     },
     {
         "Name": "Archer Pilates & Wellness",
@@ -376,9 +440,13 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "9100 S Sepulveda Blvd Ste 103, Los Angeles, CA 90045, USA",
         "Price Scraped": true,
-        "Price Intro": 20
+        "Price Intro": 20,
+        "District": "Westchester",
+        "Place ID": "ChIJ4WGhqq2wwoARRsCBPdW3FBw",
+        "Latitude": 33.95411,
+        "Longitude": -118.39572600000001
     },
     {
         "Name": "Pilates Mind",
@@ -398,8 +466,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "1110 S Western Ave #201, Los Angeles, CA 90006, USA",
+        "Price Scraped": true,
+        "District": "Central LA",
+        "Place ID": "ChIJEwD7HKK5woARZ9gunmN9WL0",
+        "Latitude": 34.050422,
+        "Longitude": -118.3086145
     },
     {
         "Name": "Piladaum+ Pilates",
@@ -419,7 +491,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "555 S Western Ave #207, Los Angeles, CA 90020, USA",
+        "District": "Koreatown",
+        "Place ID": "ChIJ8QI2yLy5woARwBptmo77Qr4",
+        "Latitude": 34.0639383,
+        "Longitude": -118.30970409999999
     },
     {
         "Name": "Sheppard Method Pilates",
@@ -439,8 +515,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "2180 Westwood Blvd #2E, Los Angeles, CA 90025, USA",
+        "Price Scraped": true,
+        "District": "West Los Angeles",
+        "Place ID": "ChIJy69tGpm7woARmu1br5ZXJBI",
+        "Latitude": 34.0446794,
+        "Longitude": -118.43176849999999
     },
     {
         "Name": "Movement Pilates",
@@ -460,8 +540,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "400 S Western Ave #205, Los Angeles, CA 90020, USA",
+        "Price Scraped": true,
+        "District": "Koreatown",
+        "Place ID": "ChIJbZ5jUoW4woARUSvtSopEjik",
+        "Latitude": 34.066930899999996,
+        "Longitude": -118.30868729999999
     },
     {
         "Name": "Natural Pilates - Brentwood",
@@ -481,12 +565,16 @@
         "Group": true,
         "Tower": false,
         "Free Trial": true,
-        "Address": "No Address Provided",
+        "Address": "11638 1/2 Barrington Ct, Los Angeles, CA 90049, USA",
         "Price Scraped": true,
         "Price Single": 99,
         "Price Source URL": "http://www.naturalpilates.com/",
         "Price Intro": 99,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Brentwood",
+        "Place ID": "ChIJLUcAfLu8woAR4gKIzQ58ZPU",
+        "Latitude": 34.0648853,
+        "Longitude": -118.46923539999997
     },
     {
         "Name": "KALI PILATES",
@@ -506,8 +594,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "158 S Oxford Ave #22, Los Angeles, CA 90004, USA",
+        "Price Scraped": true,
+        "District": "Koreatown",
+        "Place ID": "ChIJs6yPpOK5woAREQoyzCrhmSM",
+        "Latitude": 34.0720409,
+        "Longitude": -118.307556
     },
     {
         "Name": "Pilates Eagle Rock",
@@ -527,8 +619,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "5112 Townsend Ave, Los Angeles, CA 90041, USA",
+        "Price Scraped": true,
+        "District": "Northeast Los Angeles",
+        "Place ID": "ChIJbV4dx2DBwoARQa6Rc1r1hrA",
+        "Latitude": 34.139941799999995,
+        "Longitude": -118.20089569999999
     },
     {
         "Name": "Natural Pilates - Beverly Hills",
@@ -548,8 +644,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "9869 S Santa Monica Blvd, Beverly Hills, CA 90212, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJiWPu5fW7woARqRwbuya4Moo",
+        "Latitude": 34.066158699999995,
+        "Longitude": -118.41108659999999
     },
     {
         "Name": "Glow Pilates",
@@ -569,11 +669,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "7823 Melrose Ave, Los Angeles, CA 90046, USA",
         "Price Scraped": true,
         "Price Single": 45,
         "Price Source URL": "https://www.glowpilatesstudio.com/blank-1",
-        "Price Intro": 28
+        "Price Intro": 28,
+        "District": "Fairfax",
+        "Place ID": "ChIJB6Q0Jwe_woARHsX2yDO6wss",
+        "Latitude": 34.083941100000004,
+        "Longitude": -118.3603253
     },
     {
         "Name": "Pilatesmith - Culver City",
@@ -593,10 +697,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "12450 Washington Blvd, Los Angeles, CA 90066, USA",
         "Price Scraped": true,
         "Price Single": 42,
-        "Price Source URL": "https://www.pilatesmithstudio.com/pricing"
+        "Price Source URL": "https://www.pilatesmithstudio.com/pricing",
+        "District": "Culver - West",
+        "Place ID": "ChIJo_M4kLK7woARbGvyQMQMHAY",
+        "Latitude": 33.996629,
+        "Longitude": -118.42932900000001
     },
     {
         "Name": "Carrie's Pilates West Hollywood",
@@ -616,11 +724,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "8302B Melrose Ave, West Hollywood, CA 90069, USA",
         "Price Scraped": true,
         "Price Single": 20,
         "Price Source URL": "https://westhollywood.carriespilatesplus.com/pricing-west-hollywood-new/",
-        "Price Intro": 99
+        "Price Intro": 99,
+        "District": "Melrose",
+        "Place ID": "ChIJoy28a7G-woARW9_BpZbIyKg",
+        "Latitude": 34.0834689,
+        "Longitude": -118.37069299999999
     },
     {
         "Name": "Club Pilates",
@@ -640,9 +752,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "200 S Los Angeles St Suite E, Los Angeles, CA 90012, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Downtown Los Angeles",
+        "Place ID": "ChIJ1a1GVkjGwoARH9JOP9LMhO0",
+        "Latitude": 34.0498112,
+        "Longitude": -118.2434881
     },
     {
         "Name": "Pilates With Ashlee- PWA",
@@ -662,8 +778,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "1641 Ellsmere Ave, Los Angeles, CA 90019, USA",
+        "Price Scraped": true,
+        "District": "Mid-City",
+        "Place ID": "ChIJpbBlnWO5woARcy_gxVupTXc",
+        "Latitude": 34.045270099999996,
+        "Longitude": -118.36224139999999
     },
     {
         "Name": "The Pilates Cave",
@@ -683,8 +803,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "11824 W Pico Blvd, Los Angeles, CA 90064, USA",
+        "Price Scraped": true,
+        "District": "Sawtelle",
+        "Place ID": "ChIJsYUcdd27woAR5cY7zKbxkw8",
+        "Latitude": 34.0302639,
+        "Longitude": -118.4478563
     },
     {
         "Name": "West Hollywood Pilates",
@@ -704,9 +828,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "717 Highland Ave STE 6, Los Angeles, CA 90038, USA",
         "Price Scraped": true,
-        "Price Intro": 65
+        "Price Intro": 65,
+        "District": "Melrose",
+        "Place ID": "ChIJrx6WVLm5woARMoVZEaD3VjA",
+        "Latitude": 34.0844023,
+        "Longitude": -118.33894889999999
     },
     {
         "Name": "Tribe Pilates",
@@ -726,11 +854,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "1365 Westwood Blvd, Los Angeles, CA 90024, USA",
         "Price Scraped": true,
         "Price Single": 25,
         "Price Source URL": "https://tribepilatesstudio.com/",
-        "Price Intro": 25
+        "Price Intro": 25,
+        "District": "Westwood",
+        "Place ID": "ChIJaXUkIgC7woARg02rxuRVkZ4",
+        "Latitude": 34.0556858,
+        "Longitude": -118.4423793
     },
     {
         "Name": "Club Pilates",
@@ -750,9 +882,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "200 S Los Angeles St Suite E, Los Angeles, CA 90012, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Downtown Los Angeles",
+        "Place ID": "ChIJ1a1GVkjGwoARH9JOP9LMhO0",
+        "Latitude": 34.0498112,
+        "Longitude": -118.2434881
     },
     {
         "Name": "Mighty Pilates Westwood Village",
@@ -772,12 +908,16 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "10935 Weyburn Ave, Los Angeles, CA 90024, USA",
         "Price Scraped": true,
         "Price Single": 47,
         "Price Source URL": "https://www.mightypilates.com/locations/westwood/",
         "Price Intro": 99,
-        "Intro Offer": "5 classes for $99"
+        "Intro Offer": "5 classes for $99",
+        "District": "Westwood",
+        "Place ID": "ChIJeX9WW_S9woARpO4-e6k1uhs",
+        "Latitude": 34.0627369,
+        "Longitude": -118.44656030000002
     },
     {
         "Name": "Pilates Essence",
@@ -797,8 +937,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "12381 Wilshire Blvd, Los Angeles, CA 90049, USA",
+        "Price Scraped": true,
+        "District": "Brentwood",
+        "Place ID": "ChIJP4Uujwi7woARfKK3drIfFsw",
+        "Latitude": 34.0421794,
+        "Longitude": -118.47035009999999
     },
     {
         "Name": "Mighty Pilates",
@@ -818,12 +962,16 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "10935 Weyburn Ave, Los Angeles, CA 90024, USA",
         "Price Scraped": true,
         "Price Single": 47,
         "Price Source URL": "http://www.mightypilates.com/locations/santa-monica/",
         "Price Intro": 99,
-        "Intro Offer": "5 classes for $99"
+        "Intro Offer": "5 classes for $99",
+        "District": "Westwood",
+        "Place ID": "ChIJeX9WW_S9woARpO4-e6k1uhs",
+        "Latitude": 34.0627369,
+        "Longitude": -118.44656030000002
     },
     {
         "Name": "Pilates Plus SilverLake",
@@ -843,10 +991,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "2630 Hyperion Ave #104/D, Los Angeles, CA 90027, USA",
         "Price Scraped": true,
         "Price Single": 37,
-        "Price Source URL": "http://www.ppsilverlake.com/classes-memberships"
+        "Price Source URL": "http://www.ppsilverlake.com/classes-memberships",
+        "District": "Silver Lake",
+        "Place ID": "ChIJ9e1l0MvAwoARcNYUISmQAUU",
+        "Latitude": 34.106196,
+        "Longitude": -118.2722546
     },
     {
         "Name": "Flow Pilates",
@@ -866,8 +1018,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "534 Mateo St B6, Los Angeles, CA 90013, USA",
+        "Price Scraped": true,
+        "District": "Downtown Los Angeles",
+        "Place ID": "ChIJr8EYbPXHwoARKijsk_kH9-c",
+        "Latitude": 34.0406919,
+        "Longitude": -118.23254479999999
     },
     {
         "Name": "Pilates Plus LA - Studio City",
@@ -887,9 +1043,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "13205 Ventura Blvd, Studio City, CA 91604, USA",
         "Price Scraped": true,
-        "Price Intro": 40
+        "Price Intro": 40,
+        "District": "Studio City",
+        "Place ID": "ChIJMZB2d4q9woARlBUqGzOHT-Q",
+        "Latitude": 34.1463205,
+        "Longitude": -118.4200361
     },
     {
         "Name": "Pilates With Jen",
@@ -909,8 +1069,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "579 N Larchmont Blvd, Los Angeles, CA 90004, USA",
+        "Price Scraped": true,
+        "District": "Larchmont",
+        "Place ID": "ChIJfb1d6ce4woARn2X6J679yPs",
+        "Latitude": 34.081255999999996,
+        "Longitude": -118.32397390000001
     },
     {
         "Name": "elysepilates",
@@ -930,8 +1094,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "2740 Butler Ave, Los Angeles, CA 90064, USA",
+        "Price Scraped": true,
+        "District": "Westdale",
+        "Place ID": "ChIJydAIgpy7woARo9gsXeqVdcg",
+        "Latitude": 34.02707,
+        "Longitude": -118.4354779
     },
     {
         "Name": "Cotrone Pilates",
@@ -951,11 +1119,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "848 La Cienega Blvd #205, Los Angeles, CA 90069, USA",
         "Price Scraped": true,
         "Price Single": 100,
         "Price Source URL": "http://www.cotronepilates.com/classes",
-        "Price Intro": 80
+        "Price Intro": 80,
+        "District": "Melrose",
+        "Place ID": "ChIJe99pDrq-woAR6QUCDiYNmHw",
+        "Latitude": 34.0865161,
+        "Longitude": -118.37604110000001
     },
     {
         "Name": "Speir Pilates West Hollywood",
@@ -975,10 +1147,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "8356 Santa Monica Blvd, West Hollywood, CA 90069, USA",
         "Price Scraped": true,
         "Price Intro": 29,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Central LA",
+        "Place ID": "ChIJzS3Sz82kwoARaVFtEKCv61U",
+        "Latitude": 34.0904744,
+        "Longitude": -118.3722241
     },
     {
         "Name": "WundaBar Pilates - West Hollywood",
@@ -998,8 +1174,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "7940 W 3rd St, Los Angeles, CA 90048, USA",
+        "Price Scraped": true,
+        "District": "Central LA",
+        "Place ID": "ChIJPT8vN5K5woARH2L0FqNnba0",
+        "Latitude": 34.0715279,
+        "Longitude": -118.36294980000001
     },
     {
         "Name": "Hummingbird Pilates",
@@ -1019,8 +1199,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "367 S Doheny Dr, Beverly Hills, CA 90211, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJBwsrVVi5woAR6kaiWdEZ8J4",
+        "Latitude": 34.0598775,
+        "Longitude": -118.38994919999999
     },
     {
         "Name": "Westwood Pilates",
@@ -1040,8 +1224,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "2076 Westwood Blvd, Los Angeles, CA 90025, USA",
+        "Price Scraped": true,
+        "District": "West Los Angeles",
+        "Place ID": "ChIJu6X2Wpm7woARJeRZ57tEMtY",
+        "Latitude": 34.045684,
+        "Longitude": -118.43298840000001
     },
     {
         "Name": "FIT Pilates Studio",
@@ -1061,7 +1249,11 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "440 Shatto Pl #303, Los Angeles, CA 90020, USA",
+        "District": "Koreatown",
+        "Place ID": "ChIJt-WNImfHwoARiGYti_vJJIc",
+        "Latitude": 34.0659214,
+        "Longitude": -118.28953389999998
     },
     {
         "Name": "Pilates With Aly",
@@ -1081,8 +1273,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "12655 Washington Blvd Ste 205, Los Angeles, CA 90066, USA",
+        "Price Scraped": true,
+        "District": "Culver - West",
+        "Place ID": "ChIJFY0QbwC7woARiKiEzClrLhY",
+        "Latitude": 33.9972608,
+        "Longitude": -118.43363469999998
     },
     {
         "Name": "Reformation Station Pilates",
@@ -1102,10 +1298,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "2222 Pasadena Ave, Los Angeles, CA 90031, USA",
         "Price Scraped": true,
         "Price Single": 48,
-        "Price Source URL": "http://www.thereformationstation.com/rates"
+        "Price Source URL": "http://www.thereformationstation.com/rates",
+        "District": "Lincoln Heights",
+        "Place ID": "ChIJe4hyCYjGwoARY5aygi-wZbs",
+        "Latitude": 34.0753323,
+        "Longitude": -118.21787420000001
     },
     {
         "Name": "I love pilates",
@@ -1125,8 +1325,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "3130 Wilshire Blvd #212, Los Angeles, CA 90010, USA",
+        "Price Scraped": true,
+        "District": "Koreatown",
+        "Place ID": "ChIJcy6pAX24woARpXFsBcMhrws",
+        "Latitude": 34.0615023,
+        "Longitude": -118.28995110000001
     },
     {
         "Name": "Harmony Studios Pilates",
@@ -1146,8 +1350,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "8440 Santa Monica Blvd Ste 100, West Hollywood, CA 90069, USA",
+        "Price Scraped": true,
+        "District": "Central LA",
+        "Place ID": "ChIJRyHBZ7m-woARt7EjNNM6OxY",
+        "Latitude": 34.0900405,
+        "Longitude": -118.37472799999999
     },
     {
         "Name": "My Pilates Body",
@@ -1167,7 +1375,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "8242 W 3rd St #300, Los Angeles, CA 90048, USA",
+        "District": "Central LA",
+        "Place ID": "ChIJXb5iADa5woARSSA7KTgax3c",
+        "Latitude": 34.072402,
+        "Longitude": -118.36943300000001
     },
     {
         "Name": "Karen Lord Pilates Movement",
@@ -1187,9 +1399,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": true,
-        "Address": "No Address Provided",
+        "Address": "3007 Washington Blvd #100, Venice, CA 90292, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Venice",
+        "Place ID": "ChIJyTxu-cW6woARpZL6NhvoyrA",
+        "Latitude": 33.988969499999996,
+        "Longitude": -118.4504035
     },
     {
         "Name": "The Work Pilates Studio",
@@ -1209,8 +1425,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "757 Virgil Ave, Los Angeles, CA 90029, USA",
+        "Price Scraped": true,
+        "District": "East Hollywood",
+        "Place ID": "ChIJNecRWv_HwoARN4eloYa88Ok",
+        "Latitude": 34.08499880000001,
+        "Longitude": -118.28702050000001
     },
     {
         "Name": "A&U Pilates",
@@ -1230,7 +1450,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "3868 W 6th St, Los Angeles, CA 90020, USA",
+        "District": "Koreatown",
+        "Place ID": "ChIJbebYfAm5woARqpU2ihw-Z0A",
+        "Latitude": 34.0633967,
+        "Longitude": -118.3072414
     },
     {
         "Name": "Powerhouse Pilates",
@@ -1250,11 +1474,15 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "12230 1/2 Venice Blvd., Los Angeles, CA 90066, USA",
         "Price Scraped": true,
         "Price Single": 55,
         "Price Source URL": "http://www.powerhousepilates.org/classes",
-        "Price Intro": 93
+        "Price Intro": 93,
+        "District": "Mar Vista",
+        "Place ID": "ChIJnX6a9a27woARbS4KG2ZqDnE",
+        "Latitude": 34.004225,
+        "Longitude": -118.43202380000001
     },
     {
         "Name": "Pilates Platinum",
@@ -1274,8 +1502,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "11755 Wilshire Blvd, Los Angeles, CA 90025, USA",
+        "Price Scraped": true,
+        "District": "Brentwood",
+        "Place ID": "ChIJPeEOUme7woARsa9qexCCnCo",
+        "Latitude": 34.0489999,
+        "Longitude": -118.4617198
     },
     {
         "Name": "Pilates Studio City",
@@ -1295,8 +1527,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "11650 Riverside Dr #2, North Hollywood, CA 91602, USA",
+        "Price Scraped": true,
+        "District": "North Hollywood",
+        "Place ID": "ChIJwSYLm_eVwoARAqnInXnN3ps",
+        "Latitude": 34.1574556,
+        "Longitude": -118.3875228
     },
     {
         "Name": "Pilates Punx",
@@ -1316,10 +1552,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "2506 Sunset Blvd, Los Angeles, CA 90026, USA",
         "Price Scraped": true,
         "Price Intro": 89,
-        "Intro Offer": "3 classes for $89"
+        "Intro Offer": "3 classes for $89",
+        "District": "Echo Park",
+        "Place ID": "ChIJ01p_bFbHwoAR4Cfh1JU6weY",
+        "Latitude": 34.079518799999995,
+        "Longitude": -118.26936020000001
     },
     {
         "Name": "Pilates On Robertson",
@@ -1339,8 +1579,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "2816 S Robertson Blvd, Los Angeles, CA 90034, USA",
+        "Price Scraped": true,
+        "District": "Mid-City",
+        "Place ID": "ChIJWWD2ln65woAREBZ4r5hej64",
+        "Latitude": 34.035950199999995,
+        "Longitude": -118.38875309999999
     },
     {
         "Name": "The Pilates Class Studio - BuiltRx",
@@ -1360,10 +1604,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": true,
-        "Address": "No Address Provided",
+        "Address": "608 Westmount Dr, West Hollywood, CA 90069, USA",
         "Price Scraped": true,
         "Price Intro": 50,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Tri-West",
+        "Place ID": "ChIJ1Q0BygG_woARMGI5fa-ynV0",
+        "Latitude": 34.0822703,
+        "Longitude": -118.37848609999998
     },
     {
         "Name": "Pilates Vita San Francisco",
@@ -4463,9 +4711,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "850 2nd Ave, New York, NY 10017, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Manhattan",
+        "Place ID": "ChIJP2Hpv9hZwokRtS6CNhk7Hss",
+        "Latitude": 40.7518039,
+        "Longitude": -73.97048350000001
     },
     {
         "Name": "Pearl Pilates NYC",
@@ -4485,8 +4737,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "538 W 28th St, New York, NY 10001, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJVY_P4eVZwokRmYT3g5JXjjc",
+        "Latitude": 40.7514798,
+        "Longitude": -74.0036569
     },
     {
         "Name": "Club Pilates",
@@ -4506,9 +4762,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "850 2nd Ave, New York, NY 10017, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Manhattan",
+        "Place ID": "ChIJP2Hpv9hZwokRtS6CNhk7Hss",
+        "Latitude": 40.7518039,
+        "Longitude": -73.97048350000001
     },
     {
         "Name": "Nice and Tall Pilates",
@@ -4528,8 +4788,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "939 8th Ave #207, New York, NY 10019, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJhclHoVpZwokRMWrkrutK0qM",
+        "Latitude": 40.765946299999996,
+        "Longitude": -73.98385449999999
     },
     {
         "Name": "Plaza Pilates",
@@ -4549,8 +4813,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "482 W 43rd St, New York, NY 10036, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJTy4RaC5ZwokRnzVXiUnC3VU",
+        "Latitude": 40.7598647,
+        "Longitude": -73.9945336
     },
     {
         "Name": "Club Pilates",
@@ -4570,9 +4838,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "850 2nd Ave, New York, NY 10017, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Manhattan",
+        "Place ID": "ChIJP2Hpv9hZwokRtS6CNhk7Hss",
+        "Latitude": 40.7518039,
+        "Longitude": -73.97048350000001
     },
     {
         "Name": "W Pilates",
@@ -4592,8 +4864,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "29 W 36th St. Ste 500, New York, NY 10018, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJZSuxKJlZwokRe0NpRHrMiXM",
+        "Latitude": 40.7505665,
+        "Longitude": -73.985069
     },
     {
         "Name": "Club Pilates",
@@ -4613,9 +4889,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "850 2nd Ave, New York, NY 10017, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Manhattan",
+        "Place ID": "ChIJP2Hpv9hZwokRtS6CNhk7Hss",
+        "Latitude": 40.7518039,
+        "Longitude": -73.97048350000001
     },
     {
         "Name": "Abena Pilates",
@@ -4635,10 +4915,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "455 West 64th Street, Building, 100 Riverside Blvd, New York, NY 10069, USA",
         "Price Scraped": true,
         "Price Single": 75,
-        "Price Source URL": "https://abenapilates.com/pricing"
+        "Price Source URL": "https://abenapilates.com/pricing",
+        "District": "Manhattan",
+        "Place ID": "ChIJQ69qBl5YwokR0qP-yAmOvQo",
+        "Latitude": 40.7754434,
+        "Longitude": -73.98955579999999
     },
     {
         "Name": "21 Pilates NYC",
@@ -4658,11 +4942,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "242 W 38th St #4Fl, New York, NY 10018, USA",
         "Price Scraped": true,
         "Price Single": 95,
         "Price Source URL": "https://21pilatesnyc.com/schedule-%26-prices",
-        "Price Intro": 99.99
+        "Price Intro": 99.99,
+        "District": "Manhattan",
+        "Place ID": "ChIJ1fYRyJ9ZwokRKsNEaPaPPEk",
+        "Latitude": 40.7540109,
+        "Longitude": -73.990303
     },
     {
         "Name": "Pilates Perfect Studio",
@@ -4682,8 +4970,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "20 E 68th St Ste 202, New York, NY 10065, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJt4c2UOxYwokRGWzbts-CiKU",
+        "Latitude": 40.769196099999995,
+        "Longitude": -73.96770839999999
     },
     {
         "Name": "NYC Pilates",
@@ -4703,10 +4995,14 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "124 W Houston St, New York, NY 10012, USA",
         "Price Scraped": true,
         "Price Single": 35,
-        "Price Source URL": "https://www.nyc-pilates.com/private-sessions-1"
+        "Price Source URL": "https://www.nyc-pilates.com/private-sessions-1",
+        "District": "Manhattan",
+        "Place ID": "ChIJP72xGDRZwokRlPlXFQ3eSuc",
+        "Latitude": 40.727826199999996,
+        "Longitude": -74.0009771
     },
     {
         "Name": "Authentic Pilates NYC",
@@ -4726,10 +5022,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "919 2nd Ave #2A, New York, NY 10017, USA",
         "Price Scraped": true,
         "Price Single": 95,
-        "Price Source URL": "https://pilatesnyc.com/classes"
+        "Price Source URL": "https://pilatesnyc.com/classes",
+        "District": "Manhattan",
+        "Place ID": "ChIJyQXlc6ZZwokRj7e6DLXGSzA",
+        "Latitude": 40.754211,
+        "Longitude": -73.9693705
     },
     {
         "Name": "The Pilates Circuit NOMAD | Private Reformer Pilates",
@@ -4749,10 +5049,14 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "121A E 27th St #904, New York, NY 10016, USA",
         "Price Scraped": true,
         "Price Single": 40,
-        "Price Source URL": "https://www.thepilatescircuit.com/pilates-pricing"
+        "Price Source URL": "https://www.thepilatescircuit.com/pilates-pricing",
+        "District": "Manhattan",
+        "Place ID": "ChIJQ3budIRZwokRKq01HQxTMDU",
+        "Latitude": 40.7424986,
+        "Longitude": -73.9834803
     },
     {
         "Name": "AmyNYPilates",
@@ -4772,9 +5076,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "109 W 38th St STE 303, New York, NY 10018, USA",
         "Price Scraped": true,
-        "Price Intro": 29.99
+        "Price Intro": 29.99,
+        "District": "Manhattan",
+        "Place ID": "ChIJWW8L0QpZwokRJzG_SUKh-PE",
+        "Latitude": 40.7527077,
+        "Longitude": -73.98638559999999
     },
     {
         "Name": "Club Pilates",
@@ -4794,9 +5102,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "850 2nd Ave, New York, NY 10017, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Manhattan",
+        "Place ID": "ChIJP2Hpv9hZwokRtS6CNhk7Hss",
+        "Latitude": 40.7518039,
+        "Longitude": -73.97048350000001
     },
     {
         "Name": "New York Pilates Flatiron",
@@ -4816,10 +5128,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "17 W 17th St Ground Floor, New York, NY 10011, USA",
         "Price Scraped": true,
         "Price Single": 90,
-        "Price Source URL": "https://www.newyorkpilates.com/location-flatiron/"
+        "Price Source URL": "https://www.newyorkpilates.com/location-flatiron/",
+        "District": "Manhattan",
+        "Place ID": "ChIJLeUMSndZwokRxCE-GZfKuKw",
+        "Latitude": 40.738524399999996,
+        "Longitude": -73.9932413
     },
     {
         "Name": "The Space Pilates Studio",
@@ -4839,8 +5155,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "36 W 20th St 2nd Floor, New York, NY 10011, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJS2JJM-tZwokRpphILRqex9Y",
+        "Latitude": 40.7403914,
+        "Longitude": -73.99311229999999
     },
     {
         "Name": "The Pilates Room NYC",
@@ -4860,8 +5180,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "150 W 28th St #901, New York, NY 10001, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJrbLHVnZZwokR3gX4GWdNeCk",
+        "Latitude": 40.7467744,
+        "Longitude": -73.992879
     },
     {
         "Name": "Holydog Pilates",
@@ -4881,11 +5205,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "130 E 32nd St, New York, NY 10016, USA",
         "Price Scraped": true,
         "Price Single": 45,
         "Price Source URL": "https://www.holydogpilates.com/",
-        "Price Intro": 120
+        "Price Intro": 120,
+        "District": "Manhattan",
+        "Place ID": "ChIJY5Vm1qhZwokRoQVU2ZlOXp4",
+        "Latitude": 40.7450688,
+        "Longitude": -73.9809657
     },
     {
         "Name": "LifeSpan Pilates NYC",
@@ -4905,8 +5233,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "33 W 46th St 2nd floor, New York, NY 10036, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJF38elGdZwokR-jP3tbWsI8o",
+        "Latitude": 40.7568252,
+        "Longitude": -73.98032289999999
     },
     {
         "Name": "Pilates Reforming New York",
@@ -4926,9 +5258,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "1305 2nd Ave, New York, NY 10065, USA",
         "Price Scraped": true,
-        "Price Intro": 20
+        "Price Intro": 20,
+        "District": "Manhattan",
+        "Place ID": "ChIJyy7GdYxZwokRpuiUhqKCirM",
+        "Latitude": 40.7666372,
+        "Longitude": -73.9602273
     },
     {
         "Name": "LAB Pilates New York",
@@ -4948,8 +5284,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "7 W 36th St. 4th floor, New York, NY 10018, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJERIpUOpZwokRulNsuGHzN-g",
+        "Latitude": 40.7502624,
+        "Longitude": -73.9842445
     },
     {
         "Name": "IM=X Pilates NYC",
@@ -4969,8 +5309,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "265 Madison Ave 2nd floor, New York, NY 10016, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJs-DPWQ9ZwokRpEA72L75-yM",
+        "Latitude": 40.75087,
+        "Longitude": -73.98031999999999
     },
     {
         "Name": "212 Pilates",
@@ -4990,8 +5334,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "22 E 49th St 5th floor, New York, NY 10017, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJo1HLUAdZwokRpCZBmfd2LLw",
+        "Latitude": 40.757213,
+        "Longitude": -73.9766124
     },
     {
         "Name": "Pilates by Marci",
@@ -5011,8 +5359,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "142 West End Ave, New York, NY 10023, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJ0WgvQ-BZwokR-rH-NKugLCA",
+        "Latitude": 40.7757369,
+        "Longitude": -73.9857936
     },
     {
         "Name": "Return To Life Center - Pilates and Functional Movement",
@@ -5032,12 +5384,16 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "19 W 45th St #303, New York, NY 10036, USA",
         "Price Scraped": true,
         "Price Single": 50,
         "Price Source URL": "https://www.returntolifecenter.com/rtlservices",
         "Price Intro": 87,
-        "Intro Offer": "3 sessions for $179"
+        "Intro Offer": "3 sessions for $179",
+        "District": "Manhattan",
+        "Place ID": "ChIJn6ORtf9YwokReV9eHhe_rIs",
+        "Latitude": 40.7559008,
+        "Longitude": -73.98039
     },
     {
         "Name": "Power Pilates",
@@ -5057,8 +5413,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "920 3rd Ave 6th Floor, New York, NY 10022, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJzcI49eRYwokRumR7mFvJqN0",
+        "Latitude": 40.7593617,
+        "Longitude": -73.9685497
     },
     {
         "Name": "Core Pilates NYC",
@@ -5078,8 +5438,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "900 Broadway #603, New York, NY 10003, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJgWS0sJlZwokRUYdUoFMU7dc",
+        "Latitude": 40.7388492,
+        "Longitude": -73.9895501
     },
     {
         "Name": "Authentic Method Pilates Upper East Side",
@@ -5099,8 +5463,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "50 E 66th St, New York, NY 10065, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJKSwgx8tZwokRbaxNUE0Cch4",
+        "Latitude": 40.7675814,
+        "Longitude": -73.96772469999999
     },
     {
         "Name": "New York Pilates SoHo",
@@ -5120,10 +5488,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "25 Howard St, New York, NY 10013, USA",
         "Price Scraped": true,
         "Price Single": 90,
-        "Price Source URL": "https://www.newyorkpilates.com/intro-offers-nyc-and-hamptons/"
+        "Price Source URL": "https://www.newyorkpilates.com/intro-offers-nyc-and-hamptons/",
+        "District": "Manhattan",
+        "Place ID": "ChIJPSgHIIpZwokRTGP4jDGvGH4",
+        "Latitude": 40.71932400000001,
+        "Longitude": -74.000644
     },
     {
         "Name": "Power Pilates",
@@ -5143,12 +5515,16 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "920 3rd Ave 6th Floor, New York, NY 10022, USA",
         "Price Scraped": true,
         "Price Single": 55,
         "Price Source URL": "https://www.powerpilates.com/chelsea",
         "Price Intro": 99,
-        "Intro Offer": "58% off first visit"
+        "Intro Offer": "58% off first visit",
+        "District": "Manhattan",
+        "Place ID": "ChIJzcI49eRYwokRumR7mFvJqN0",
+        "Latitude": 40.7593617,
+        "Longitude": -73.9685497
     },
     {
         "Name": "Steele Pilates & Dragonfly Studio NYC",
@@ -5168,12 +5544,16 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "309 W 57th St Suite 305 / Room 1, New York, NY 10019, USA",
         "Price Scraped": true,
         "Price Single": 35,
         "Price Source URL": "http://teristeelepilates.com/",
         "Price Intro": 20,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Manhattan",
+        "Place ID": "ChIJqZkhNnxZwokRe2wLsq45p14",
+        "Latitude": 40.7672217,
+        "Longitude": -73.98332429999999
     },
     {
         "Name": "Pilates Habitat",
@@ -5193,8 +5573,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "192 3rd Ave, New York, NY 10003, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJbcVjf59ZwokR935Y0RM815I",
+        "Latitude": 40.735544,
+        "Longitude": -73.9859559
     },
     {
         "Name": "Court Pilates",
@@ -5214,8 +5598,12 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "939 8th Ave, New York, NY 10019, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJkx85EfZYwokR2pZwtTiLmnw",
+        "Latitude": 40.765875099999995,
+        "Longitude": -73.9837132
     },
     {
         "Name": "Uptown Pilates Upper West Side",
@@ -5235,8 +5623,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "136 W 72nd St 2nd fl, New York, NY 10023, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJ3cJ8S4pYwokRq-B11UxcHOw",
+        "Latitude": 40.777730299999995,
+        "Longitude": -73.9802977
     },
     {
         "Name": "Pilates People",
@@ -5256,8 +5648,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "252 W 14th St Fl 2, New York, NY 10011, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJh4O7PORbwokRwtPunpOwyU4",
+        "Latitude": 40.7394032,
+        "Longitude": -74.0022281
     },
     {
         "Name": "Power Pilates",
@@ -5277,12 +5673,16 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "920 3rd Ave 6th Floor, New York, NY 10022, USA",
         "Price Scraped": true,
         "Price Single": 55,
         "Price Source URL": "https://www.powerpilates.com/flatiron",
         "Price Intro": 99,
-        "Intro Offer": "58% off first visit"
+        "Intro Offer": "58% off first visit",
+        "District": "Manhattan",
+        "Place ID": "ChIJzcI49eRYwokRumR7mFvJqN0",
+        "Latitude": 40.7593617,
+        "Longitude": -73.9685497
     },
     {
         "Name": "Bombshell Pilates Gramercy",
@@ -5302,8 +5702,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "201 E 16th St #3A, New York, NY 10003, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJBzMIIuZZwokRHU8a4Z2WTUE",
+        "Latitude": 40.7346253,
+        "Longitude": -73.9858954
     },
     {
         "Name": "Dynamic Body Pilates NYC",
@@ -5323,8 +5727,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "80 5th Ave #1003, New York, NY 10011, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJKeRU5ZhZwokRuiD7U0Cjah0",
+        "Latitude": 40.7359096,
+        "Longitude": -73.9940321
     },
     {
         "Name": "Classical Pilates NYC",
@@ -5344,8 +5752,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "130 W 28th St, New York, NY 10001, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJQUigia9ZwokRCKgE1apOgus",
+        "Latitude": 40.7464319,
+        "Longitude": -73.9919385
     },
     {
         "Name": "Pilates House",
@@ -5365,8 +5777,12 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "102 W 75th St, New York, NY 10023, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJkbvff4lYwokRAQhRXesuwcg",
+        "Latitude": 40.7792731,
+        "Longitude": -73.9778279
     },
     {
         "Name": "Pilates by YKLee",
@@ -5386,8 +5802,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "470 7th Ave #401, New York, NY 10018, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJ7VZaEaxZwokRLKC-gPkR1U4",
+        "Latitude": 40.752001799999995,
+        "Longitude": -73.9903349
     },
     {
         "Name": "Core Zone Pilates",
@@ -5407,8 +5827,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "53 W 72nd St, New York, NY 10023, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJcaNM7YtYwokRlCdpk7FmDNo",
+        "Latitude": 40.77753010000001,
+        "Longitude": -73.9783988
     },
     {
         "Name": "New York Pilates West Village",
@@ -5428,10 +5852,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "124 W Houston St, New York, NY 10012, USA",
         "Price Scraped": true,
         "Price Single": 90,
-        "Price Source URL": "https://www.newyorkpilates.com/intro-offers-nyc-and-hamptons/"
+        "Price Source URL": "https://www.newyorkpilates.com/intro-offers-nyc-and-hamptons/",
+        "District": "Manhattan",
+        "Place ID": "ChIJP72xGDRZwokRlPlXFQ3eSuc",
+        "Latitude": 40.727826199999996,
+        "Longitude": -74.0009771
     },
     {
         "Name": "Natural Pilates - SoHo",
@@ -5451,12 +5879,16 @@
         "Group": true,
         "Tower": false,
         "Free Trial": true,
-        "Address": "No Address Provided",
+        "Address": "206 Spring St 4th Floor, New York, NY 10012, USA",
         "Price Scraped": true,
         "Price Single": 99,
         "Price Source URL": "http://www.naturalpilates.com/",
         "Price Intro": 99,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Manhattan",
+        "Place ID": "ChIJ1RXBnl1ZwokRqQ5vjjuj1Yo",
+        "Latitude": 40.725217099999995,
+        "Longitude": -74.00378280000001
     },
     {
         "Name": "JUST PILATES",
@@ -5476,8 +5908,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "319 W 74th St, New York, NY 10023, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJzUuRQmJYwokRlK_31rBMkcY",
+        "Latitude": 40.781763999999995,
+        "Longitude": -73.98453599999999
     },
     {
         "Name": "Pilates Midtown East",
@@ -5497,8 +5933,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "767 Lexington Ave #405, New York, NY 10065, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJ-RXm6eJYwokR5bcW7SOJHy4",
+        "Latitude": 40.76302,
+        "Longitude": -73.967405
     },
     {
         "Name": "Bombshell Pilates Chelsea",
@@ -5518,8 +5958,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "135 W 20th St #301, New York, NY 10011, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJ0_S8pWpZwokRGPRd7beR4fc",
+        "Latitude": 40.741859999999996,
+        "Longitude": -73.99575329999999
     },
     {
         "Name": "EDB Method Pilates and Holistic Health",
@@ -5539,8 +5983,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "850 7th Ave #805, New York, NY 10019, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJ2e2aPPhYwokRoHusJ_6dsY4",
+        "Latitude": 40.767716899999996,
+        "Longitude": -73.9834937
     },
     {
         "Name": "Good Day Pilates Soho",
@@ -5560,10 +6008,14 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "150 Spring St Level 3, New York, NY 10012, USA",
         "Price Scraped": true,
         "Price Single": 47,
-        "Price Source URL": "http://gooddaypilates.com/pricing"
+        "Price Source URL": "http://gooddaypilates.com/pricing",
+        "District": "Manhattan",
+        "Place ID": "ChIJl-Lb54ZZwokRLEU0aPFqi4Y",
+        "Latitude": 40.7242366,
+        "Longitude": -74.0014884
     },
     {
         "Name": "CENTER PILATES",
@@ -5583,8 +6035,12 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "150 W 28th St Ste, New York, NY 10001, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJYa1MTZ9ZwokR9WUgKYNvRkQ",
+        "Latitude": 40.7467391,
+        "Longitude": -73.99287970000002
     },
     {
         "Name": "The Pilates Local",
@@ -5604,11 +6060,15 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "125 4th Ave 2nd floor, New York, NY 10003, USA",
         "Price Scraped": true,
         "Price Single": 60,
         "Price Source URL": "https://thepilateslocal.com/book-pilates-classes/",
-        "Price Intro": 65
+        "Price Intro": 65,
+        "District": "Manhattan",
+        "Place ID": "ChIJ7-asg21ZwokRacKzk0Fwfck",
+        "Latitude": 40.7330622,
+        "Longitude": -73.9896853
     },
     {
         "Name": "Core Culture Pilates",
@@ -5628,8 +6088,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "146 Sullivan St, New York, NY 10012, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJq3HJT2FZwokRxpqrGpD0adw",
+        "Latitude": 40.7272378,
+        "Longitude": -74.0020744
     },
     {
         "Name": "Creative Core Pilates Chelsea",
@@ -5649,8 +6113,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "119 W 23rd St Ste 407, New York, NY 10011, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJlQr4v5xZwokRio4-zVzB5RA",
+        "Latitude": 40.7435419,
+        "Longitude": -73.9933767
     },
     {
         "Name": "Brooks Pilates",
@@ -5670,11 +6138,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "242 W 27th St #6a, New York, NY 10011, USA",
         "Price Scraped": true,
         "Price Single": 50,
         "Price Source URL": "http://www.brookspilates.com/classesct",
-        "Price Intro": 50
+        "Price Intro": 50,
+        "District": "Manhattan",
+        "Place ID": "ChIJlXlHTZ9ZwokRoL7K-iGxoiw",
+        "Latitude": 40.7472616,
+        "Longitude": -73.9959235
     },
     {
         "Name": "Club Pilates",
@@ -5694,9 +6166,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "850 2nd Ave, New York, NY 10017, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Manhattan",
+        "Place ID": "ChIJP2Hpv9hZwokRtS6CNhk7Hss",
+        "Latitude": 40.7518039,
+        "Longitude": -73.97048350000001
     },
     {
         "Name": "BASI Pilates Studio - NYC",
@@ -5716,10 +6192,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "115 E 82nd St, New York, NY 10028, USA",
         "Price Scraped": true,
         "Price Single": 45,
-        "Price Source URL": "https://www.basipilatesacademynyc.com/small-group-class/"
+        "Price Source URL": "https://www.basipilatesacademynyc.com/small-group-class/",
+        "District": "Manhattan",
+        "Place ID": "ChIJEQMe-r1YwokRFnATyr3X8jk",
+        "Latitude": 40.7773906,
+        "Longitude": -73.9580934
     },
     {
         "Name": "Sola Pilates",
@@ -5739,8 +6219,12 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "330 W 56th St, New York, NY 10019, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJf0NOCKtZwokRkNcgriZwy4A",
+        "Latitude": 40.7665143,
+        "Longitude": -73.98499799999999
     },
     {
         "Name": "Pilates BKLYN Reformer Studio",
@@ -5760,8 +6244,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "1067 Manhattan Ave, Brooklyn, NY 11222, USA",
+        "Price Scraped": true,
+        "District": "Brooklyn",
+        "Place ID": "ChIJK-q-y29ZwokRSSfTIkX33io",
+        "Latitude": 40.735248,
+        "Longitude": -73.9552857
     },
     {
         "Name": "Mindful Pilates NYC",
@@ -5781,8 +6269,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "21 W 121st St, New York, NY 10027, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJUU8t3jhZwokR_6cRi70stpg",
+        "Latitude": 40.8051234,
+        "Longitude": -73.9466686
     },
     {
         "Name": "Club Pilates",
@@ -5802,9 +6294,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "850 2nd Ave, New York, NY 10017, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Manhattan",
+        "Place ID": "ChIJP2Hpv9hZwokRtS6CNhk7Hss",
+        "Latitude": 40.7518039,
+        "Longitude": -73.97048350000001
     },
     {
         "Name": "Pilates Reforming New York",
@@ -5824,9 +6320,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "1462 1st Ave #2W, New York, NY 10075, USA",
         "Price Scraped": true,
-        "Price Intro": 20
+        "Price Intro": 20,
+        "District": "Manhattan",
+        "Place ID": "ChIJ82iSq8BYwokR22CtvQMp3lE",
+        "Latitude": 40.7703728,
+        "Longitude": -73.953777
     },
     {
         "Name": "Park East Pilates",
@@ -5846,8 +6346,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "58 E 79th St, New York, NY 10075, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJR2Ds15VYwokR1WgFAg2KiZU",
+        "Latitude": 40.7760549,
+        "Longitude": -73.9617373
     },
     {
         "Name": "True Pilates",
@@ -5867,7 +6371,11 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "358 E 57th St, New York, NY 10022, USA",
+        "District": "Manhattan",
+        "Place ID": "ChIJtYFNwuZYwokRxXPpb_FVrT0",
+        "Latitude": 40.758272999999996,
+        "Longitude": -73.963506
     },
     {
         "Name": "Banyan & Nomad Pilates",
@@ -5887,8 +6395,12 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "146 E 55th St f4, New York, NY 10022, USA",
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJt8G4lORYwokRcSqSPpGabCs",
+        "Latitude": 40.7592275,
+        "Longitude": -73.9694896
     },
     {
         "Name": "I\u2022D Pilates",
@@ -10246,8 +10758,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "30 SW 1st St Ste 801, Miami, FL 33130, USA",
+        "Price Scraped": true,
+        "District": "Downtown Miami",
+        "Place ID": "ChIJoR_oyiK32YgRCTUCydqc7zA",
+        "Latitude": 25.7732205,
+        "Longitude": -80.1937734
     },
     {
         "Name": "Kinona Pilates Studio",
@@ -10267,8 +10783,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "175 SW 7th St Unit 1520, Miami, FL 33130, USA",
+        "Price Scraped": true,
+        "District": "Brickell",
+        "Place ID": "ChIJdQXuO5O32YgRcYhaDH1JZxA",
+        "Latitude": 25.767693200000004,
+        "Longitude": -80.19699349999999
     },
     {
         "Name": "Pilates on Brickell",
@@ -10288,7 +10808,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "175 SW 7th St Unite 1703, Miami, FL 33130, USA",
+        "District": "Brickell",
+        "Place ID": "ChIJ_xen_J232YgRRvYS4TxD1nE",
+        "Latitude": 25.7676096,
+        "Longitude": -80.19685559999999
     },
     {
         "Name": "Long Lean Pilates",
@@ -10308,8 +10832,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "121 SE 2nd Ave, Miami, FL 33131, USA",
+        "Price Scraped": true,
+        "District": "Downtown Miami",
+        "Place ID": "ChIJv_IYIHW32YgRWRD-WDN9lqA",
+        "Latitude": 25.7729671,
+        "Longitude": -80.19010689999999
     },
     {
         "Name": "Pilates In The Grove",
@@ -10329,11 +10857,15 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "3316 Virginia St, Coconut Grove, FL 33133, USA",
         "Price Scraped": true,
         "Price Single": 110,
         "Price Source URL": "https://www.pilatesinthegrove.com/classes",
-        "Price Intro": 120
+        "Price Intro": 120,
+        "District": "Coconut Grove",
+        "Place ID": "ChIJVXjzEc-32YgRmqPDA2_ftMs",
+        "Latitude": 25.729464999999998,
+        "Longitude": -80.241984
     },
     {
         "Name": "Club Pilates",
@@ -10353,9 +10885,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "117 SW 10th St Suite 103, Miami, FL 33130, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Brickell",
+        "Place ID": "ChIJmd3RyoW22YgRgSHggIXx7H0",
+        "Latitude": 25.764588099999997,
+        "Longitude": -80.1960352
     },
     {
         "Name": "CADiLab Pilates",
@@ -10375,8 +10911,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "2750 Coral Wy Suite 206, Miami, FL 33145, USA",
+        "Price Scraped": true,
+        "District": "Coral Way",
+        "Place ID": "ChIJR2xg-CO32YgRH8MBEVGInrc",
+        "Latitude": 25.7498133,
+        "Longitude": -80.2396436
     },
     {
         "Name": "The Pilates Place Studios",
@@ -10396,8 +10936,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "5400 Federal Hwy #4A, Miami, FL 33137, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJA2NTi1-x2YgR-k83ncaPpgc",
+        "Latitude": 25.825906999999997,
+        "Longitude": -80.187483
     },
     {
         "Name": "Pilatay - Classical Pilates Studio",
@@ -10417,10 +10961,14 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "2357 SW 22nd St, Miami, FL 33145, USA",
         "Price Scraped": true,
         "Price Single": 115,
-        "Price Source URL": "https://www.miami-pilates.com/pricing"
+        "Price Source URL": "https://www.miami-pilates.com/pricing",
+        "District": "Coral Way",
+        "Place ID": "ChIJy4EqG9e32YgRXsKV0fvyh8M",
+        "Latitude": 25.750652,
+        "Longitude": -80.2332881
     },
     {
         "Name": "Pilathon Pilates - Wynwood",
@@ -10440,11 +10988,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "2700 N Miami Ave, Miami, FL 33127, USA",
         "Price Scraped": true,
         "Price Single": 45,
         "Price Source URL": "https://pilathon.com/?y_source=1_MTAxMDQ5ODU5OC03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
-        "Price Intro": 45
+        "Price Intro": 45,
+        "District": "Wynwood Art District",
+        "Place ID": "ChIJ2Vls3qy22YgRD2sY08i9BfU",
+        "Latitude": 25.802771999999997,
+        "Longitude": -80.19569899999999
     },
     {
         "Name": "BREATHE PILATES Miami",
@@ -10464,8 +11016,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "8650 Biscayne Blvd #31, El Portal, FL 33138, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJS9gonNSz2YgR5IymBjSMyOU",
+        "Latitude": 25.855062399999998,
+        "Longitude": -80.1860976
     },
     {
         "Name": "Renegade Pilates",
@@ -10485,9 +11041,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "8250 Biscayne Blvd Ste 200, Miami, FL 33138, USA",
         "Price Scraped": true,
-        "Price Intro": 115
+        "Price Intro": 115,
+        "District": "Upper East Side",
+        "Place ID": "ChIJ4xXI7dSz2YgRLjt4UQTwQOU",
+        "Latitude": 25.850995599999997,
+        "Longitude": -80.18494079999999
     },
     {
         "Name": "Pilates in the Grove- Coconut Grove",
@@ -10507,11 +11067,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "3316 Virginia St, Coconut Grove, FL 33133, USA",
         "Price Scraped": true,
         "Price Single": 110,
         "Price Source URL": "https://www.pilatesinthegrove.com/classes",
-        "Price Intro": 120
+        "Price Intro": 120,
+        "District": "Coconut Grove",
+        "Place ID": "ChIJVXjzEc-32YgRmqPDA2_ftMs",
+        "Latitude": 25.729464999999998,
+        "Longitude": -80.241984
     },
     {
         "Name": "The Method- Pilates",
@@ -10531,7 +11095,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "1129 71st St, Miami Beach, FL 33141, USA",
+        "District": "Normandy Isles",
+        "Place ID": "ChIJH68isgOz2YgRhcHtXl5D64Y",
+        "Latitude": 25.854945999999998,
+        "Longitude": -80.1302475
     },
     {
         "Name": "Pinecrest Pilates- Miami Pilates Studio",
@@ -10551,8 +11119,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "12115 S Dixie Hwy, Miami, FL 33156, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJyQWX1_DG2YgRbF6hYmULYw4",
+        "Latitude": 25.657967199999998,
+        "Longitude": -80.32687279999999
     },
     {
         "Name": "Eleven Pilates",
@@ -10572,11 +11144,15 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "111 SW 3rd St Suite 103, Miami, FL 33130, USA",
         "Price Scraped": true,
         "Price Single": 35,
         "Price Source URL": "http://www.elevenpilates.com/classes",
-        "Price Intro": 100
+        "Price Intro": 100,
+        "District": "Downtown Miami",
+        "Place ID": "ChIJhcHCJa_hmmIRAa_2jyB7r7Q",
+        "Latitude": 25.7719573,
+        "Longitude": -80.195982
     },
     {
         "Name": "Pilates One",
@@ -10596,8 +11172,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "2900 SW 28th Terrace Ste 101, Coconut Grove, FL 33133, USA",
+        "Price Scraped": true,
+        "District": "Coconut Grove",
+        "Place ID": "ChIJW-q6PbS32YgRR_M7Rj-xOOA",
+        "Latitude": 25.7384867,
+        "Longitude": -80.2402802
     },
     {
         "Name": "Paz Pilates Miami",
@@ -10617,7 +11197,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "1650 Tigertail Ave, Miami, FL 33133, USA",
+        "District": "Coconut Grove",
+        "Place ID": "ChIJV5PQWRC32YgRffHQkDCbpoI",
+        "Latitude": 25.7425177,
+        "Longitude": -80.2204509
     },
     {
         "Name": "Pilathon Pilates - Little River",
@@ -10637,11 +11221,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "8301 NE 2nd Ave, Miami, FL 33138, USA",
         "Price Scraped": true,
         "Price Single": 45,
         "Price Source URL": "https://pilathon.com/?y_source=1_MTAxMDUwMDg0My03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
-        "Price Intro": 45
+        "Price Intro": 45,
+        "District": "Little River",
+        "Place ID": "ChIJHaqBAHGx2YgREQDdSGctlWg",
+        "Latitude": 25.8515688,
+        "Longitude": -80.19275329999999
     },
     {
         "Name": "Pilates Zone",
@@ -10661,8 +11249,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "260 Crandon Blvd #15, Key Biscayne, FL 33149, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJr_z0X23K2YgRk4j-fIeYl8M",
+        "Latitude": 25.696114599999998,
+        "Longitude": -80.1640503
     },
     {
         "Name": "Club Pilates",
@@ -10682,9 +11274,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "3252 Buena Vista Blvd Unit 102, Miami, FL 33137, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Wynwood Art District",
+        "Place ID": "ChIJe3w7pn-x2YgRb8-v-IFIso8",
+        "Latitude": 25.8077114,
+        "Longitude": -80.1935099
     },
     {
         "Name": "NV Pilates",
@@ -10704,8 +11300,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "540 Brickell Key Dr, Miami, FL 33131, USA",
+        "Price Scraped": true,
+        "District": "Brickell",
+        "Place ID": "ChIJKz3zKVq12YgR5cgdjZ1c_Vo",
+        "Latitude": 25.768002799999998,
+        "Longitude": -80.1837141
     },
     {
         "Name": "JETSET Pilates - Downtown Miami",
@@ -10725,11 +11325,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "151 SE 1st St Fl 3, Miami, FL 33131, USA",
         "Price Scraped": true,
         "Price Single": 19,
         "Price Source URL": "http://www.jetsetpilates.com/downtown-miami/pricing",
-        "Price Intro": 49
+        "Price Intro": 49,
+        "District": "Downtown Miami",
+        "Place ID": "ChIJaWNFnh632YgRaNMmhYRpFfw",
+        "Latitude": 25.7736231,
+        "Longitude": -80.1906577
     },
     {
         "Name": "Miami Pilates",
@@ -10749,8 +11353,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "2823 NW 3rd Ave #137, Miami, FL 33127, USA",
+        "Price Scraped": true,
+        "District": "Wynwood Art District",
+        "Place ID": "ChIJYdOfHd232YgRg1ZElw62AsI",
+        "Latitude": 25.8033359,
+        "Longitude": -80.2010821
     },
     {
         "Name": "FLY Pilates Miami",
@@ -10770,8 +11378,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "7601 E Treasure Dr Cu-8, North Bay Village, FL 33141, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJR9jZqDGz2YgRXuPbsCOJ2oc",
+        "Latitude": 25.847663599999997,
+        "Longitude": -80.145714
     },
     {
         "Name": "Pilates with Peggy",
@@ -10791,8 +11403,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "245 NE 14th St, Miami, FL 33132, USA",
+        "Price Scraped": true,
+        "District": "Downtown Miami",
+        "Place ID": "ChIJgRnEKqa32YgR-y2-6KyKWnc",
+        "Latitude": 25.7883872,
+        "Longitude": -80.1901129
     },
     {
         "Name": "South Beach Pilates",
@@ -10812,9 +11428,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "300 Arthur Godfrey Rd Suite 214, Miami Beach, FL 33140, USA",
         "Price Scraped": true,
-        "Price Intro": 105
+        "Price Intro": 105,
+        "District": "Bayshore",
+        "Place ID": "ChIJp4D8knCz2YgRbMrYXA5ReVU",
+        "Latitude": 25.813088999999998,
+        "Longitude": -80.1269832
     },
     {
         "Name": "Method K Pilates",
@@ -10834,11 +11454,15 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "5801 NE 4th Ct, Miami, FL 33137, USA",
         "Price Scraped": true,
         "Price Single": 100,
         "Price Source URL": "https://www.methodkpilates.com/",
-        "Price Intro": 100
+        "Price Intro": 100,
+        "District": "Upper East Side",
+        "Place ID": "ChIJrS5ielez2YgRBT9E-mvCUA0",
+        "Latitude": 25.829388100000003,
+        "Longitude": -80.18664299999999
     },
     {
         "Name": "The Pilates Place Studios",
@@ -10858,8 +11482,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "5400 Federal Hwy #4A, Miami, FL 33137, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJA2NTi1-x2YgR-k83ncaPpgc",
+        "Latitude": 25.825906999999997,
+        "Longitude": -80.187483
     },
     {
         "Name": "Springs & Slings Pilates - South Beach",
@@ -10879,10 +11507,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "407 Lincoln Rd Ste 506, Miami Beach, FL 33139, USA",
         "Price Scraped": true,
         "Price Single": 65,
-        "Price Source URL": "http://springsandslings.com/pricing"
+        "Price Source URL": "http://springsandslings.com/pricing",
+        "District": "City Center",
+        "Place ID": "ChIJf6uGyAy12YgRcq8ju89vGx4",
+        "Latitude": 25.7909886,
+        "Longitude": -80.1321248
     },
     {
         "Name": "Pilates on the Beach Studio",
@@ -10902,8 +11534,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "712 W 51st St, Miami Beach, FL 33140, USA",
+        "Price Scraped": true,
+        "District": "La Gorce",
+        "Place ID": "ChIJGciDS96z2YgRiKUeOCr27gA",
+        "Latitude": 25.8271309,
+        "Longitude": -80.1295501
     },
     {
         "Name": "Club Pilates",
@@ -10923,9 +11559,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "3252 Buena Vista Blvd Unit 102, Miami, FL 33137, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Wynwood Art District",
+        "Place ID": "ChIJe3w7pn-x2YgRb8-v-IFIso8",
+        "Latitude": 25.8077114,
+        "Longitude": -80.1935099
     },
     {
         "Name": "Club Pilates",
@@ -10945,9 +11585,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "3252 Buena Vista Blvd Unit 102, Miami, FL 33137, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Wynwood Art District",
+        "Place ID": "ChIJe3w7pn-x2YgRb8-v-IFIso8",
+        "Latitude": 25.8077114,
+        "Longitude": -80.1935099
     },
     {
         "Name": "Polestar Pilates Dadeland",
@@ -10967,8 +11611,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "9015 Dadeland Blvd #F104, Miami, FL 33156, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJmwKrdfvH2YgReSzdkFWimHU",
+        "Latitude": 25.6866,
+        "Longitude": -80.31322569999999
     },
     {
         "Name": "Pilates Strong Studio",
@@ -10988,8 +11636,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "320 Miracle Mile #204, Coral Gables, FL 33134, USA",
+        "Price Scraped": true,
+        "District": "Crafts",
+        "Place ID": "ChIJvcEko5C32YgRL0YXZ4WeHNc",
+        "Latitude": 25.7491183,
+        "Longitude": -80.26122389999999
     },
     {
         "Name": "Reforming Pilates Miami Beach",
@@ -11009,8 +11661,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "1560 Lenox Ave., Miami Beach, FL 33139, USA",
+        "Price Scraped": true,
+        "District": "South Beach",
+        "Place ID": "ChIJF7tw9MC12YgR5TVDWmCXi7o",
+        "Latitude": 25.788706400000002,
+        "Longitude": -80.14032879999999
     },
     {
         "Name": "Sensory Pilates & Wellness",
@@ -11030,11 +11686,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "8790 SW 132nd St, Miami, FL 33176, USA",
         "Price Scraped": true,
         "Price Single": 40,
         "Price Source URL": "http://www.experiencesensory.com/",
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "",
+        "Place ID": "ChIJl43BD5PG2YgRPxfh6QMBqNI",
+        "Latitude": 25.6472274,
+        "Longitude": -80.33596560000001
     },
     {
         "Name": "Pilates Miami Shores",
@@ -11054,8 +11714,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "Parking & entrance in the rear, 11098 Biscayne Blvd #301, Miami, FL 33161, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJI6lu1o6x2YgRRlxElj19cms",
+        "Latitude": 25.8781944,
+        "Longitude": -80.1684298
     },
     {
         "Name": "JETSET Pilates - NoMi (North Miami)",
@@ -11075,8 +11739,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "12000 Biscayne Blvd Ste 108, Miami, FL 33181, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJgbEGg6qz2YgRZv7BsZaDI0Q",
+        "Latitude": 25.8869459,
+        "Longitude": -80.165229
     },
     {
         "Name": "Kenergy Pilates",
@@ -11096,9 +11764,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "7411 Biscayne Blvd, Miami, FL 33138, USA",
         "Price Scraped": true,
-        "Price Intro": 20
+        "Price Intro": 20,
+        "District": "Upper East Side",
+        "Place ID": "ChIJJYg-Nz6z2YgRalVeMWVC7Co",
+        "Latitude": 25.8434924,
+        "Longitude": -80.1841589
     },
     {
         "Name": "Glow Pilates Reformer",
@@ -11118,8 +11790,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "349 Aragon Ave, Coral Gables, FL 33134, USA",
+        "Price Scraped": true,
+        "District": "Coral Gables Section",
+        "Place ID": "ChIJT2Kq7BG32YgRs5oZFV0a-ks",
+        "Latitude": 25.7504234,
+        "Longitude": -80.2615907
     },
     {
         "Name": "Pilates Studio Yam",
@@ -11139,8 +11815,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "7902 NW 36th St unit 209, Doral, FL 33166, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJESDcJuy52YgRZ0yOvasEp8Q",
+        "Latitude": 25.8078054,
+        "Longitude": -80.32760239999999
     },
     {
         "Name": "JETSET Pilates - Brickell",
@@ -11160,8 +11840,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "40 SW 13th St #504, Miami, FL 33130, USA",
+        "Price Scraped": true,
+        "District": "Brickell",
+        "Place ID": "ChIJEwD0woa22YgRe6cwtxO0mig",
+        "Latitude": 25.76097,
+        "Longitude": -80.194372
     },
     {
         "Name": "Club Pilates",
@@ -11181,9 +11865,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "117 SW 10th St Suite 103, Miami, FL 33130, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Brickell",
+        "Place ID": "ChIJmd3RyoW22YgRgSHggIXx7H0",
+        "Latitude": 25.764588099999997,
+        "Longitude": -80.1960352
     },
     {
         "Name": "AVIVA PILATES",
@@ -11203,8 +11891,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "3100 N 29th Ct, Hollywood, FL 33020, USA",
+        "Price Scraped": true,
+        "District": "Oakwood",
+        "Place ID": "ChIJVZV_0xar2YgRWIZ39-Jdy-8",
+        "Latitude": 26.0384127,
+        "Longitude": -80.1673344
     },
     {
         "Name": "Elev8 Pilates",
@@ -11224,9 +11916,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "1001 Ponce de Leon Blvd Ste d, Coral Gables, FL 33134, USA",
         "Price Scraped": true,
-        "Intro Offer": "50% off first visit"
+        "Intro Offer": "50% off first visit",
+        "District": "Douglas",
+        "Place ID": "ChIJ9xSCBUS32YgRE1FmW1SJFEI",
+        "Latitude": 25.761991599999998,
+        "Longitude": -80.2589105
     },
     {
         "Name": "Babe Hot Pilates",
@@ -11246,8 +11942,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "2119 NW 2nd Ave, Miami, FL 33127, USA",
+        "Price Scraped": true,
+        "District": "Wynwood Art District",
+        "Place ID": "ChIJAWc52x232YgRfEPRyByCz_0",
+        "Latitude": 25.797234699999997,
+        "Longitude": -80.1988208
     },
     {
         "Name": "JETSET Pilates - South of Fifth",
@@ -11267,8 +11967,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "110 Washington Ave, Miami Beach, FL 33139, USA",
+        "Price Scraped": true,
+        "District": "South Beach",
+        "Place ID": "ChIJ_w5pffG02YgRm_KbnBmI7E8",
+        "Latitude": 25.7706029,
+        "Longitude": -80.1352472
     },
     {
         "Name": "Pilates Gaia",
@@ -11288,10 +11992,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "210 Valencia Ave Ste 300, Coral Gables, FL 33134, USA",
         "Price Scraped": true,
         "Price Single": 45,
-        "Price Source URL": "http://pilatesgaia.com/studiopilatesclass"
+        "Price Source URL": "http://pilatesgaia.com/studiopilatesclass",
+        "District": "Crafts",
+        "Place ID": "ChIJKU65PuC32YgRinakTEs0eio",
+        "Latitude": 25.7476107,
+        "Longitude": -80.2591569
     },
     {
         "Name": "PilatesPlate",
@@ -11311,8 +12019,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "1513 SW 2nd Ave, Miami, FL 33129, USA",
+        "Price Scraped": true,
+        "District": "Brickell",
+        "Place ID": "ChIJG94ky4e22YgRLtdRj2m0gEw",
+        "Latitude": 25.7600264,
+        "Longitude": -80.1973356
     },
     {
         "Name": "Pilates Rejuvenation & Wellness",
@@ -11332,7 +12044,11 @@
         "Group": false,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "1513 SW 2nd Ave, Miami, FL 33129, USA",
+        "District": "Brickell",
+        "Place ID": "ChIJG94ky4e22YgRLtdRj2m0gEw",
+        "Latitude": 25.7600264,
+        "Longitude": -80.1973356
     },
     {
         "Name": "Beau Monde Pilates",
@@ -11352,12 +12068,16 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "500 South Pointe Dr Apt 120, Miami Beach, FL 33139, USA",
         "Price Scraped": true,
         "Price Single": 45,
         "Price Source URL": "https://beaumondepilates.com/pricing-south-of-fifth",
         "Price Intro": 99,
-        "Intro Offer": "3 classes for $99"
+        "Intro Offer": "3 classes for $99",
+        "District": "South Beach",
+        "Place ID": "ChIJleWkJha12YgRBCejxvseZFg",
+        "Latitude": 25.7680014,
+        "Longitude": -80.1349331
     },
     {
         "Name": "Hauser Bayside Pilates",
@@ -11377,9 +12097,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "1819 West Ave, Miami Beach, FL 33139, USA",
         "Price Scraped": true,
-        "Price Intro": 75
+        "Price Intro": 75,
+        "District": "Bayshore",
+        "Place ID": "ChIJmUrNVYe02YgRktTLvIgQ0Tg",
+        "Latitude": 25.7940087,
+        "Longitude": -80.14229139999999
     },
     {
         "Name": "Transition Pilates",
@@ -11399,7 +12123,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "3183 SW 38th Ct, Miami, FL 33134, USA",
+        "District": "Coral Way",
+        "Place ID": "ChIJ1c2yppe32YgR5Y_X--6othw",
+        "Latitude": 25.732384600000003,
+        "Longitude": -80.2566253
     },
     {
         "Name": "Alma Pilates",
@@ -11419,8 +12147,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "9831 NW 58th St Unit 135, Doral, FL 33178, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJrY_rCfC72YgRXloSxcm4U0o",
+        "Latitude": 25.8267252,
+        "Longitude": -80.35571929999999
     },
     {
         "Name": "JETSET Pilates - Edgewater",
@@ -11440,8 +12172,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "2063 Biscayne Blvd Ste C301B, Miami, FL 33137, USA",
+        "Price Scraped": true,
+        "District": "Edgewater",
+        "Place ID": "ChIJWVWGB7O22YgR6e5xkCUBf1M",
+        "Latitude": 25.796301,
+        "Longitude": -80.18862709999999
     },
     {
         "Name": "Conscious Movement Pilates",
@@ -11461,8 +12197,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "4649 Ponce de Leon Blvd #400, Coral Gables, FL 33146, USA",
+        "Price Scraped": true,
+        "District": "Riviera",
+        "Place ID": "ChIJc8HTduy32YgR9jwzA8rUb9c",
+        "Latitude": 25.7265248,
+        "Longitude": -80.2634506
     },
     {
         "Name": "Forrest Pilates Inc.",
@@ -11482,10 +12222,14 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "936 NW 9th Ct, Miami, FL 33136, USA",
         "Price Scraped": true,
         "Price Single": 55,
-        "Price Source URL": "http://www.forrestpilates.com/group-pilates-classes-miami"
+        "Price Source URL": "http://www.forrestpilates.com/group-pilates-classes-miami",
+        "District": "Overtown",
+        "Place ID": "ChIJq8r3EsC22YgR43HbY5WmWyA",
+        "Latitude": 25.78296,
+        "Longitude": -80.210639
     },
     {
         "Name": "Lit Pilates",
@@ -11505,10 +12249,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "570 NE 70th St, Miami, FL 33138, USA",
         "Price Scraped": true,
         "Price Single": 75,
-        "Price Source URL": "http://litpilates.com/"
+        "Price Source URL": "http://litpilates.com/",
+        "District": "Upper East Side",
+        "Place ID": "ChIJVzfLWpmz2YgRmTxU-V7Ahig",
+        "Latitude": 25.839395099999997,
+        "Longitude": -80.1850511
     },
     {
         "Name": "Sundara Pilates",
@@ -11528,8 +12276,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "3794 Irvington Ave, Miami, FL 33133, USA",
+        "Price Scraped": true,
+        "District": "Coconut Grove",
+        "Place ID": "ChIJ2_76chO32YgR82LrbAImUU0",
+        "Latitude": 25.722317999999998,
+        "Longitude": -80.2549794
     },
     {
         "Name": "Miami Beach Pilates Studio",
@@ -11549,10 +12301,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "763 W 41st St Ste a, Miami Beach, FL 33140, USA",
         "Price Scraped": true,
         "Price Single": 45,
-        "Price Source URL": "http://miamibeachpilatesstudio.com/pricing"
+        "Price Source URL": "http://miamibeachpilatesstudio.com/pricing",
+        "District": "Nautilus",
+        "Place ID": "ChIJSQLyPYW22YgRrdp8zKZ30yg",
+        "Latitude": 25.814154,
+        "Longitude": -80.132194
     },
     {
         "Name": "JETSET Pilates - Merrick Park",
@@ -11572,8 +12328,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "4102A Ponce de Leon Blvd, Coral Gables, FL 33146, USA",
+        "Price Scraped": true,
+        "District": "Industrial Section",
+        "Place ID": "ChIJyRHHr0G32YgRLf_Hx-OVhIk",
+        "Latitude": 25.7336307,
+        "Longitude": -80.2588011
     },
     {
         "Name": "Renee Ricca's Pilates Center Aventura",
@@ -11593,8 +12353,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "18131 Biscayne Blvd, Aventura, FL 33160, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJvebFnlSs2YgRdExcPmKrVCc",
+        "Latitude": 25.942743,
+        "Longitude": -80.14741400000001
     },
     {
         "Name": "The Pilates Loft",
@@ -13597,9 +14361,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "907 W Madison St, Chicago, IL 60607, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "West Loop",
+        "Place ID": "ChIJb-C7cNssDogRoMWJAY7yCMA",
+        "Latitude": 41.8815914,
+        "Longitude": -87.6502172
     },
     {
         "Name": "Pilates Center of Chicago",
@@ -13619,9 +14387,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "4001 N Ravenswood Ave #404, Chicago, IL 60613, USA",
         "Price Scraped": true,
-        "Price Intro": 78
+        "Price Intro": 78,
+        "District": "Lake View",
+        "Place ID": "ChIJ40jWtkDSD4gRRa3lDwyNPps",
+        "Latitude": 41.954527999999996,
+        "Longitude": -87.67331
     },
     {
         "Name": "Cue Pilates",
@@ -13641,7 +14413,11 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided"
+        "Address": "664 W Hubbard St, Chicago, IL 60654, USA",
+        "District": "West Town",
+        "Place ID": "ChIJxbGY8VMtDogRQTQty0hwSt4",
+        "Latitude": 41.890237299999995,
+        "Longitude": -87.64554059999999
     },
     {
         "Name": "Lincoln Park Pilates",
@@ -13661,9 +14437,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "2105 N Southport Ave #200, Chicago, IL 60614, USA",
         "Price Scraped": true,
-        "Price Intro": 45
+        "Price Intro": 45,
+        "District": "Lincoln Park",
+        "Place ID": "ChIJP19zIv3TD4gR3FckPs4r5-w",
+        "Latitude": 41.920249999999996,
+        "Longitude": -87.66299099999999
     },
     {
         "Name": "Pilatesville",
@@ -13683,8 +14463,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "329 E Ontario St, Chicago, IL 60611, USA",
+        "Price Scraped": true,
+        "District": "Streeterville",
+        "Place ID": "ChIJbwt7DDktDogRepMCZLXUuh0",
+        "Latitude": 41.893310799999995,
+        "Longitude": -87.6190158
     },
     {
         "Name": "BODYBAR Pilates",
@@ -13704,8 +14488,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "1474 N Milwaukee Ave, Chicago, IL 60622, USA",
+        "Price Scraped": true,
+        "District": "West Town",
+        "Place ID": "ChIJVYQMts7TD4gRTRh_r_r7Z7w",
+        "Latitude": 41.908558899999996,
+        "Longitude": -87.6750735
     },
     {
         "Name": "Studio West Pilates",
@@ -13725,11 +14513,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "2107 W Caton St, Chicago, IL 60647, USA",
         "Price Scraped": true,
         "Price Single": 120,
         "Price Source URL": "https://www.studio-west-pilates.com/privatesessionspricing",
-        "Price Intro": 75
+        "Price Intro": 75,
+        "District": "West Town",
+        "Place ID": "ChIJwdS2H5DTD4gRwquZdi8Y5Qg",
+        "Latitude": 41.9117725,
+        "Longitude": -87.6802606
     },
     {
         "Name": "ReForm Pilates",
@@ -13749,12 +14541,16 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "2819 N Lincoln Ave, Chicago, IL 60657, USA",
         "Price Scraped": true,
         "Price Single": 46,
         "Price Source URL": "https://www.reformpilateschicago.com/",
         "Price Intro": 70,
-        "Intro Offer": "2 classes for $70"
+        "Intro Offer": "2 classes for $70",
+        "District": "Lake View",
+        "Place ID": "ChIJ0dsP7GrTD4gR6mJr6PpUyjk",
+        "Latitude": 41.933188699999995,
+        "Longitude": -87.65924849999999
     },
     {
         "Name": "Resolve Pilates",
@@ -13774,8 +14570,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "Lower Level, 826 W Armitage Ave, Chicago, IL 60614, USA",
+        "Price Scraped": true,
+        "District": "Lincoln Park",
+        "Place ID": "ChIJM_CWMsjTD4gRTCYWCmL3Ra4",
+        "Latitude": 41.9184165,
+        "Longitude": -87.64958870000001
     },
     {
         "Name": "Pilatesville - Lincoln Park",
@@ -13795,8 +14595,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "1617 N Clybourn Ave, Chicago, IL 60614, USA",
+        "Price Scraped": true,
+        "District": "Lincoln Park",
+        "Place ID": "ChIJe5jWaBLTD4gRR0XsoOlT_L8",
+        "Latitude": 41.911528399999995,
+        "Longitude": -87.6499572
     },
     {
         "Name": "Metaphysical Pilates",
@@ -13816,8 +14620,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "1048 W Fulton Market, Chicago, IL 60607, USA",
+        "Price Scraped": true,
+        "District": "Fulton Market District",
+        "Place ID": "ChIJc8ZuyW0tDogRDqEVLThkfjY",
+        "Latitude": 41.8869099,
+        "Longitude": -87.6541621
     },
     {
         "Name": "Top Shelf Pilates\u00ae\ufe0f",
@@ -13837,8 +14645,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "5015 N Clark St, Chicago, IL 60640, USA",
+        "Price Scraped": true,
+        "District": "Uptown",
+        "Place ID": "ChIJs7Rcib3TD4gRJtEq391srzA",
+        "Latitude": 41.972975100000006,
+        "Longitude": -87.66762
     },
     {
         "Name": "Restore Pilates Chicago",
@@ -13858,8 +14670,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "4845 N Damen Ave, Chicago, IL 60625, USA",
+        "Price Scraped": true,
+        "District": "Lincoln Square",
+        "Place ID": "ChIJjYaA0VTTD4gRAA-Z4Evf-9o",
+        "Latitude": 41.9701094,
+        "Longitude": -87.6790276
     },
     {
         "Name": "Studio Pilates Chicago",
@@ -13879,8 +14695,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "445 W Erie St #205, Chicago, IL 60654, USA",
+        "Price Scraped": true,
+        "District": "River North",
+        "Place ID": "ChIJTTngenAtDogRTfjIk3us-0w",
+        "Latitude": 41.893699,
+        "Longitude": -87.64034000000001
     },
     {
         "Name": "Pure Pilates Chicago",
@@ -13900,8 +14720,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "833 W Chicago Ave #600, Chicago, IL 60642, USA",
+        "Price Scraped": true,
+        "District": "West Town",
+        "Place ID": "ChIJyWXYlNksDogRwsZpApwF7Zk",
+        "Latitude": 41.896262799999995,
+        "Longitude": -87.6491534
     },
     {
         "Name": "BODYBAR Pilates",
@@ -13921,8 +14745,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "1474 N Milwaukee Ave, Chicago, IL 60622, USA",
+        "Price Scraped": true,
+        "District": "West Town",
+        "Place ID": "ChIJVYQMts7TD4gRTRh_r_r7Z7w",
+        "Latitude": 41.908558899999996,
+        "Longitude": -87.6750735
     },
     {
         "Name": "Club Pilates",
@@ -13942,9 +14770,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "710 S Clark St, Chicago, IL 60605, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Chicago Loop",
+        "Place ID": "ChIJL8hzZOItDogRoPlY0tmCSbg",
+        "Latitude": 41.8729387,
+        "Longitude": -87.6308225
     },
     {
         "Name": "Core Chicago Pilates",
@@ -13964,11 +14796,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "3000 N Sheffield Ave, Chicago, IL 60657, USA",
         "Price Scraped": true,
         "Price Single": 45,
         "Price Source URL": "https://www.corechicagopilates.com/pricing",
-        "Price Intro": 110
+        "Price Intro": 110,
+        "District": "Lake View East",
+        "Place ID": "ChIJ8__ex4LTD4gRx8T1ZzvIi80",
+        "Latitude": 41.9364175,
+        "Longitude": -87.6542532
     },
     {
         "Name": "Core Chicago Pilates",
@@ -13988,11 +14824,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "3000 N Sheffield Ave, Chicago, IL 60657, USA",
         "Price Scraped": true,
         "Price Single": 45,
         "Price Source URL": "http://www.corechicagopilates.com/pricing",
-        "Price Intro": 110
+        "Price Intro": 110,
+        "District": "Lake View East",
+        "Place ID": "ChIJ8__ex4LTD4gRx8T1ZzvIi80",
+        "Latitude": 41.9364175,
+        "Longitude": -87.6542532
     },
     {
         "Name": "Club Pilates",
@@ -14012,9 +14852,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": true,
-        "Address": "No Address Provided",
+        "Address": "907 W Madison St, Chicago, IL 60607, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "West Loop",
+        "Place ID": "ChIJb-C7cNssDogRoMWJAY7yCMA",
+        "Latitude": 41.8815914,
+        "Longitude": -87.6502172
     },
     {
         "Name": "Studio 8 Pilates",
@@ -14034,11 +14878,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "3656 N Lincoln Ave F, Chicago, IL 60613, USA",
         "Price Scraped": true,
         "Price Single": 115,
         "Price Source URL": "http://www.studio8chicago.com/private-pilates",
-        "Price Intro": 75
+        "Price Intro": 75,
+        "District": "North Center",
+        "Place ID": "ChIJq1gBqkPSD4gRM36B3XoFCnk",
+        "Latitude": 41.948305,
+        "Longitude": -87.674841
     },
     {
         "Name": "Amplified Pilates Center",
@@ -14058,8 +14906,12 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "314 W Institute Pl, Chicago, IL 60610, USA",
+        "Price Scraped": true,
+        "District": "Near North",
+        "Place ID": "ChIJG6NG2UrTD4gRY1ng7WTfWO0",
+        "Latitude": 41.897786499999995,
+        "Longitude": -87.636366
     },
     {
         "Name": "Club Pilates",
@@ -14079,9 +14931,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "710 S Clark St, Chicago, IL 60605, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Chicago Loop",
+        "Place ID": "ChIJL8hzZOItDogRoPlY0tmCSbg",
+        "Latitude": 41.8729387,
+        "Longitude": -87.6308225
     },
     {
         "Name": "Ab&Flow Pilates Studio",
@@ -14101,10 +14957,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "1704 N Wells St, Chicago, IL 60614, USA",
         "Price Scraped": true,
         "Price Single": 105,
-        "Price Source URL": "https://abandflow.com/pricing"
+        "Price Source URL": "https://abandflow.com/pricing",
+        "District": "Old Town Triangle",
+        "Place ID": "ChIJgdWtgI7TD4gR816I724nJf4",
+        "Latitude": 41.913109999999996,
+        "Longitude": -87.6349338
     },
     {
         "Name": "Platform Pilates",
@@ -14124,8 +14984,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "445 W Erie St #106, Chicago, IL 60654, USA",
+        "Price Scraped": true,
+        "District": "River North",
+        "Place ID": "ChIJ0eRj6CUtDogRLNouOQNsCuU",
+        "Latitude": 41.8936928,
+        "Longitude": -87.6404272
     },
     {
         "Name": "Club Pilates",
@@ -14145,9 +15009,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": true,
-        "Address": "No Address Provided",
+        "Address": "710 S Clark St, Chicago, IL 60605, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Chicago Loop",
+        "Place ID": "ChIJL8hzZOItDogRoPlY0tmCSbg",
+        "Latitude": 41.8729387,
+        "Longitude": -87.6308225
     },
     {
         "Name": "Pilates + Coffee",
@@ -14167,8 +15035,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "2144 W Roscoe St Unit b, Chicago, IL 60618, USA",
+        "Price Scraped": true,
+        "District": "North Center",
+        "Place ID": "ChIJ-yUKgGbSD4gRXy4LY-qtf10",
+        "Latitude": 41.943297699999995,
+        "Longitude": -87.6826397
     },
     {
         "Name": "High Bridge Pilates",
@@ -14188,11 +15060,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "3722 N Ashland Ave, Chicago, IL 60613, USA",
         "Price Scraped": true,
         "Price Single": 100,
         "Price Source URL": "https://www.highbridgepilates.com/private-and-duet-sessions",
-        "Price Intro": 99
+        "Price Intro": 99,
+        "District": "Lake View",
+        "Place ID": "ChIJ33zoKnnTD4gRaxyTFUHPZTA",
+        "Latitude": 41.9495006,
+        "Longitude": -87.6693325
     },
     {
         "Name": "LightSpace Pilates & Wellness",
@@ -14212,10 +15088,14 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "2732 N Clark St Fl 2, Chicago, IL 60614, USA",
         "Price Scraped": true,
         "Price Single": 20,
-        "Price Source URL": "https://lightspacechicago.com/services-rates/"
+        "Price Source URL": "https://lightspacechicago.com/services-rates/",
+        "District": "Lincoln Park",
+        "Place ID": "ChIJwQnt6gHTD4gRo2_5OXe_3Lw",
+        "Latitude": 41.932209,
+        "Longitude": -87.6449373
     },
     {
         "Name": "Full Circle Pilates",
@@ -14235,11 +15115,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "1937 N Damen Ave, Chicago, IL 60647, USA",
         "Price Scraped": true,
         "Price Single": 45,
         "Price Source URL": "http://www.fullcirclechicago.com/prices",
-        "Price Intro": 35
+        "Price Intro": 35,
+        "District": "Bucktown",
+        "Place ID": "ChIJr1A_dsPTD4gRmFX1jUAvals",
+        "Latitude": 41.917071899999996,
+        "Longitude": -87.67732199999999
     },
     {
         "Name": "Motus Functional Fitness and Pilates",
@@ -14259,8 +15143,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "409 W Huron St #300, Chicago, IL 60654, USA",
+        "Price Scraped": true,
+        "District": "River North",
+        "Place ID": "ChIJ9SD2_L8tDogRZMOT_kZGDyU",
+        "Latitude": 41.894540299999996,
+        "Longitude": -87.63903239999999
     },
     {
         "Name": "Frog Temple Pilates Studio",
@@ -14280,10 +15168,14 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "1635 W Cortland St #2, Chicago, IL 60622, USA",
         "Price Scraped": true,
         "Price Single": 25,
-        "Price Source URL": "http://www.frogtemple.com/classes-page"
+        "Price Source URL": "http://www.frogtemple.com/classes-page",
+        "District": "Bucktown",
+        "Place ID": "ChIJ28aHfcDSD4gR7kVZzVJNmAQ",
+        "Latitude": 41.9159564,
+        "Longitude": -87.6692881
     },
     {
         "Name": "Reach Pilates Inc",
@@ -14303,8 +15195,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "2024 W Roscoe St, Chicago, IL 60618, USA",
+        "Price Scraped": true,
+        "District": "North Center",
+        "Place ID": "ChIJH596EUHSD4gRTlaIh1vibBE",
+        "Latitude": 41.9433256,
+        "Longitude": -87.6795021
     },
     {
         "Name": "Logan Square Pilates & Core Studio",
@@ -14324,9 +15220,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "2774 N Milwaukee Ave, Chicago, IL 60647, USA",
         "Price Scraped": true,
-        "Price Intro": 100
+        "Price Intro": 100,
+        "District": "Logan Square",
+        "Place ID": "ChIJ1ZctS3HND4gRXD2HLPBVu74",
+        "Latitude": 41.931418699999995,
+        "Longitude": -87.71182189999999
     },
     {
         "Name": "Sana Vita Studio Pilates and Yoga",
@@ -14346,9 +15246,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "1357 W Grand Ave, Chicago, IL 60642, USA",
         "Price Scraped": true,
-        "Price Intro": 60
+        "Price Intro": 60,
+        "District": "West Town",
+        "Place ID": "ChIJJ2wkfSktDogRGxMyPmafamY",
+        "Latitude": 41.89082,
+        "Longitude": -87.661141
     },
     {
         "Name": "LRO Fitness -Pilates & Posture Alignment",
@@ -14368,8 +15272,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "133 N Jefferson St Ste 608 & 610, Chicago, IL 60611, USA",
+        "Price Scraped": true,
+        "District": "West Loop",
+        "Place ID": "ChIJ__-_s8gsDogRK4Q-eL7mAp4",
+        "Latitude": 41.8841891,
+        "Longitude": -87.64245629999999
     },
     {
         "Name": "True Pilates Chicago",
@@ -14389,8 +15297,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "770 N Halsted St Ste 100n, Chicago, IL 60642, USA",
+        "Price Scraped": true,
+        "District": "West Town",
+        "Place ID": "ChIJTYW7hfLTD4gRc04VSBZUZ2M",
+        "Latitude": 41.8961494,
+        "Longitude": -87.6483137
     },
     {
         "Name": "Pilates Advantage",
@@ -14410,9 +15322,13 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "4027 N Broadway, Chicago, IL 60613, USA",
         "Price Scraped": true,
-        "Price Intro": 99
+        "Price Intro": 99,
+        "District": "Uptown",
+        "Place ID": "ChIJDW4I9STTD4gRsXpjI0wbrmk",
+        "Latitude": 41.955386999999995,
+        "Longitude": -87.6506739
     },
     {
         "Name": "Page One Pilates",
@@ -14432,11 +15348,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "213 N Morgan St #1c, Chicago, IL 60607, USA",
         "Price Scraped": true,
         "Price Single": 39,
         "Price Source URL": "http://pageonepilates.com/faq-pricing",
-        "Price Intro": 49
+        "Price Intro": 49,
+        "District": "Fulton Market District",
+        "Place ID": "ChIJcb9MuNssDogRLKIh7PjHqbc",
+        "Latitude": 41.8861943,
+        "Longitude": -87.6518444
     },
     {
         "Name": "Club Pilates",
@@ -14456,9 +15376,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "907 W Madison St, Chicago, IL 60607, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "West Loop",
+        "Place ID": "ChIJb-C7cNssDogRoMWJAY7yCMA",
+        "Latitude": 41.8815914,
+        "Longitude": -87.6502172
     },
     {
         "Name": "Club Pilates",
@@ -14478,9 +15402,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": true,
-        "Address": "No Address Provided",
+        "Address": "907 W Madison St, Chicago, IL 60607, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "West Loop",
+        "Place ID": "ChIJb-C7cNssDogRoMWJAY7yCMA",
+        "Latitude": 41.8815914,
+        "Longitude": -87.6502172
     },
     {
         "Name": "Pilates Practice Inc.",
@@ -14500,8 +15428,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "1016 N Dearborn Pkwy, Chicago, IL 60610, USA",
+        "Price Scraped": true,
+        "District": "Rush & Division",
+        "Place ID": "ChIJVceuaE7TD4gRZLt1FjC3lHY",
+        "Latitude": 41.9011965,
+        "Longitude": -87.63033779999999
     },
     {
         "Name": "Artisan Pilates",
@@ -14521,10 +15453,14 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "740 N Franklin St #10, Chicago, IL 60654, USA",
         "Price Scraped": true,
         "Price Single": 40,
-        "Price Source URL": "http://www.artisanpilates.com/"
+        "Price Source URL": "http://www.artisanpilates.com/",
+        "District": "River North",
+        "Place ID": "ChIJfZJ7O7UsDogRyQISstM3hw8",
+        "Latitude": 41.8959158,
+        "Longitude": -87.6358887
     },
     {
         "Name": "Studio 1002 Pilates",
@@ -14544,8 +15480,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "1002 W Diversey Pkwy, Chicago, IL 60614, USA",
+        "Price Scraped": true,
+        "District": "Lake View East",
+        "Place ID": "ChIJF8YSIQHTD4gRmcF3fMWNtc8",
+        "Latitude": 41.932794099999995,
+        "Longitude": -87.654237
     },
     {
         "Name": "Tabpilates & Bodyworks Center Inc",
@@ -14565,8 +15505,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "6200 S Drexel Ave, Chicago, IL 60637, USA",
+        "Price Scraped": true,
+        "District": "Woodlawn",
+        "Place ID": "ChIJuWdMcCQpDogRn1XgoDlpozs",
+        "Latitude": 41.781934299999996,
+        "Longitude": -87.604879
     },
     {
         "Name": "Emerson Pilates",
@@ -14586,11 +15530,15 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "5637 N Ashland Ave, Chicago, IL 60660, USA",
         "Price Scraped": true,
         "Price Single": 30,
         "Price Source URL": "http://emersonpilates.com/pricing%2Fclasses",
-        "Price Intro": 119
+        "Price Intro": 119,
+        "District": "Andersonville",
+        "Place ID": "ChIJ-71IGJTRD4gRK-Oxs70m2PA",
+        "Latitude": 41.984618,
+        "Longitude": -87.66956019999999
     },
     {
         "Name": "Be Studio Pilates",
@@ -14610,8 +15558,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "1802 W Berteau Ave #214, Chicago, IL 60613, USA",
+        "Price Scraped": true,
+        "District": "North Center",
+        "Place ID": "ChIJxxwvHT_SD4gRW2TV6sE2mEI",
+        "Latitude": 41.958083699999996,
+        "Longitude": -87.6746801
     },
     {
         "Name": "CLEARLY Reformer Pilates",
@@ -14631,8 +15583,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "71 LaGrange Rd, La Grange, IL 60525, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJJ6O-Kz5JDogRJ3EHbDAM5Jk",
+        "Latitude": 41.813252399999996,
+        "Longitude": -87.869207
     },
     {
         "Name": "Club Pilates",
@@ -14652,9 +15608,13 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "907 W Madison St, Chicago, IL 60607, USA",
         "Price Scraped": true,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "West Loop",
+        "Place ID": "ChIJb-C7cNssDogRoMWJAY7yCMA",
+        "Latitude": 41.8815914,
+        "Longitude": -87.6502172
     },
     {
         "Name": "CLEARLY Reformer Pilates",
@@ -14674,8 +15634,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "71 LaGrange Rd, La Grange, IL 60525, USA",
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJJ6O-Kz5JDogRJ3EHbDAM5Jk",
+        "Latitude": 41.813252399999996,
+        "Longitude": -87.869207
     },
     {
         "Name": "reform Physical Therapy + Pilates",
@@ -14695,8 +15659,12 @@
         "Group": true,
         "Tower": false,
         "Free Trial": false,
-        "Address": "No Address Provided",
-        "Price Scraped": true
+        "Address": "228 E Illinois St Upper Illinois, Next to Egg Harbor, 228 E Illinois St, Chicago, IL 60611, USA",
+        "Price Scraped": true,
+        "District": "Streeterville",
+        "Place ID": "ChIJC1szPb8tDogRNgf57cg2To0",
+        "Latitude": 41.8911069,
+        "Longitude": -87.6215469
     },
     {
         "Name": "Engage Pilates",
@@ -14716,11 +15684,15 @@
         "Group": true,
         "Tower": true,
         "Free Trial": false,
-        "Address": "No Address Provided",
+        "Address": "3950 Church St, Evanston, IL 60203, USA",
         "Price Scraped": true,
         "Price Single": 43,
         "Price Source URL": "http://www.engagepilatesstudio.com/pricing",
-        "Price Intro": 85
+        "Price Intro": 85,
+        "District": "",
+        "Place ID": "ChIJa8P_x1fPD4gRUg8PCc0SL8g",
+        "Latitude": 42.048249899999995,
+        "Longitude": -87.7272306
     },
     {
         "Name": "Shyft Pilates",
@@ -46297,7 +47269,11 @@
         "Price Scraped": true,
         "Price Single": 30,
         "Price Source URL": "https://flow-la.com/pricing",
-        "Price Intro": 30
+        "Price Intro": 30,
+        "District": "Downtown Los Angeles",
+        "Place ID": "ChIJr8EYbPXHwoARKijsk_kH9-c",
+        "Latitude": 34.0406919,
+        "Longitude": -118.23254479999999
     },
     {
         "Name": "Common Ground Pilates - West Adams Studio",
@@ -46320,7 +47296,11 @@
         "Free Trial": false,
         "Price Scraped": true,
         "Price Intro": 77,
-        "Intro Offer": "3 classes for $77"
+        "Intro Offer": "3 classes for $77",
+        "District": "South Los Angeles",
+        "Place ID": "ChIJA2BQthW5woARRBSxmhjGuO8",
+        "Latitude": 34.0258718,
+        "Longitude": -118.3451846
     },
     {
         "Name": "In Movement Pilates",
@@ -46341,7 +47321,11 @@
         "Private": false,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Fairfax",
+        "Place ID": "ChIJj9bw3FO5woAR_-t1ChY3Ipg",
+        "Latitude": 34.075932,
+        "Longitude": -118.35187320000001
     },
     {
         "Name": "Hess Pilates",
@@ -46366,7 +47350,11 @@
         "Price Single": 25,
         "Price Source URL": "https://hesspilates.com/",
         "Price Intro": 25,
-        "Intro Offer": "1 cla for $25"
+        "Intro Offer": "1 cla for $25",
+        "District": "Westlake",
+        "Place ID": "ChIJpc0nrxrHwoARlDisRtIzKDM",
+        "Latitude": 34.0516958,
+        "Longitude": -118.26240800000001
     },
     {
         "Name": "Common Ground Pilates - Mid City",
@@ -46391,7 +47379,11 @@
         "Price Single": 36,
         "Price Source URL": "https://commongroundpilates.net/pricing.html",
         "Price Intro": 77,
-        "Intro Offer": "3 classes for $77"
+        "Intro Offer": "3 classes for $77",
+        "District": "Mid-City",
+        "Place ID": "ChIJOw4vBlS5woARSUMUy6X-b9Q",
+        "Latitude": 34.0400353,
+        "Longitude": -118.33958829999999
     },
     {
         "Name": "Forte Pilates",
@@ -46415,7 +47407,11 @@
         "Price Scraped": true,
         "Price Single": 40,
         "Price Source URL": "https://www.fortepilatesla.net/",
-        "Price Intro": 70
+        "Price Intro": 70,
+        "District": "Westlake",
+        "Place ID": "ChIJUQz8lg3HwoARyoB1RxtMn0w",
+        "Latitude": 34.067667,
+        "Longitude": -118.2720119
     },
     {
         "Name": "Flow Pilates K-town",
@@ -46436,7 +47432,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Westlake",
+        "Place ID": "ChIJdQKwvSPHwoAR4uj5p3Q_o78",
+        "Latitude": 34.0599287,
+        "Longitude": -118.28608159999999
     },
     {
         "Name": "CASA PILATES LA",
@@ -46460,7 +47460,11 @@
         "Price Scraped": true,
         "Price Single": 40,
         "Price Source URL": "https://casapilatesla.com/services",
-        "Price Intro": 25
+        "Price Intro": 25,
+        "District": "Larchmont",
+        "Place ID": "ChIJfwOTBKq5woAR2mvg2jz1p2M",
+        "Latitude": 34.077882599999995,
+        "Longitude": -118.32384069999999
     },
     {
         "Name": "Pilatesmith - Culver City - Athletic Pilates Club",
@@ -46483,7 +47487,11 @@
         "Free Trial": false,
         "Price Scraped": true,
         "Price Single": 42,
-        "Price Source URL": "https://www.pilatesmithstudio.com/pricing"
+        "Price Source URL": "https://www.pilatesmithstudio.com/pricing",
+        "District": "Culver - West",
+        "Place ID": "ChIJo_M4kLK7woARbGvyQMQMHAY",
+        "Latitude": 33.996629,
+        "Longitude": -118.42932900000001
     },
     {
         "Name": "Focus Pilates (Reformer + Mat Studio)",
@@ -46508,7 +47516,11 @@
         "Price Single": 35,
         "Price Source URL": "https://www.focuspilatesstudio.com/pricing-1",
         "Price Intro": 75,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "North Hollywood",
+        "Place ID": "ChIJSw-2ZMyVwoAR0E0tjvnILgo",
+        "Latitude": 34.1671281,
+        "Longitude": -118.37428509999998
     },
     {
         "Name": "Pilatesmith - Santa Monica - Athletic Pilates Club",
@@ -46531,7 +47543,11 @@
         "Free Trial": false,
         "Price Scraped": true,
         "Price Single": 42,
-        "Price Source URL": "https://www.pilatesmithstudio.com/pricing"
+        "Price Source URL": "https://www.pilatesmithstudio.com/pricing",
+        "District": "Ocean Park",
+        "Place ID": "ChIJa6l-JHClwoARpsMWfpoLv2I",
+        "Latitude": 34.0059112,
+        "Longitude": -118.48810920000001
     },
     {
         "Name": "The Pilates Cave- Mat Method",
@@ -46555,7 +47571,11 @@
         "Price Scraped": true,
         "Price Single": 45,
         "Price Source URL": "https://thepilatescave.com/pricing/",
-        "Price Intro": 35
+        "Price Intro": 35,
+        "District": "Sawtelle",
+        "Place ID": "ChIJZ0DHAHi7woARSo3ScfdWeWE",
+        "Latitude": 34.0442208,
+        "Longitude": -118.4556601
     },
     {
         "Name": "Crown Control Pilates",
@@ -46577,7 +47597,11 @@
         "Group": true,
         "Free Trial": false,
         "Price Scraped": true,
-        "Intro Offer": "20% off first visit"
+        "Intro Offer": "20% off first visit",
+        "District": "West Los Angeles",
+        "Place ID": "ChIJC4nlmhG7woARWdfGGps0HZc",
+        "Latitude": 34.0515731,
+        "Longitude": -118.43205419999998
     },
     {
         "Name": "Curanim Pilates",
@@ -46598,7 +47622,11 @@
         "Private": false,
         "Group": false,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "McManus",
+        "Place ID": "ChIJ29QVnWO5woARCScukVSwQNg",
+        "Latitude": 34.0303622,
+        "Longitude": -118.38069379999999
     },
     {
         "Name": "Bodyline Pilates",
@@ -46621,7 +47649,11 @@
         "Free Trial": false,
         "Price Scraped": true,
         "Price Intro": 99,
-        "Intro Offer": "3 classes for $99"
+        "Intro Offer": "3 classes for $99",
+        "District": "",
+        "Place ID": "ChIJI_aerFm5woAR5eelcj9RdJ8",
+        "Latitude": 34.0672005,
+        "Longitude": -118.39206589999999
     },
     {
         "Name": "Pilates Boutique",
@@ -46645,7 +47677,11 @@
         "Price Scraped": true,
         "Price Single": 39,
         "Price Source URL": "https://pilatesboutique.com/classes",
-        "Price Intro": 39
+        "Price Intro": 39,
+        "District": "Central LA",
+        "Place ID": "ChIJ__-oA6m-woARLlyTO_D6x7E",
+        "Latitude": 34.0799398,
+        "Longitude": -118.38948409999998
     },
     {
         "Name": "Bodyshop Studio Pilates & Fitness",
@@ -46669,7 +47705,11 @@
         "Price Scraped": true,
         "Price Single": 38,
         "Price Source URL": "https://bodyshopstudio.co/pricing",
-        "Price Intro": 59
+        "Price Intro": 59,
+        "District": "Downtown Los Angeles",
+        "Place ID": "ChIJgY-AvyzHwoAR61XAOq2vXV4",
+        "Latitude": 34.0334232,
+        "Longitude": -118.22977230000001
     },
     {
         "Name": "BASI Pilates - Sacramento",
@@ -48091,7 +49131,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Crafts",
+        "Place ID": "ChIJvcEko5C32YgRL0YXZ4WeHNc",
+        "Latitude": 25.7491183,
+        "Longitude": -80.26122389999999
     },
     {
         "Name": "Posh Life Pilates",
@@ -48112,7 +49156,11 @@
         "Private": false,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Allapattah",
+        "Place ID": "ChIJ5-cN2jO32YgRHBu21-DoFa0",
+        "Latitude": 25.7852072,
+        "Longitude": -80.2207272
     },
     {
         "Name": "BODYBAR Pilates - Midtown Miami",
@@ -48133,7 +49181,11 @@
         "Private": false,
         "Group": false,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Edgewater",
+        "Place ID": "ChIJ6bYErSG32YgRpwjYY9x2B8c",
+        "Latitude": 25.803670999999998,
+        "Longitude": -80.191356
     },
     {
         "Name": "Revive Pilates",
@@ -48157,7 +49209,11 @@
         "Price Scraped": true,
         "Price Single": 42,
         "Price Source URL": "https://www.revivexpilates.com/",
-        "Price Intro": 120
+        "Price Intro": 120,
+        "District": "Edgewater",
+        "Place ID": "ChIJPSM0SAO32YgRN7sdQvXFxhA",
+        "Latitude": 25.8000755,
+        "Longitude": -80.1912116
     },
     {
         "Name": "727 Pilates",
@@ -48178,7 +49234,11 @@
         "Private": false,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Little River",
+        "Place ID": "ChIJcwIRTmOx2YgRS5RqHQvC0W8",
+        "Latitude": 25.8327043,
+        "Longitude": -80.18975139999999
     },
     {
         "Name": "JETSET Pilates Coconut Grove",
@@ -48202,7 +49262,11 @@
         "Price Scraped": true,
         "Price Single": 19,
         "Price Source URL": "https://jetsetpilates.com/fl/coconut-grove/pricing",
-        "Price Intro": 49
+        "Price Intro": 49,
+        "District": "Coconut Grove",
+        "Place ID": "ChIJeys2J2u32YgRGak89wKeh7w",
+        "Latitude": 25.731978899999998,
+        "Longitude": -80.2366764
     },
     {
         "Name": "Miami Pilates Aventura",
@@ -48223,7 +49287,11 @@
         "Private": false,
         "Group": false,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJ35xXP82t2YgR-ZFeQph4L3I",
+        "Latitude": 25.942096000000003,
+        "Longitude": -80.1496844
     },
     {
         "Name": "Reforming Pilates Brickell",
@@ -48247,7 +49315,11 @@
         "Price Scraped": true,
         "Price Single": 40,
         "Price Source URL": "https://reformingpilates.com/pricing/",
-        "Price Intro": 40
+        "Price Intro": 40,
+        "District": "Brickell",
+        "Place ID": "ChIJJ2SPeYy32YgRz8gS0KHZ94M",
+        "Latitude": 25.764340699999998,
+        "Longitude": -80.1943758
     },
     {
         "Name": "JETSET Pilates - North Miami (NoMi)",
@@ -48271,7 +49343,11 @@
         "Price Scraped": true,
         "Price Single": 19,
         "Price Source URL": "https://jetsetpilates.com/fl/north-miami/pricing",
-        "Price Intro": 49
+        "Price Intro": 49,
+        "District": "",
+        "Place ID": "ChIJgbEGg6qz2YgRZv7BsZaDI0Q",
+        "Latitude": 25.8869459,
+        "Longitude": -80.165229
     },
     {
         "Name": "Portal Pilates",
@@ -48292,7 +49368,11 @@
         "Private": false,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Brickell",
+        "Place ID": "ChIJP_BGC2a32YgR0jmtfhqjfUY",
+        "Latitude": 25.7665613,
+        "Longitude": -80.19848139999999
     },
     {
         "Name": "Art In Movement Pilates Studio",
@@ -48314,7 +49394,11 @@
         "Group": true,
         "Free Trial": false,
         "Price Scraped": true,
-        "Price Intro": 15
+        "Price Intro": 15,
+        "District": "Coral Way",
+        "Place ID": "ChIJFfdzLFy32YgRShTd7zR6EBY",
+        "Latitude": 25.75988,
+        "Longitude": -80.2002017
     },
     {
         "Name": "Align\u00e9 Pilates Miami- Classical Pilates Studio",
@@ -48335,7 +49419,11 @@
         "Private": false,
         "Group": false,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Downtown Miami",
+        "Place ID": "ChIJgRnEKqa32YgR-y2-6KyKWnc",
+        "Latitude": 25.7883872,
+        "Longitude": -80.1901129
     },
     {
         "Name": "The Most Hot Pilates",
@@ -48356,7 +49444,11 @@
         "Private": false,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Brickell",
+        "Place ID": "ChIJLdh0tSK12YgRHMClXse_QMg",
+        "Latitude": 25.7678862,
+        "Longitude": -80.185811
     },
     {
         "Name": "JETSET Pilates - Sunset Harbour",
@@ -48377,7 +49469,11 @@
         "Private": false,
         "Group": false,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Bayshore",
+        "Place ID": "ChIJw85DpYC02YgR_OlKP1iqzK4",
+        "Latitude": 25.7944498,
+        "Longitude": -80.14273759999999
     },
     {
         "Name": "Mimi Yoga & Pilates",
@@ -48401,7 +49497,11 @@
         "Price Scraped": true,
         "Price Single": 33,
         "Price Source URL": "http://www.mimiyoga.com/",
-        "Price Intro": 75
+        "Price Intro": 75,
+        "District": "Wynwood Art District",
+        "Place ID": "ChIJBZiqkli32YgRbsF30J9sF80",
+        "Latitude": 25.8019954,
+        "Longitude": -80.2007388
     },
     {
         "Name": "Solace Pilates and Yoga",
@@ -49858,7 +50958,11 @@
         "Group": true,
         "Free Trial": false,
         "Price Scraped": true,
-        "Price Intro": 60
+        "Price Intro": 60,
+        "District": "West Town",
+        "Place ID": "ChIJJ2wkfSktDogRGxMyPmafamY",
+        "Latitude": 41.89082,
+        "Longitude": -87.661141
     },
     {
         "Name": "Pilatesville Streeterville",
@@ -49879,7 +50983,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Streeterville",
+        "Place ID": "ChIJbwt7DDktDogRepMCZLXUuh0",
+        "Latitude": 41.893310799999995,
+        "Longitude": -87.6190158
     },
     {
         "Name": "BODYBAR Pilates - Wicker Park",
@@ -49900,7 +51008,11 @@
         "Private": false,
         "Group": false,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "West Town",
+        "Place ID": "ChIJVYQMts7TD4gRTRh_r_r7Z7w",
+        "Latitude": 41.908558899999996,
+        "Longitude": -87.6750735
     },
     {
         "Name": "Lincoln Park Pilates & Events",
@@ -49924,7 +51036,11 @@
         "Price Scraped": true,
         "Price Single": 40,
         "Price Source URL": "https://lincolnparkeastpilates.zoca.com/?utm_source=googlemaps&utm_medium=googlemaps&utm_campaign=googlemaps",
-        "Price Intro": 50
+        "Price Intro": 50,
+        "District": "Lincoln Park",
+        "Place ID": "ChIJP19zIv3TD4gR3FckPs4r5-w",
+        "Latitude": 41.920249999999996,
+        "Longitude": -87.66299099999999
     },
     {
         "Name": "Vinyl Pilates",
@@ -49945,7 +51061,11 @@
         "Private": false,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Logan Square",
+        "Place ID": "ChIJd0uVhDjTD4gR4hvg_BvC2Zs",
+        "Latitude": 41.9245926,
+        "Longitude": -87.69706579999999
     },
     {
         "Name": "Logan Square Pilates + Core",
@@ -49967,7 +51087,11 @@
         "Group": true,
         "Free Trial": false,
         "Price Scraped": true,
-        "Price Intro": 100
+        "Price Intro": 100,
+        "District": "Logan Square",
+        "Place ID": "ChIJ1ZctS3HND4gRXD2HLPBVu74",
+        "Latitude": 41.931418699999995,
+        "Longitude": -87.71182189999999
     },
     {
         "Name": "The Roe Pilates",
@@ -49988,7 +51112,11 @@
         "Private": false,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "River North",
+        "Place ID": "ChIJrzY_PAEtDogR5kDQ0ZvnhUc",
+        "Latitude": 41.8894324,
+        "Longitude": -87.6321378
     },
     {
         "Name": "BODYBAR Pilates - Fulton Market",
@@ -50009,7 +51137,11 @@
         "Private": false,
         "Group": false,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Fulton Market District",
+        "Place ID": "ChIJkfpRh_wtDogRntWag5jopJw",
+        "Latitude": 41.88529,
+        "Longitude": -87.65356659999999
     },
     {
         "Name": "Half Moon Yoga & Pilates Studio",
@@ -50033,7 +51165,11 @@
         "Price Scraped": true,
         "Price Single": 10,
         "Price Source URL": "https://www.halfmoonchicago.com/packages",
-        "Price Intro": 69
+        "Price Intro": 69,
+        "District": "Chicago Loop",
+        "Place ID": "ChIJnwWXNtQtDogRhNG7RNEMFF8",
+        "Latitude": 41.8682854,
+        "Longitude": -87.6253735
     },
     {
         "Name": "Karve Pilates",
@@ -53242,7 +54378,11 @@
         "Price Scraped": true,
         "Price Single": 44,
         "Price Source URL": "https://www.studiopilates.com/studios/soho/",
-        "Price Intro": 44
+        "Price Intro": 44,
+        "District": "Manhattan",
+        "Place ID": "ChIJzcAm5BlZwokRlins78KkJWU",
+        "Latitude": 40.7273849,
+        "Longitude": -74.0068623
     },
     {
         "Name": "SoHo Pilates",
@@ -53263,7 +54403,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJtfMhSthZwokRQfBCGPTqztI",
+        "Latitude": 40.724767799999995,
+        "Longitude": -73.99638949999999
     },
     {
         "Name": "Hell\u2019s Kitchen Pilates",
@@ -53284,7 +54428,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJEVvxQ9hZwokR_79DtmKT5kk",
+        "Latitude": 40.760253999999996,
+        "Longitude": -73.9923249
     },
     {
         "Name": "Reforming Pilates Townhouse",
@@ -53308,7 +54456,11 @@
         "Price Scraped": true,
         "Price Single": 40,
         "Price Source URL": "https://reformingpilates.com/pricing/",
-        "Price Intro": 40
+        "Price Intro": 40,
+        "District": "Manhattan",
+        "Place ID": "ChIJueNCl9hZwokRXu27xuJyCXQ",
+        "Latitude": 40.73969,
+        "Longitude": -73.99592
     },
     {
         "Name": "Craft Pilates Upper West Side",
@@ -53329,7 +54481,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJw9u3EGpZwokRiNaDxtXLS5c",
+        "Latitude": 40.7911794,
+        "Longitude": -73.9727017
     },
     {
         "Name": "Pilates Square",
@@ -53352,7 +54508,11 @@
         "Free Trial": false,
         "Price Scraped": true,
         "Price Intro": 99,
-        "Intro Offer": "4 classes for $99"
+        "Intro Offer": "4 classes for $99",
+        "District": "Manhattan",
+        "Place ID": "ChIJlYfpb-FZwokRqvP29oa-XLA",
+        "Latitude": 40.720878899999995,
+        "Longitude": -73.9871841
     },
     {
         "Name": "Studio Pilates International Harlem",
@@ -53377,7 +54537,11 @@
         "Price Single": 40,
         "Price Source URL": "https://www.studiopilates.com/studios/harlem/",
         "Price Intro": 60,
-        "Intro Offer": "6 classes for $60"
+        "Intro Offer": "6 classes for $60",
+        "District": "Manhattan",
+        "Place ID": "ChIJ_wMjoxT3wokRQfjLtJfCB7w",
+        "Latitude": 40.800984,
+        "Longitude": -73.95823469999999
     },
     {
         "Name": "Reforming Pilates Upper East Side",
@@ -53401,7 +54565,11 @@
         "Price Scraped": true,
         "Price Single": 40,
         "Price Source URL": "https://reformingpilates.com/pricing/",
-        "Price Intro": 40
+        "Price Intro": 40,
+        "District": "Manhattan",
+        "Place ID": "ChIJyy7GdYxZwokRpuiUhqKCirM",
+        "Latitude": 40.7666372,
+        "Longitude": -73.9602273
     },
     {
         "Name": "Vita Pilates x Merrithew\u00ae Host Training Center",
@@ -53426,7 +54594,11 @@
         "Price Single": 40,
         "Price Source URL": "https://vitapilates.net/classes/",
         "Price Intro": 100,
-        "Intro Offer": "2 classes for $50"
+        "Intro Offer": "2 classes for $50",
+        "District": "Manhattan",
+        "Place ID": "ChIJj3VKwoBZwokRfqrFtmMiwaY",
+        "Latitude": 40.7518581,
+        "Longitude": -73.9912986
     },
     {
         "Name": "Natural Pilates - Upper East Side",
@@ -53451,7 +54623,11 @@
         "Price Single": 99,
         "Price Source URL": "https://naturalpilates.com/",
         "Price Intro": 99,
-        "Intro Offer": "Free intro class"
+        "Intro Offer": "Free intro class",
+        "District": "Manhattan",
+        "Place ID": "ChIJ_TcsrQlZwokRqEmUd3vlv0I",
+        "Latitude": 40.7766723,
+        "Longitude": -73.95319429999999
     },
     {
         "Name": "Core Culture Pilates SoHo",
@@ -53472,7 +54648,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJq3HJT2FZwokRxpqrGpD0adw",
+        "Latitude": 40.7272378,
+        "Longitude": -74.0020744
     },
     {
         "Name": "New York Pilates Bowery",
@@ -53495,7 +54675,11 @@
         "Free Trial": false,
         "Price Scraped": true,
         "Price Single": 90,
-        "Price Source URL": "https://www.newyorkpilates.com/intro-offers-nyc-and-hamptons/"
+        "Price Source URL": "https://www.newyorkpilates.com/intro-offers-nyc-and-hamptons/",
+        "District": "Manhattan",
+        "Place ID": "ChIJSSLVv4VZwokR2aW2F0iLftc",
+        "Latitude": 40.7233344,
+        "Longitude": -73.99326429999999
     },
     {
         "Name": "Natural Pilates - Flatiron",
@@ -53518,7 +54702,11 @@
         "Free Trial": false,
         "Price Scraped": true,
         "Price Single": 20,
-        "Price Source URL": "https://naturalpilates.com/book-fis.html"
+        "Price Source URL": "https://naturalpilates.com/book-fis.html",
+        "District": "Manhattan",
+        "Place ID": "ChIJkxTWvCNZwokR_HFcRb5zjpc",
+        "Latitude": 40.7414287,
+        "Longitude": -73.9917724
     },
     {
         "Name": "SB Pilates",
@@ -53539,7 +54727,11 @@
         "Private": false,
         "Group": false,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJv_qraeFZwokRDOXb1RWZyeM",
+        "Latitude": 40.7197943,
+        "Longitude": -73.99907990000001
     },
     {
         "Name": "JETSET Pilates - SoHo",
@@ -53563,7 +54755,11 @@
         "Price Scraped": true,
         "Price Single": 35,
         "Price Source URL": "https://jetsetpilates.com/ny/soho/pricing",
-        "Price Intro": 99
+        "Price Intro": 99,
+        "District": "Manhattan",
+        "Place ID": "ChIJ5wIaRXZZwokRiLF__ii0i2w",
+        "Latitude": 40.7228673,
+        "Longitude": -74.00304299999999
     },
     {
         "Name": "Pilates Social Club - FiDi",
@@ -53583,7 +54779,11 @@
         "Online": false,
         "Private": false,
         "Group": false,
-        "Free Trial": false
+        "Free Trial": false,
+        "District": "Manhattan",
+        "Place ID": "ChIJL5OyRnRbwokRnAltC6x33F0",
+        "Latitude": 40.7079952,
+        "Longitude": -74.0143571
     },
     {
         "Name": "Amare Pilates Tribeca",
@@ -53604,7 +54804,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJOc8W0ElbwokRaDe2TmyJ84A",
+        "Latitude": 40.7147781,
+        "Longitude": -74.010027
     },
     {
         "Name": "United Pilates NYC- U.N. Plaza",
@@ -53625,7 +54829,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJNVxy3wpZwokRg6qwtyCAj9Y",
+        "Latitude": 40.7530177,
+        "Longitude": -73.96710039999999
     },
     {
         "Name": "Dear Pilates",
@@ -53648,7 +54856,11 @@
         "Free Trial": false,
         "Price Scraped": true,
         "Price Single": 60,
-        "Price Source URL": "https://dearpilatesnyc.com/group-class"
+        "Price Source URL": "https://dearpilatesnyc.com/group-class",
+        "District": "Manhattan",
+        "Place ID": "ChIJTSBaLY5ZwokRlKWlKxcISU4",
+        "Latitude": 40.7384112,
+        "Longitude": -73.99210169999999
     },
     {
         "Name": "Lift NYC (Pilates)",
@@ -53672,7 +54884,11 @@
         "Price Scraped": true,
         "Price Single": 25,
         "Price Source URL": "https://lift.nyc/pricing/",
-        "Price Intro": 25
+        "Price Intro": 25,
+        "District": "Manhattan",
+        "Place ID": "ChIJ-zyYTJNZwokRzMcrrzv0xz4",
+        "Latitude": 40.78379100000001,
+        "Longitude": -73.9772752
     },
     {
         "Name": "GRAMERCY PILATES NYC CERTIFICATION SCHOOL",
@@ -53696,7 +54912,11 @@
         "Price Scraped": true,
         "Price Single": 46,
         "Price Source URL": "http://www.gramercypilatesnyc.com/reformer-tower-classes",
-        "Price Intro": 46
+        "Price Intro": 46,
+        "District": "Manhattan",
+        "Place ID": "ChIJP6iUfqFZwokRiYgUirU_uw0",
+        "Latitude": 40.7388914,
+        "Longitude": -73.98861
     },
     {
         "Name": "BASI Pilates Academy - NYC",
@@ -53719,7 +54939,11 @@
         "Free Trial": false,
         "Price Scraped": true,
         "Price Single": 45,
-        "Price Source URL": "https://www.basipilatesacademynyc.com/small-group-class/"
+        "Price Source URL": "https://www.basipilatesacademynyc.com/small-group-class/",
+        "District": "Brooklyn",
+        "Place ID": "ChIJXXDGmjFbwokRMz4FX_OJyKg",
+        "Latitude": 40.692122499999996,
+        "Longitude": -73.98860669999999
     },
     {
         "Name": "Avea Pilates West Village",
@@ -53740,7 +54964,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJsZ6XGslZwokRNEvZzDekQyU",
+        "Latitude": 40.7372546,
+        "Longitude": -73.99572049999999
     },
     {
         "Name": "JETSET Pilates - South End",
@@ -59121,7 +60349,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Mid-City",
+        "Place ID": "ChIJg4SgbGa6woARF9nVveyAeAA",
+        "Latitude": 34.0324496,
+        "Longitude": -118.38352929999999
     },
     {
         "Name": "AVENIR-LA (SILVERLAKE)",
@@ -59143,7 +60375,11 @@
         "Group": true,
         "Free Trial": false,
         "Price Scraped": true,
-        "Price Intro": 25
+        "Price Intro": 25,
+        "District": "East Hollywood",
+        "Place ID": "ChIJ4fRVXae4woAREJ-y6HEWD5A",
+        "Latitude": 34.095630299999996,
+        "Longitude": -118.2854689
     },
     {
         "Name": "Whole Body Method",
@@ -59167,7 +60403,11 @@
         "Price Scraped": true,
         "Price Single": 45,
         "Price Source URL": "http://www.wholebodymethod.com/pricing",
-        "Price Intro": 95
+        "Price Intro": 95,
+        "District": "Mid-City",
+        "Place ID": "ChIJ39e6RAW5woARIHUbgDj07Mw",
+        "Latitude": 34.0505085,
+        "Longitude": -118.36275570000001
     },
     {
         "Name": "Sorrel Studio",
@@ -59192,7 +60432,11 @@
         "Price Single": 42,
         "Price Source URL": "https://sorrel-studio.com/buy-1",
         "Price Intro": 89,
-        "Intro Offer": "5 classes for $89"
+        "Intro Offer": "5 classes for $89",
+        "District": "Little Ethiopia",
+        "Place ID": "ChIJm3qcmCy5woARY_DUXeYkTUM",
+        "Latitude": 34.0575502,
+        "Longitude": -118.3645107
     },
     {
         "Name": "l.a. springs",
@@ -59213,7 +60457,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Echo Park",
+        "Place ID": "ChIJv68x5L3HwoARt-OrHtz2qwo",
+        "Latitude": 34.0775575,
+        "Longitude": -118.26490779999999
     },
     {
         "Name": "G:50 Studio-Where It's HiiP",
@@ -59234,7 +60482,11 @@
         "Private": false,
         "Group": false,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Central LA",
+        "Place ID": "ChIJtyV0vxO_woARSXdaFfm9zoA",
+        "Latitude": 34.0729902,
+        "Longitude": -118.3753985
     },
     {
         "Name": "Breakthrough Pilates",
@@ -59258,7 +60510,11 @@
         "Price Scraped": true,
         "Price Single": 97,
         "Price Source URL": "https://www.breakthroughpilates.com/",
-        "Price Intro": 95
+        "Price Intro": 95,
+        "District": "Central LA",
+        "Place ID": "ChIJg2HfCYG_woARqQXoRo8OJLg",
+        "Latitude": 34.0904917,
+        "Longitude": -118.352911
     },
     {
         "Name": "DOMA Studio",
@@ -61071,7 +62327,11 @@
         "Private": false,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Wynwood Art District",
+        "Place ID": "ChIJh41HGO2x2YgR4W2sk1oPlgs",
+        "Latitude": 25.801718299999997,
+        "Longitude": -80.1962571
     },
     {
         "Name": "BODYROK Miami - Coconut Grove",
@@ -61095,7 +62355,11 @@
         "Price Scraped": true,
         "Price Single": 36,
         "Price Source URL": "https://bodyrok.com/studio/coconut-grove/",
-        "Price Intro": 20
+        "Price Intro": 20,
+        "District": "Coconut Grove",
+        "Place ID": "ChIJY7MwUQy32YgR39Vs9IYxci4",
+        "Latitude": 25.728972,
+        "Longitude": -80.24197699999999
     },
     {
         "Name": "Align Miami | Pilates & Strength",
@@ -61116,7 +62380,11 @@
         "Private": false,
         "Group": false,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Coconut Grove",
+        "Place ID": "ChIJQdQzP5K32YgRMCRhVLTWNGs",
+        "Latitude": 25.729273199999998,
+        "Longitude": -80.2413421
     },
     {
         "Name": "ActiveSoul Wellness Studio",
@@ -61140,7 +62408,11 @@
         "Price Scraped": true,
         "Price Single": 27,
         "Price Source URL": "https://activesoulwellnessstudio.com/",
-        "Price Intro": 27
+        "Price Intro": 27,
+        "District": "Coral Way",
+        "Place ID": "ChIJyTJQME632YgRvKJKtzVL95Q",
+        "Latitude": 25.750446,
+        "Longitude": -80.2160316
     },
     {
         "Name": "TREMBLE",
@@ -61161,7 +62433,11 @@
         "Private": false,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Bayshore",
+        "Place ID": "ChIJ_d3o1xK12YgRKTrm8i1xxSc",
+        "Latitude": 25.7953768,
+        "Longitude": -80.1421701
     },
     {
         "Name": "BODYROK Miami - Edgewater",
@@ -61185,7 +62461,11 @@
         "Price Scraped": true,
         "Price Single": 30,
         "Price Source URL": "https://bodyrok.com/",
-        "Price Intro": 20
+        "Price Intro": 20,
+        "District": "Edgewater",
+        "Place ID": "ChIJe1wIVne32YgRzB3W0qYCUbo",
+        "Latitude": 25.798028799999997,
+        "Longitude": -80.1877587
     },
     {
         "Name": "Pandora Pilates & Physical Therapy",
@@ -61206,7 +62486,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Coral Way",
+        "Place ID": "ChIJq6p2Xei32YgR9rlwbVpkS4c",
+        "Latitude": 25.7394677,
+        "Longitude": -80.25447849999999
     },
     {
         "Name": "Laira Balance",
@@ -61227,7 +62511,11 @@
         "Private": false,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "",
+        "Place ID": "ChIJUaAaJ4Wx2YgRvKbLqfF9jS4",
+        "Latitude": 25.815937,
+        "Longitude": -80.199878
     },
     {
         "Name": "TREMBLE",
@@ -62793,7 +64081,11 @@
         "Group": true,
         "Free Trial": false,
         "Price Scraped": true,
-        "Price Intro": 99
+        "Price Intro": 99,
+        "District": "Streeterville",
+        "Place ID": "ChIJC1szPb8tDogRNgf57cg2To0",
+        "Latitude": 41.8911069,
+        "Longitude": -87.6215469
     },
     {
         "Name": "Resistance Lagree",
@@ -62815,7 +64107,11 @@
         "Group": true,
         "Free Trial": false,
         "Price Scraped": true,
-        "Price Intro": 19
+        "Price Intro": 19,
+        "District": "West Town",
+        "Place ID": "ChIJ9-1KlbjTD4gRvqXMnEb66pI",
+        "Latitude": 41.904956,
+        "Longitude": -87.668746
     },
     {
         "Name": "BODYROK West Loop",
@@ -62839,7 +64135,11 @@
         "Price Scraped": true,
         "Price Single": 36,
         "Price Source URL": "https://bodyrok.com/studio/west_loop/",
-        "Price Intro": 20
+        "Price Intro": 20,
+        "District": "West Loop",
+        "Place ID": "ChIJh1Jgij0tDogRTgmXuKbXVgg",
+        "Latitude": 41.885498,
+        "Longitude": -87.64722239999999
     },
     {
         "Name": "BODYROK River North Studio",
@@ -62863,7 +64163,11 @@
         "Price Scraped": true,
         "Price Single": 30,
         "Price Source URL": "https://bodyrok.com/",
-        "Price Intro": 20
+        "Price Intro": 20,
+        "District": "River North",
+        "Place ID": "ChIJx7K7EsPTD4gRNfbb7yr9oSo",
+        "Latitude": 41.8955376,
+        "Longitude": -87.6313778
     },
     {
         "Name": "Flex & Flow Fitness Studio",
@@ -62887,7 +64191,11 @@
         "Price Scraped": true,
         "Price Single": 27,
         "Price Source URL": "http://www.myflexandflow.com/pricing",
-        "Price Intro": 20
+        "Price Intro": 20,
+        "District": "West Town",
+        "Place ID": "ChIJ_YT1M4ctDogRhkK9gNeI52Q",
+        "Latitude": 41.896218399999995,
+        "Longitude": -87.66939789999999
     },
     {
         "Name": "Centered on North",
@@ -62911,7 +64219,11 @@
         "Price Scraped": true,
         "Price Single": 120,
         "Price Source URL": "http://centeredonnorth.com/new-dropdown-1",
-        "Price Intro": 120
+        "Price Intro": 120,
+        "District": "Near North Side",
+        "Place ID": "ChIJpdSyMD_TD4gRuMjOIeefio0",
+        "Latitude": 41.910913099999995,
+        "Longitude": -87.64000829999999
     },
     {
         "Name": "105F Hot Yoga, Pilates & Wellness - South Loop",
@@ -62933,7 +64245,11 @@
         "Group": true,
         "Free Trial": false,
         "Price Scraped": true,
-        "Price Intro": 55
+        "Price Intro": 55,
+        "District": "Chicago Loop",
+        "Place ID": "ChIJFakjbJcsDogRrNUnwMzBgHk",
+        "Latitude": 41.8721099,
+        "Longitude": -87.6292222
     },
     {
         "Name": "Namastate of Mind",
@@ -62955,7 +64271,11 @@
         "Group": true,
         "Free Trial": false,
         "Price Scraped": true,
-        "Price Intro": 99
+        "Price Intro": 99,
+        "District": "Lincoln Park",
+        "Place ID": "ChIJofeZEJ7TD4gRf_dvZ23jteo",
+        "Latitude": 41.921926,
+        "Longitude": -87.659302
     },
     {
         "Name": "The Barre Code Chicago - River North",
@@ -62979,7 +64299,11 @@
         "Price Scraped": true,
         "Price Single": 33,
         "Price Source URL": "https://barrecode.co/pages/a-badass-studio-with-simple-pricing",
-        "Price Intro": 50
+        "Price Intro": 50,
+        "District": "River North",
+        "Place ID": "ChIJuwafXrEsDogR-gEqN8pUpBA",
+        "Latitude": 41.8903663,
+        "Longitude": -87.6323149
     },
     {
         "Name": "Le Movement",
@@ -63000,7 +64324,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Fulton Market District",
+        "Place ID": "ChIJaaf-NrMtDogRcNLS3GqH0s8",
+        "Latitude": 41.884063,
+        "Longitude": -87.6513121
     },
     {
         "Name": "Studio Fala Moves",
@@ -63021,7 +64349,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "River North",
+        "Place ID": "ChIJm_GrVf4tDogR9Ym-14KqsKQ",
+        "Latitude": 41.895839200000005,
+        "Longitude": -87.6360122
     },
     {
         "Name": "Flow Studio",
@@ -63042,7 +64374,11 @@
         "Private": false,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Lincoln Park",
+        "Place ID": "ChIJ5wUO2xLTD4gRZbNPd3CksS0",
+        "Latitude": 41.923189,
+        "Longitude": -87.639307
     },
     {
         "Name": "360 Studios Naperville",
@@ -69140,7 +70476,11 @@
         "Price Scraped": true,
         "Price Single": 26,
         "Price Source URL": "http://riseroomnyc.com/pages/pricing",
-        "Price Intro": 29
+        "Price Intro": 29,
+        "District": "Manhattan",
+        "Place ID": "ChIJRb57UuVZwokRQBxge5poXyI",
+        "Latitude": 40.7483961,
+        "Longitude": -73.9927932
     },
     {
         "Name": "BODYROK Chelsea",
@@ -69164,7 +70504,11 @@
         "Price Scraped": true,
         "Price Single": 20,
         "Price Source URL": "https://bodyrok.com/studio/chelsea/",
-        "Price Intro": 20
+        "Price Intro": 20,
+        "District": "Manhattan",
+        "Place ID": "ChIJ3WdyA3xZwokR0LxBqWqtwDE",
+        "Latitude": 40.7456129,
+        "Longitude": -73.9917459
     },
     {
         "Name": "BODYROK Union Square",
@@ -69188,7 +70532,11 @@
         "Price Scraped": true,
         "Price Single": 25,
         "Price Source URL": "https://bodyrok.com/studio/union-square/",
-        "Price Intro": 20
+        "Price Intro": 20,
+        "District": "Manhattan",
+        "Place ID": "ChIJhRX4y8RZwokRqQEXbKpg9Jo",
+        "Latitude": 40.734386,
+        "Longitude": -73.9928307
     },
     {
         "Name": "TRAPHAUS",
@@ -69210,7 +70558,11 @@
         "Group": true,
         "Free Trial": false,
         "Price Scraped": true,
-        "Price Intro": 35
+        "Price Intro": 35,
+        "District": "Manhattan",
+        "Place ID": "ChIJP-1y80pZwokRRVyMgge-7HE",
+        "Latitude": 40.7197514,
+        "Longitude": -73.9887744
     },
     {
         "Name": "BODYROK Soho",
@@ -69234,7 +70586,11 @@
         "Price Scraped": true,
         "Price Single": 36,
         "Price Source URL": "https://bodyrok.com/studio/soho/",
-        "Price Intro": 20
+        "Price Intro": 20,
+        "District": "Manhattan",
+        "Place ID": "ChIJYxjLG5BZwokR7O8-BS1XsQg",
+        "Latitude": 40.7250377,
+        "Longitude": -73.99680699999999
     },
     {
         "Name": "Seaport Pilates NYC",
@@ -69258,7 +70614,11 @@
         "Price Scraped": true,
         "Price Single": 60,
         "Price Source URL": "https://seaportpilatesnyc.com/pricing-seaport-pilates-nyc/",
-        "Price Intro": 110
+        "Price Intro": 110,
+        "District": "Manhattan",
+        "Place ID": "ChIJPTVDfhxbwokR3bMTxiYtHaQ",
+        "Latitude": 40.707287,
+        "Longitude": -74.002319
     },
     {
         "Name": "The Pilates Movement Upper East Side",
@@ -69282,7 +70642,11 @@
         "Price Scraped": true,
         "Price Single": 55,
         "Price Source URL": "https://pilatesmovementnyc.com/upper-east-side/?utm_source=google&utm_medium=organic&utm_campaign=gbp-listing&utm_content=nyc-location",
-        "Price Intro": 105
+        "Price Intro": 105,
+        "District": "Manhattan",
+        "Place ID": "ChIJzaQngelYwokRUiX542KzwBc",
+        "Latitude": 40.7668117,
+        "Longitude": -73.96204689999999
     },
     {
         "Name": "BODYROK FLATIRON STUDIO",
@@ -69306,7 +70670,11 @@
         "Price Scraped": true,
         "Price Single": 36,
         "Price Source URL": "http://www.bodyrok.com/flatiron",
-        "Price Intro": 20
+        "Price Intro": 20,
+        "District": "Manhattan",
+        "Place ID": "ChIJ2W2-Oh9ZwokRcb_vgDPjNFY",
+        "Latitude": 40.738765,
+        "Longitude": -73.992897
     },
     {
         "Name": "Real Pilates\u00ae",
@@ -69328,7 +70696,11 @@
         "Group": true,
         "Free Trial": false,
         "Price Scraped": true,
-        "Price Intro": 40
+        "Price Intro": 40,
+        "District": "Manhattan",
+        "Place ID": "ChIJhcyvTx5awokRcvYRpsPTJKM",
+        "Latitude": 40.716471299999995,
+        "Longitude": -74.00765659999999
     },
     {
         "Name": "practice room noho",
@@ -69349,7 +70721,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJ_YqEdINZwokRtkOE52s9o0w",
+        "Latitude": 40.7266739,
+        "Longitude": -73.9952837
     },
     {
         "Name": "NeXa Studios",
@@ -69370,7 +70746,11 @@
         "Private": false,
         "Group": false,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJnbpk7idZwokRqnRwwkPNEJQ",
+        "Latitude": 40.7770249,
+        "Longitude": -73.97845749999999
     },
     {
         "Name": "Nofar Method Flatiron",
@@ -69391,7 +70771,11 @@
         "Private": false,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJ8y3EyNNZwokRZO9XIFe5fgo",
+        "Latitude": 40.7391382,
+        "Longitude": -73.9928051
     },
     {
         "Name": "IM=X Pilates and Fitness - Union Square NYC",
@@ -69412,7 +70796,11 @@
         "Private": true,
         "Group": true,
         "Free Trial": true,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "District": "Manhattan",
+        "Place ID": "ChIJvzl3rd9ZwokRoD1XfYjcP7I",
+        "Latitude": 40.7372051,
+        "Longitude": -73.99496289999999
     },
     {
         "Name": "BODYROK CHARLOTTE",

@@ -28,6 +28,9 @@ async function loadStudiosData() {
                 website: studio.Website,
                 photo_url: studio["Photo URL"], // Changed to match expected property
                 address: studio.Address,
+                district: studio.District || '',
+                latitude: studio.Latitude ?? null,
+                longitude: studio.Longitude ?? null,
                 price_single: studio["Price Single"] || null,
                 price_intro: studio["Price Intro"] || null,
                 intro_offer: studio["Intro Offer"] || null,
@@ -227,8 +230,13 @@ function studioCardHtml(studio, stateName) {
         .map(([key]) => `<span class="criteria-badge" title="${key}" data-label="${key.replace('_', ' ')}">${CRITERIA_EMOJIS[key]}</span>`)
         .join('');
 
+    // Within a big city the district beats repeating the state ("SoHo, New York City")
+    const locationLabel = studio.district
+        ? `${studio.district}, ${studio.city}`
+        : `${studio.city}, ${stateName}`;
+
     return `
-        <a class="studio-card" href="/studio?state=${encodeURIComponent(stateName)}&city=${encodeURIComponent(studio.city)}&name=${encodeURIComponent(studio.name)}">
+        <a class="studio-card" href="/studio?state=${encodeURIComponent(stateName)}&city=${encodeURIComponent(studio.city)}&name=${encodeURIComponent(studio.name)}" data-district="${escapeHtml(studio.district)}">
             <div class="studio-image">
                 <img src="${escapeHtml(studio.photo_url) || '/assets/default-studio.jpg'}" alt="${escapeHtml(studio.name)}" loading="lazy"
                      onerror="this.onerror=null;this.src='/assets/default-studio.jpg'">
@@ -238,7 +246,7 @@ function studioCardHtml(studio, stateName) {
             </div>
             <div class="studio-info">
                 <h3 class="studio-name">${escapeHtml(studio.name)}</h3>
-                <p class="studio-location">${PIN_ICON}<span>${escapeHtml(studio.city)}, ${escapeHtml(stateName)}</span></p>
+                <p class="studio-location">${PIN_ICON}<span>${escapeHtml(locationLabel)}</span></p>
                 ${metaParts.length ? `<div class="studio-meta">${metaParts.join('<span class="meta-dot">·</span>')}</div>` : ''}
                 ${chips ? `<div class="criteria">${chips}</div>` : ''}
             </div>

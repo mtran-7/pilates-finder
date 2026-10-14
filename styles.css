@@ -483,13 +483,14 @@ body.index-page #featured-cities-list {
 }
 
 .city-card.coming-soon {
-    cursor: default;
-    opacity: 0.65;
+    opacity: 0.85;
 }
 
-.city-card.coming-soon:hover {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transform: none;
+.city-card.coming-soon .notify-hint {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
 .state-card {
@@ -687,7 +688,6 @@ body.index-page #featured-cities-list {
 
 .studio-image {
     position: relative;
-    height: 50%;
     width: 100%;
     margin: 0; /* Remove margin */
 }
@@ -908,6 +908,54 @@ body.index-page #featured-cities-list {
 .filter-btn.active {
     background: var(--primary-color);
     background-color: rgb(241, 241, 241);
+}
+
+/* District chips on big-city pages ("Browse by area") */
+.district-filter-group {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.district-filters-label {
+    margin: 10px 0 0;
+    font-size: 1.05rem;
+}
+
+.district-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 14px 40px 0;
+}
+
+.district-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background: #fff;
+    font-family: var(--font-family-main);
+    font-size: 0.95rem;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.district-btn:hover {
+    background: #f5f5f5;
+}
+
+.district-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.district-btn.active .filter-count {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .filters {
@@ -2781,7 +2829,7 @@ a.type-card {
 }
 
 .studio-card .studio-info {
-    padding: 16px 18px 18px;
+    padding: 26px 18px 18px;
     gap: 6px;
 }
 
@@ -2851,6 +2899,96 @@ a.type-card {
 
 .offers-list .offer-card {
     flex: 0 0 340px;
+}
+
+/* Shared solid green button (used by "Find a Studio", "Show more", waitlist form) */
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.primary-button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.primary-button:disabled {
+    opacity: 0.6;
+    cursor: default;
+    transform: none;
+}
+
+/* ===========================
+   Waitlist Section (coming-soon regions)
+=========================== */
+.waitlist-section {
+    background: var(--background);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.waitlist-content {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.waitlist-content h2 {
+    margin: 0 0 10px;
+    font-size: 2rem;
+}
+
+.waitlist-content > p {
+    margin: 0 0 24px;
+}
+
+.waitlist-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.waitlist-form select,
+.waitlist-form input[type="email"] {
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--font-family-main);
+    font-size: 1rem;
+    background: #fff;
+    color: var(--text);
+}
+
+.waitlist-form input[type="email"] {
+    flex: 1 1 240px;
+    max-width: 320px;
+}
+
+.waitlist-form button {
+    cursor: pointer;
+    border: none;
+    font-family: var(--font-family-main);
+}
+
+.waitlist-status {
+    min-height: 1.5em;
+    margin: 14px 0 0;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.waitlist-status.error {
+    color: #b3261e;
 }
 
 @media (max-width: 600px) {

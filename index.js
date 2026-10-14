@@ -107,7 +107,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     function regionCardHtml({ region, studios }) {
         if (!studios.length) {
-            return `<div class="city-card coming-soon"><h3>${region}</h3><p>Studios coming soon</p></div>`;
+            return `
+                <a class="city-card coming-soon" href="#waitlist" data-waitlist-region="${region}">
+                    <h3>${region}</h3>
+                    <p>Studios coming soon</p>
+                    <p class="notify-hint">Sign up to be notified when our ${region} list is ready →</p>
+                </a>`;
         }
 
         // Count occurrences of each criterion and keep the top 3
