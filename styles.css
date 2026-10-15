@@ -482,8 +482,27 @@ body.index-page #featured-cities-list {
     width: 100%;
 }
 
+/* Placeholder look: not-yet-live regions get a dashed outline instead of a solid card */
 .city-card.coming-soon {
-    opacity: 0.85;
+    background: transparent;
+    border: 2px dashed #c5c8bd;
+    box-shadow: none;
+}
+
+.city-card.coming-soon:hover {
+    border-color: var(--primary-hover);
+    box-shadow: none;
+}
+
+.coming-soon-badge {
+    background: var(--secondary-color);
+    color: var(--text);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 12px;
 }
 
 .city-card.coming-soon .notify-hint {
@@ -2069,17 +2088,55 @@ margin-left: auto;
     margin-bottom: 10px;
 }
 
+.pricing-list {
+    max-width: 660px;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 4px 18px;
+}
+
 .pricing-row {
     display: flex;
     justify-content: space-between;
-    max-width: 260px;
-    padding: 4px 0;
+    align-items: center;
+    gap: 24px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0ec;
     color: #444444;
 }
 
-.pricing-value {
-    font-weight: bold;
-    color: var(--primary-color);
+.pricing-row:last-of-type {
+    border-bottom: none;
+}
+
+.pricing-label {
+    flex-shrink: 0;
+    font-weight: 500;
+}
+
+.pricing-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px;
+}
+
+.price-chip {
+    background: var(--background);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 3px 11px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+}
+
+.price-chip-main {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
 }
 
 /* Studio page text styles */
@@ -2576,6 +2633,26 @@ button:focus {
     display: none;
 }
 
+/* Region/back rows are buttons but must look like the anchor rows */
+button.location-item {
+    width: 100%;
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.location-back span {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.location-search[hidden] {
+    display: none;
+}
+
 /* ===== Browse Studios page ===== */
 .browse-hero .hero-content h1 {
     font-size: 2.6rem;
@@ -2653,12 +2730,15 @@ button:focus {
 .browse-select {
     font-family: var(--font-family-main);
     font-size: 0.9rem;
-    padding: 8px 12px;
+    padding: 8px 36px 8px 14px;
     border: 1px solid var(--border-color);
     border-radius: 20px;
-    background: #fff;
     color: var(--text);
     cursor: pointer;
+    /* Custom chevron: the native one hugs the pill's rounded edge */
+    appearance: none;
+    -webkit-appearance: none;
+    background: #fff url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23242424' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;
 }
 
 .browse-select:disabled {
@@ -2929,6 +3009,80 @@ a.type-card {
 }
 
 /* ===========================
+   Studio page: contact block
+=========================== */
+.contact-section {
+    margin-top: 24px;
+}
+
+.contact-section h3 {
+    margin: 0 0 12px;
+}
+
+.contact-cta {
+    margin-bottom: 14px;
+}
+
+.contact-section .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+}
+
+/* display:flex above would otherwise defeat the hidden attribute */
+.contact-section .contact-item[hidden] {
+    display: none;
+}
+
+.contact-section .contact-item a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.contact-section .contact-item a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+.contact-section .fa-whatsapp {
+    color: #25d366;
+}
+
+.contact-section .fa-instagram {
+    color: #c13584;
+}
+
+.studio-location a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.studio-location a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+.pricing-source {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.pricing-source:hover {
+    color: var(--primary-hover);
+}
+
+/* Feature badges sit flush under their heading on the studio page */
+.features-section .criteria-filters {
+    justify-content: flex-start;
+    padding: 6px 0;
+}
+
+/* ===========================
    Waitlist Section (coming-soon regions)
 =========================== */
 .waitlist-section {
@@ -2958,8 +3112,7 @@ a.type-card {
     gap: 10px;
 }
 
-.waitlist-form select,
-.waitlist-form input[type="email"] {
+.waitlist-form input {
     padding: 12px 14px;
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -2969,9 +3122,14 @@ a.type-card {
     color: var(--text);
 }
 
+.waitlist-form input[type="text"] {
+    flex: 1 1 150px;
+    max-width: 220px;
+}
+
 .waitlist-form input[type="email"] {
-    flex: 1 1 240px;
-    max-width: 320px;
+    flex: 1 1 220px;
+    max-width: 300px;
 }
 
 .waitlist-form button {

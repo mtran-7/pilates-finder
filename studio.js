@@ -1,4 +1,4 @@
-import { loadStudiosData, getStudioOffer, studioCardHtml, CRITERIA_EMOJIS } from './global.js';
+import { loadStudiosData, getStudioOffer, studioCardHtml, CRITERIA_EMOJIS, formatCount } from './global.js';
 
 const criteriaEmojis = CRITERIA_EMOJIS;
 
@@ -44,25 +44,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Update page content
     document.getElementById('studio-name').textContent = studio.name;
     document.getElementById('rating-value').textContent = studio.rating;
-    document.getElementById('review-count').textContent = 
-        studio.number_of_reviews ? ` (${studio.number_of_reviews} reviews)` : '';
-    document.getElementById('studio-address').textContent = studio.address;
-    
-    // Update hours
-    const hoursContainer = document.getElementById('studio-hours');
-    if (studio.opening_hours) {
-        const hours = studio.opening_hours
-            .split('\n')
-            .map(day => {
-                const [dayName, time] = day.split(': ');
-                return `<div class="hours-row">
-                    <span class="day">${dayName}</span>
-                    <span class="time">${time || 'Closed'}</span>
-                </div>`;
-            })
-            .join('');
-        hoursContainer.innerHTML = hours;
-    }
+    document.getElementById('review-count').textContent =
+        studio.number_of_reviews ? ` (${formatCount(studio.number_of_reviews)} reviews)` : '';
 
     // Update breadcrumb
     document.getElementById('breadcrumb-path').innerHTML = `
@@ -90,15 +73,18 @@ function showError() {
 function updateStudioContent(studio) {
     // Basic Info
     document.getElementById('studio-name').textContent = studio.name;
-    
-    // Determine studio type based on criteria
-    const studioType = studio.criteria.Reformer ? 'Reformer Pilates' : 'Classical Pilates';
-    document.getElementById('studio-type').textContent = studioType;
-    
+
+    // Address links to directions (the raw string is often a Google plus-code)
+    const addressLink = document.getElementById('studio-address');
+    addressLink.textContent = studio.address || '';
+    addressLink.href = (studio.latitude && studio.longitude)
+        ? `https://www.google.com/maps/search/?api=1&query=${studio.latitude},${studio.longitude}`
+        : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${studio.name} ${studio.city}`)}`;
+
     // Rating and Reviews
     document.getElementById('rating-value').textContent = studio.rating || 'N/A';
     document.getElementById('review-count').textContent = 
-        studio.number_of_reviews ? ` (${studio.number_of_reviews} reviews)` : '';
+        studio.number_of_reviews ? ` (${formatCount(studio.number_of_reviews)} reviews)` : '';
 
     // Features/Criteria
     const featuresContainer = document.getElementById('studio-features');
@@ -114,7 +100,6 @@ function updateStudioContent(studio) {
                 <span class="emoji">${criteriaEmojis[key]}</span>
             `;
             featuresContainer.appendChild(badge);
-            activeCriteria.push(key.replace('_', ' '));
         }
     });
 
@@ -124,83 +109,72 @@ function updateStudioContent(studio) {
     if (offer) {
         pricingRows.push(`<div class="pricing-offer">✦ ${offer}</div>`);
     }
-    // Skip the intro-price row when the offer label already states that price
-    if (studio.price_intro && !(offer && offer.includes(`$${studio.price_intro}`))) {
-        pricingRows.push(`<div class="pricing-row"><span>Intro price</span><span class="pricing-value">$${studio.price_intro}</span></div>`);
+    // "Rp 570K · 5-pack Rp 2.6M" -> one pill per price point, lead price emphasized
+    const priceChips = value => value.split(' · ')
+        .map((part, i) => `<span class="price-chip${i === 0 ? ' price-chip-main' : ''}">${part}</span>`)
+        .join('');
+    const priceRow = (label, value) =>
+        `<div class="pricing-row"><span class="pricing-label">${label}</span><span class="pricing-chips">${priceChips(value)}</span></div>`;
+
+    if (Array.isArray(studio.price_details) && studio.price_details.length) {
+        // Studios with a full menu carry their breakdown (tiers, packs, memberships)
+        studio.price_details.forEach(row => pricingRows.push(priceRow(row.label, row.value)));
+    } else {
+        // Skip the intro-price row when the offer label already states that price
+        const introLabel = studio.price_intro_local || `$${studio.price_intro}`;
+        if (studio.price_intro && !(offer && offer.includes(introLabel))) {
+            pricingRows.push(priceRow('Intro price', introLabel));
+        }
+        if (studio.price_single) {
+            pricingRows.push(priceRow('Single class', studio.price_single_local || `$${studio.price_single}`));
+        }
+        if (studio.price_monthly) {
+            pricingRows.push(priceRow('Membership', `from $${studio.price_monthly}/month`));
+        }
     }
-    if (studio.price_single) {
-        pricingRows.push(`<div class="pricing-row"><span>Single class</span><span class="pricing-value">$${studio.price_single}</span></div>`);
+    if (studio.price_source_url && pricingRows.length) {
+        pricingRows.push(`<a class="pricing-source" href="${studio.price_source_url}" target="_blank" rel="noopener">See current prices →</a>`);
     }
     if (pricingRows.length) {
         document.getElementById('studio-pricing').innerHTML = pricingRows.join('');
         document.getElementById('pricing-section').hidden = false;
     }
 
-    // Phone number
+    // Contact: website button, Instagram, WhatsApp (Bali books via WhatsApp), phone
+    const isInstagram = url => /instagram\.com/i.test(url || '');
+    const instagram = studio.instagram || (isInstagram(studio.website) ? studio.website : null);
+    const website = isInstagram(studio.website) ? null : studio.website;
+
+    const websiteBtn = document.getElementById('studio-website');
+    if (website || instagram) {
+        websiteBtn.href = website || instagram;
+        websiteBtn.textContent = website ? 'Visit Website' : 'View Instagram';
+        websiteBtn.hidden = false;
+    }
+    if (instagram && website) {
+        document.getElementById('studio-instagram').href = instagram;
+        document.getElementById('instagram-item').hidden = false;
+    }
+
     const phoneLink = document.getElementById('studio-phone');
     if (studio.phone) {
         const cleanPhone = studio.phone.replace(/\D/g, '');
-        phoneLink.href = `tel:${cleanPhone}`;
+        phoneLink.href = `tel:+${cleanPhone}`;
         phoneLink.textContent = studio.phone;
-        phoneLink.parentElement.style.display = 'block';
+        phoneLink.parentElement.style.display = '';
+        // Indonesian mobile numbers (+62 8xx) are WhatsApp numbers in practice
+        if (/^628/.test(cleanPhone)) {
+            document.getElementById('studio-whatsapp').href = `https://wa.me/${cleanPhone}`;
+            document.getElementById('whatsapp-item').hidden = false;
+        }
     } else {
         phoneLink.parentElement.style.display = 'none';
-    }
-
-    // Add About section
-    const aboutSection = document.createElement('div');
-    aboutSection.className = 'about-section';
-    aboutSection.innerHTML = `
-        <h2>About ${studio.name}</h2>
-        <p>${studio.name} is a ${studioType} studio located in ${studio.city}, ${studio.state} 
-           with a ${studio.rating || 'N/A'} star rating from ${studio.number_of_reviews || 0} reviews. 
-           This establishment is offering ${activeCriteria.join(', ') || 'various pilates services'}.</p>
-    `;
-    
-    featuresContainer.parentNode.insertBefore(aboutSection, featuresContainer.nextSibling);
-
-    // Contact Info
-    if (studio.website) {
-        const websiteLink = document.getElementById('studio-website');
-        websiteLink.href = studio.website;
-        websiteLink.textContent = 'Visit Website';
-    }
-
-    // Hours formatting
-    const hoursContainer = document.getElementById('studio-hours');
-    if (studio.opening_hours) {
-        const hours = studio.opening_hours
-            .replace(/[\u202f\u2009\u2013]/g, ' ')
-            .split('\n')
-            .map(day => {
-                const [dayName, time] = day.split(': ');
-                return `<div class="hours-row">
-                    <span class="day">${dayName}</span>
-                    <span class="time">${time || 'Closed'}</span>
-                </div>`;
-            }).join('');
-        hoursContainer.innerHTML = hours;
-    } else {
-        hoursContainer.innerHTML = '<p>Hours not available</p>';
     }
 
     // Image
     const studioImage = document.getElementById('studio-image');
     studioImage.src = studio.photo_url || '/assets/default-studio.jpg';
     studioImage.alt = studio.name;
-
-    // Social Links
-    if (studio.instagram) {
-        document.getElementById('instagram-link').href = studio.instagram;
-    } else {
-        document.getElementById('instagram-link').style.display = 'none';
-    }
-    
-    if (studio.facebook) {
-        document.getElementById('facebook-link').href = studio.facebook;
-    } else {
-        document.getElementById('facebook-link').style.display = 'none';
-    }
 
     updateMetadata(studio);
 }

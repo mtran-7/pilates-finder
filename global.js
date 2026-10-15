@@ -1,5 +1,10 @@
 let allStudiosData = null;
 
+// "3479" -> "3,479" for every user-facing count
+function formatCount(n) {
+    return Number(n || 0).toLocaleString('en-US');
+}
+
 async function loadStudiosData() {
     try {
         const response = await fetch("/pilates_studios.json");
@@ -33,6 +38,15 @@ async function loadStudiosData() {
                 longitude: studio.Longitude ?? null,
                 price_single: studio["Price Single"] || null,
                 price_intro: studio["Price Intro"] || null,
+                // Original-currency labels (e.g. "Rp 275K") for non-USD studios;
+                // the numeric USD fields above still drive sorting and filters.
+                price_single_local: studio["Price Single Local"] || null,
+                price_intro_local: studio["Price Intro Local"] || null,
+                // Membership-based studios price by month, not per class
+                price_monthly: studio["Price Monthly"] || null,
+                price_details: studio["Price Details"] || null,
+                price_source_url: studio["Price Source URL"] || null,
+                instagram: studio.Instagram || null,
                 intro_offer: studio["Intro Offer"] || null,
                 criteria: {
                     Reformer: Boolean(studio.Reformer),
@@ -77,12 +91,58 @@ function initLocationPicker() {
     const list = mount.querySelector('.location-list');
     const search = mount.querySelector('.location-search');
     let loaded = false;
+    let regionData = null;
+
+    // Top level shows regions (USA, Bali, …); picking USA drills into its states
+    function renderRegions() {
+        search.hidden = true;
+        search.value = '';
+        const usaCount = regionData
+            .filter(s => s.state !== 'Bali')
+            .reduce((n, s) => n + s.studios.length, 0);
+        const bali = regionData.find(s => s.state === 'Bali');
+        list.innerHTML = `
+            <button type="button" class="location-item location-region">
+                <span>USA</span><span class="location-count">${formatCount(usaCount)}</span>
+            </button>
+            ${bali ? `
+            <a href="/cities?state=Bali" class="location-item">
+                <span>Bali</span><span class="location-count">${formatCount(bali.studios.length)}</span>
+            </a>` : ''}`;
+        // stopPropagation: the re-render detaches the clicked button, which would
+        // make the document-level outside-click handler close the panel
+        list.querySelector('.location-region').addEventListener('click', (e) => {
+            e.stopPropagation();
+            renderStates();
+        });
+    }
+
+    function renderStates() {
+        search.hidden = false;
+        const states = regionData
+            .filter(s => s.state !== 'Bali')
+            .map(s => ({ name: s.state, count: s.studios.length }))
+            .sort((a, b) => a.name.localeCompare(b.name));
+        list.innerHTML = `
+            <button type="button" class="location-item location-back"><span>← All locations</span></button>
+            ${states.map(s => `
+            <a href="/cities?state=${encodeURIComponent(s.name)}" class="location-item">
+                <span>${s.name}</span><span class="location-count">${formatCount(s.count)}</span>
+            </a>`).join('')}`;
+        list.querySelector('.location-back').addEventListener('click', (e) => {
+            e.stopPropagation();
+            renderRegions();
+        });
+        search.focus();
+    }
 
     async function open() {
         panel.hidden = false;
         btn.setAttribute('aria-expanded', 'true');
-        search.focus();
-        if (loaded) return;
+        if (loaded) {
+            if (!search.hidden) search.focus();
+            return;
+        }
         loaded = true;
         const data = await loadStudiosData();
         if (!data || !Array.isArray(data)) {
@@ -90,13 +150,8 @@ function initLocationPicker() {
             loaded = false;
             return;
         }
-        const states = data
-            .map(s => ({ name: s.state, count: s.studios.length }))
-            .sort((a, b) => a.name.localeCompare(b.name));
-        list.innerHTML = states.map(s => `
-            <a href="/cities?state=${encodeURIComponent(s.name)}" class="location-item">
-                <span>${s.name}</span><span class="location-count">${s.count}</span>
-            </a>`).join('');
+        regionData = data;
+        renderRegions();
     }
 
     function close() {
@@ -113,7 +168,7 @@ function initLocationPicker() {
     });
     search.addEventListener('input', () => {
         const q = search.value.toLowerCase();
-        list.querySelectorAll('.location-item').forEach(el => {
+        list.querySelectorAll('.location-item:not(.location-back)').forEach(el => {
             el.hidden = !el.textContent.toLowerCase().includes(q);
         });
     });
@@ -181,7 +236,7 @@ function getStudioOffer(studio) {
     for (const { pattern, label } of CHAIN_OFFERS) {
         if (pattern.test(studio.name || '')) return label;
     }
-    if (studio.price_intro) return `New client intro offer for $${studio.price_intro}`;
+    if (studio.price_intro) return `New client intro offer for ${studio.price_intro_local || `$${studio.price_intro}`}`;
     if (studio.criteria?.Free_Trial) return 'Free trial for new clients';
     return null;
 }
@@ -222,8 +277,9 @@ function studioCardHtml(studio, stateName) {
     const isFav = loadFavorites().has(favId);
 
     const metaParts = [];
-    if (studio.rating) metaParts.push(`<span class="studio-rating">★ ${studio.rating} <span class="review-count">(${reviews})</span></span>`);
-    if (studio.price_single) metaParts.push(`<span class="studio-price">From $${studio.price_single}/class</span>`);
+    if (studio.rating) metaParts.push(`<span class="studio-rating">★ ${studio.rating} <span class="review-count">(${formatCount(reviews)})</span></span>`);
+    if (studio.price_single) metaParts.push(`<span class="studio-price">From ${studio.price_single_local || `$${studio.price_single}`}/class</span>`);
+    else if (studio.price_monthly) metaParts.push(`<span class="studio-price">From $${studio.price_monthly}/month</span>`);
 
     const chips = Object.entries(studio.criteria || {})
         .filter(([key, value]) => value && CRITERIA_EMOJIS[key])
@@ -274,4 +330,4 @@ document.addEventListener('click', (e) => {
     });
 });
 
-export { loadStudiosData, getStudioOffer, studioCardHtml, CRITERIA_EMOJIS };
+export { loadStudiosData, getStudioOffer, studioCardHtml, CRITERIA_EMOJIS, formatCount };

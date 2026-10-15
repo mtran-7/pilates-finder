@@ -12,8 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const status = document.getElementById('waitlist-status');
     const emailInput = form.querySelector('input[type="email"]');
-    const regionSelect = form.querySelector('select[name="region"]');
+    const cityInput = form.querySelector('input[name="city"]');
+    const countryInput = form.querySelector('input[name="country"]');
     const submitBtn = form.querySelector('button[type="submit"]');
+
+    // Known coming-soon regions prefill both fields from the card's label
+    const REGION_PREFILL = { London: { city: 'London', country: 'United Kingdom' } };
 
     function setStatus(message, isError = false) {
         status.textContent = message;
@@ -27,15 +31,25 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Coming-soon city cards link to #waitlist; preselect the region they clicked
+    // Coming-soon city cards link to #waitlist; prefill the city they clicked
     document.addEventListener('click', (e) => {
         const link = e.target.closest('a[data-waitlist-region]');
-        if (link) regionSelect.value = link.dataset.waitlistRegion;
+        if (!link) return;
+        const region = link.dataset.waitlistRegion;
+        const prefill = REGION_PREFILL[region] || { city: region, country: '' };
+        cityInput.value = prefill.city;
+        countryInput.value = prefill.country;
     });
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const email = emailInput.value.trim();
+        const city = cityInput.value.trim();
+        const country = countryInput.value.trim();
+        if (!city || !country) {
+            setStatus('Please tell us the city and country.', true);
+            return;
+        }
         if (!EMAIL_RE.test(email)) {
             setStatus('Please enter a valid email address.', true);
             return;
@@ -51,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     apikey: SUPABASE_ANON_KEY,
                     Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
                 },
-                body: JSON.stringify({ email, region: regionSelect.value }),
+                body: JSON.stringify({ email, region: `${city}, ${country}` }),
             });
             if (resp.ok) {
                 form.reset();

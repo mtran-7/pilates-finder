@@ -1,4 +1,4 @@
-import { loadStudiosData, getStudioOffer, studioCardHtml } from './global.js';
+import { loadStudiosData, getStudioOffer, studioCardHtml, formatCount } from './global.js';
 
 // Approximate visitor location (US state/city) from their IP, for localizing
 // the offers section. Returns null outside the US or when the lookup fails.
@@ -99,18 +99,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     const featuredCitiesContainer = document.getElementById("featured-cities-list");
 
     // One card per region; regions with no studios in the data yet show "coming soon"
+    const baliStudios = allStudiosData.find(s => s.state === 'Bali')?.studios || [];
     const featuredRegions = [
-        { region: "USA", studios: allStudiosData.flatMap(s => s.studios) },
-        { region: "Bali", studios: [] },
+        { region: "USA", studios: allStudiosData.filter(s => s.state !== 'Bali').flatMap(s => s.studios), href: "/studios" },
+        { region: "Bali", studios: baliStudios, href: "/cities?state=Bali" },
         { region: "London", studios: [] }
     ];
 
-    function regionCardHtml({ region, studios }) {
+    function regionCardHtml({ region, studios, href }) {
         if (!studios.length) {
             return `
                 <a class="city-card coming-soon" href="#waitlist" data-waitlist-region="${region}">
+                    <span class="coming-soon-badge">Coming soon</span>
                     <h3>${region}</h3>
-                    <p>Studios coming soon</p>
                     <p class="notify-hint">Sign up to be notified when our ${region} list is ready →</p>
                 </a>`;
         }
@@ -128,14 +129,14 @@ document.addEventListener("DOMContentLoaded", async () => {
             .sort((a, b) => b[1] - a[1])
             .slice(0, 3)
             .map(([criterion, count]) =>
-                `<div class="criteria-item">${criteriaEmojis[criterion] || ""} ${criterion.replace('_', ' ')} (${count})</div>`
+                `<div class="criteria-item">${criteriaEmojis[criterion] || ""} ${criterion.replace('_', ' ')} (${formatCount(count)})</div>`
             )
             .join("");
 
         return `
-            <a class="city-card" href="/studios">
+            <a class="city-card" href="${href}">
                 <h3>${region}</h3>
-                <p>${studios.length} pilates locations</p>
+                <p>${formatCount(studios.length)} pilates locations</p>
                 <div class="criteria">${topCriteria}</div>
             </a>`;
     }

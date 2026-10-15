@@ -28,7 +28,6 @@
             <nav class="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
                 <div id="nav-location" class="nav-location"></div>
-                <a href="/studios" class="nav-link">Browse Studios</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>
@@ -48,7 +47,6 @@
             <div class="studio-main">
                 <h1 id="studio-name" class="studio-title"></h1>
                 <div class="meta-row">
-                    <div class="studio-type" id="studio-type"></div>
                     <div class="rating-container">
                         <span class="rating">⭐</span>
                         <span id="rating-value"></span>
@@ -58,7 +56,7 @@
 
                 <div class="studio-location">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span id="studio-address"></span>
+                    <a id="studio-address" href="" target="_blank" rel="noopener"></a>
                 </div>
 
                 <div class="features-section">
@@ -75,35 +73,23 @@
                     </div>
                 </div>
 
-                <div class="info-row">
-                    <div class="hours-column">
-                        <h3>Hours</h3>
-                        <div id="studio-hours" class="hours-list">
-                            <!-- Will be populated by JS -->
+                <div class="contact-section">
+                    <h3>Contact</h3>
+                    <a id="studio-website" class="primary-button contact-cta" href="" target="_blank" rel="noopener" hidden>Visit Website</a>
+                    <div class="contact-info">
+                        <div class="contact-item" id="instagram-item" hidden>
+                            <i class="fab fa-instagram"></i>
+                            <a id="studio-instagram" href="" target="_blank" rel="noopener">Instagram</a>
+                        </div>
+                        <div class="contact-item" id="whatsapp-item" hidden>
+                            <i class="fab fa-whatsapp"></i>
+                            <a id="studio-whatsapp" href="" target="_blank" rel="noopener">WhatsApp</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a id="studio-phone" href="tel:"></a>
                         </div>
                     </div>
-                    <div class="contact-column">
-                        <h3>Contact</h3>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <a id="studio-phone" href="tel:"></a>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-globe"></i>
-                                <a id="studio-website" href="" target="_blank">Visit Website</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="social-links">
-                    <a id="instagram-link" href="#" class="social-icon" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a id="facebook-link" href="#" class="social-icon" target="_blank">
-                        <i class="fab fa-facebook"></i>
-                    </a>
                 </div>
             </div>
 

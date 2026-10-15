@@ -1,4 +1,4 @@
-import { loadStudiosData, getStudioOffer, studioCardHtml } from './global.js';
+import { loadStudiosData, getStudioOffer, studioCardHtml, formatCount } from './global.js';
 
 const PAGE_SIZE = 24;
 
@@ -104,7 +104,7 @@ function render() {
     document.getElementById('sort-select').value = state.sort;
 
     const results = applyFilters();
-    countEl.textContent = `${results.length} ${results.length === 1 ? 'studio' : 'studios'} found`;
+    countEl.textContent = `${formatCount(results.length)} ${results.length === 1 ? 'studio' : 'studios'} found`;
     resultsEl.innerHTML = results.slice(0, state.shown)
         .map(({ studio, stateName }) => studioCardHtml(studio, stateName))
         .join('');
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.querySelectorAll('[data-count-for]').forEach(el => {
         const key = el.dataset.countFor;
         const n = allStudios.filter(({ studio }) => studio.criteria?.[key]).length;
-        el.textContent = `${n} studios`;
+        el.textContent = `${formatCount(n)} studios`;
     });
 
     // State select options

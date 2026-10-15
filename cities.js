@@ -1,4 +1,4 @@
-import { loadStudiosData } from './global.js';
+import { loadStudiosData, formatCount } from './global.js';
 
 const criteriaEmojis = {
     Reformer: "🏋️‍♀️",
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         card.href = `/city?state=${encodeURIComponent(displayName)}&city=${encodeURIComponent(city.name)}`;
         card.innerHTML = `
             <h3>${city.name}</h3>
-            <p>${city.totalStudios} pilates ${city.totalStudios === 1 ? 'location' : 'locations'}</p>
+            <p>${formatCount(city.totalStudios)} pilates ${city.totalStudios === 1 ? 'location' : 'locations'}</p>
             <div class="criteria">
                 ${topCriteria.map(([key, count]) => `
                     <div class="criteria-item">

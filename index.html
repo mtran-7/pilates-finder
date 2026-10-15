@@ -10,12 +10,12 @@
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Pilates Finder | Find Top-Rated Pilates Studios Near You">
     <meta property="og:description" content="Discover the best Pilates studios near you. Search Reformer, Mat, Barre, and Tower Pilates classes across the United States.">
-    <meta property="og:image" content="https://pilatesfinder.org/images/og-home.jpg">
-    <meta property="og:url" content="https://pilatesfinder.org">
+    <meta property="og:image" content="https://www.pilatesfinder.org/images/og-home.jpg">
+    <meta property="og:url" content="https://www.pilatesfinder.org">
     <meta property="og:type" content="website">
     
     <!-- Accessibility Skip Link -->
-    <link rel="canonical" href="https://pilatesfinder.org">
+    <link rel="canonical" href="https://www.pilatesfinder.org">
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Inter:wght@400;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <!-- Font Awesome CDN -->
@@ -37,7 +37,6 @@
             <nav class="nav-menu">
                 <a href="/" class="nav-link">Home</a>
                 <div id="nav-location" class="nav-location"></div>
-                <a href="/studios" class="nav-link">Browse Studios</a>
                 <a href="/about.html" class="nav-link">About</a>
                 <a href="/contact.html" class="nav-link">Contact</a>
             </nav>
@@ -242,14 +241,11 @@
         <!-- Waitlist Section (coming-soon regions) -->
         <section id="waitlist" class="waitlist-section" aria-labelledby="waitlist-heading">
             <div class="waitlist-content">
-                <h2 id="waitlist-heading">Coming Soon: Bali &amp; London</h2>
-                <p>We're curating studio lists for new destinations. Leave your email and we'll let you know the moment your city is ready.</p>
+                <h2 id="waitlist-heading">Which city should we cover next?</h2>
+                <p>Tell us where you'd like Pilates Finder to go — we'll email you the moment your city is ready.</p>
                 <form id="waitlist-form" class="waitlist-form" novalidate>
-                    <select name="region" aria-label="Which city are you interested in?">
-                        <option value="Bali">Bali</option>
-                        <option value="London">London</option>
-                        <option value="general">Somewhere else</option>
-                    </select>
+                    <input type="text" name="city" placeholder="City (e.g. London)" required aria-label="City">
+                    <input type="text" name="country" placeholder="Country" required aria-label="Country">
                     <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
                     <button type="submit" class="primary-button">Notify me</button>
                 </form>

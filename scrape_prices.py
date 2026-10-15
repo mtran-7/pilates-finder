@@ -31,19 +31,61 @@ USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
 TIMEOUT = 10
 MAX_PRICE_PAGES = 3
 
-PRICING_LINK_RE = re.compile(r"pric|rate|member|package|class|intro|offer|book", re.I)
-PRICE_RE = re.compile(r"\$\s?(\d{1,3}(?:\.\d{2})?)")
+PRICING_LINK_RE = re.compile(r"pric|rate|member|package|class|intro|offer|book|reformer|\bmat\b", re.I)
+
+# Prices are stored in USD; IDR amounts (Bali studios) are converted.
+IDR_PER_USD = 16000
+
+# "$45" | "Rp 150.000" / "IDR 250,000" / "Rp 1500000"
+# | "225,000 IDR" / "200,000K IDR" (suffix currency, stray K included)
+# | "Rp 150K" / bare "150K"
+MONEY_PAT = (
+    r"\$\s?(?P<usd>\d{1,3}(?:\.\d{2})?)"
+    r"|(?:Rp\.?|IDR)\s?(?P<idr>\d{1,3}(?:[.,\s]\d{3})+|\d{4,7})"
+    r"|(?P<idrsuf>\d{1,3}(?:[.,\s]\d{3})+)\s?0*K?\s?(?:IDR|Rp)\b"
+    r"|(?:(?:Rp\.?|IDR)\s?|\b)(?P<idrk>\d{2,3})\s?[kK]\b"
+)
+MONEY_RE = re.compile(MONEY_PAT)
+
+
+def money_to_usd(m):
+    """(usd_amount, idr_amount_or_None) for one MONEY_RE match."""
+    if m.group("usd"):
+        return float(m.group("usd")), None
+    if m.group("idr") or m.group("idrsuf"):
+        idr = float((m.group("idr") or m.group("idrsuf")).replace(".", "").replace(",", "").replace(" ", ""))
+    else:
+        idr = float(m.group("idrk")) * 1000
+    return round(idr / IDR_PER_USD), idr
+
+
+def fmt_idr(idr):
+    """Rp label the way Bali studios write it: 'Rp 550K', 'Rp 2.08M'."""
+    if idr >= 1_000_000:
+        mil = idr / 1_000_000
+        return f"Rp {mil:g}M"
+    return f"Rp {int(round(idr / 1000))}K"
 # Tier 1: phrases that almost always label a drop-in/single class price
 SINGLE_TIER1 = re.compile(
     r"drop[\s-]?ins?\b|single (?:class|session|visit)|class single|session single"
     r"|\bsingle\b(?=\s*[:\-–]?\s*\$)",  # bare 'Single $50' style labels
     re.I)
 # Tier 2: weaker phrases, used only when tier 1 found nothing
-SINGLE_TIER2 = re.compile(r"\b(?:one|1) class\b|per class", re.I)
+# ("1 reformer credit" is how Bali credit-based studios label a single class)
+SINGLE_TIER2 = re.compile(r"\b(?:one|1) class\b|per class|\b(?:one|1)\s+(?:[a-z]+\s+)?credit\b", re.I)
+# Tier 3: privates-only studios price per private/semi-private session; take the
+# cheapest such rate, and only when tiers 1-2 found nothing
+SINGLE_TIER3 = re.compile(r"(?:semi[\s-]?)?private\s+(?:reformer\s+|pilates\s+)?(?:class|session|pilates)\b", re.I)
 INTRO_KEYWORDS = re.compile(r"intro(?:ductory)?\b|first (?:class|session|visit)|trial\b|new (?:client|student|member)", re.I)
-# Intro-offer shapes: "$49 for 2 weeks", "3 classes for $30", "50% off", "free intro class"
-BUNDLE_RE = re.compile(r"\$\s?(\d{1,3})\s*for\s*(\d{1,2})\s*(classes|sessions|weeks|days|class|session|week|day)\b", re.I)
-BUNDLE_REV_RE = re.compile(r"(\d{1,2})\s*(classes|sessions|weeks|class|session|week)\s*for\s*\$\s?(\d{1,3})\b", re.I)
+# Intro-offer shapes: "$49 for 2 weeks", "3 classes for Rp 450.000",
+# "3-class intro pack for 550K", "50% off", "free intro class"
+BUNDLE_RE = re.compile(rf"(?:{MONEY_PAT})\s*for\s*(?P<n>\d{{1,2}})\s*(?P<unit>classes|sessions|weeks|days|class|session|week|day)\b", re.I)
+# No connector word required: "3 Classes. Just 450K", "3 Class Intro Offer 450,000K IDR";
+# the intro-keyword context check in extract_intro_offer keeps this from
+# swallowing ordinary package tables.
+BUNDLE_REV_RE = re.compile(
+    rf"(?P<n>\d{{1,2}})[\s-]*(?P<unit>classes|sessions|weeks|class|session|week)\b"
+    rf"[^?!$]{{0,40}}?(?:{MONEY_PAT})", re.I)
 PCT_RE = re.compile(r"(\d{1,2})\s?%\s?off", re.I)
 FREE_RE = re.compile(r"free\s+(?:intro(?:ductory)?|first|trial)\s*(?:class|session|week)?|first\s+(?:class|session)\s+(?:is\s+)?free", re.I)
 TAG_RE = re.compile(r"<script[\s\S]*?</script>|<style[\s\S]*?</style>|<[^>]+>")
@@ -78,10 +120,12 @@ def pricing_page_urls(base_url, page_html):
     found = []
     for m in re.finditer(r'<a[^>]+href=["\']([^"\'#]+)["\'][^>]*>(.{0,80}?)</a>', page_html, re.I | re.S):
         href, label = m.group(1), strip_tags(m.group(2))
-        if not (PRICING_LINK_RE.search(href) or PRICING_LINK_RE.search(label)):
-            continue
         absolute = urllib.parse.urljoin(base_url, href)
         parsed = urllib.parse.urlparse(absolute)
+        # Match on the path, not the full URL: a domain like malupilates.com
+        # would otherwise make every internal link look like a pricing page.
+        if not (PRICING_LINK_RE.search(parsed.path) or PRICING_LINK_RE.search(label)):
+            continue
         if parsed.netloc != base.netloc or not parsed.scheme.startswith("http"):
             continue
         if absolute not in found and absolute != base_url:
@@ -101,23 +145,33 @@ def nearest_price(text, kw_start, kw_end, lo=10, hi=120, before=30, after=70):
     window = text[window_start: kw_end + after]
     best = None
     best_dist = 10 ** 9
-    for m in PRICE_RE.finditer(window):
-        amount = float(m.group(1))
-        if not (lo <= amount <= hi):
+    for m in MONEY_RE.finditer(window):
+        amount, idr = money_to_usd(m)
+        # Converted IDR prices get their own sanity range: a Bali single class
+        # runs ~Rp 100-300K (~$6-19), below the USD floor used for $ sites.
+        if not ((3 <= amount <= 125) if idr else (lo <= amount <= hi)):
             continue
         pos = window_start + m.start()
         dist = min(abs(pos - kw_end), abs(kw_start - pos))
         if dist < best_dist:
-            best, best_dist = amount, dist
+            best, best_dist = (amount, idr), dist
     return best
 
 
-def anchored_price(text, keyword_re, lo=10, hi=120):
+def anchored_price(text, keyword_re, lo=10, hi=120, take_min=False):
+    """(usd_amount, idr_amount_or_None) for the price nearest a keyword, or None.
+
+    take_min considers every keyword match and returns the cheapest hit
+    (private vs semi-private rates); default is first match wins.
+    """
+    found = []
     for m in keyword_re.finditer(text):
         price = nearest_price(text, m.start(), m.end(), lo=lo, hi=hi)
         if price is not None:
-            return price
-    return None
+            if not take_min:
+                return price
+            found.append(price)
+    return min(found, key=lambda p: p[0]) if found else None
 
 
 def fmt(amount):
@@ -125,21 +179,33 @@ def fmt(amount):
 
 
 def plural(n, unit):
-    unit = unit.lower().rstrip("s")
-    return f"{n} {unit}{'' if n == '1' else 's'}"
+    unit = unit.lower()
+    if unit.endswith("es") and unit[:-2].endswith("s"):
+        unit = unit[:-2]  # classes -> class
+    elif unit.endswith("s") and not unit.endswith("ss"):
+        unit = unit[:-1]  # sessions -> session
+    suffix = "" if n == "1" else ("es" if unit.endswith("s") else "s")
+    return f"{n} {unit}{suffix}"
+
+
+def money_label(usd, idr):
+    """IDR prices display in their own currency, matching the studio's site."""
+    return fmt_idr(idr) if idr else f"${fmt(usd)}"
 
 
 def extract_intro_offer(text):
     """A short human-readable intro-offer label, or None."""
-    # "$49 for 2 weeks" / "2 classes for $30" near intro wording
+    # "$49 for 2 weeks" / "2 classes for Rp 300.000" near intro wording
     for m in BUNDLE_RE.finditer(text):
         ctx = text[max(0, m.start() - 100): m.end() + 60]
-        if INTRO_KEYWORDS.search(ctx) and 0 < float(m.group(1)) <= 200:
-            return f"${fmt(float(m.group(1)))} for {plural(m.group(2), m.group(3))}"
+        amount, idr = money_to_usd(m)
+        if INTRO_KEYWORDS.search(ctx) and 0 < amount <= 200:
+            return f"{money_label(amount, idr)} for {plural(m.group('n'), m.group('unit'))}"
     for m in BUNDLE_REV_RE.finditer(text):
         ctx = text[max(0, m.start() - 100): m.end() + 60]
-        if INTRO_KEYWORDS.search(ctx) and 0 < float(m.group(3)) <= 200:
-            return f"{plural(m.group(1), m.group(2))} for ${fmt(float(m.group(3)))}"
+        amount, idr = money_to_usd(m)
+        if INTRO_KEYWORDS.search(ctx) and 0 < amount <= 200:
+            return f"{plural(m.group('n'), m.group('unit'))} for {money_label(amount, idr)}"
     # "50% off" near intro wording
     for m in PCT_RE.finditer(text):
         ctx = text[max(0, m.start() - 100): m.end() + 60]
@@ -152,10 +218,15 @@ def extract_intro_offer(text):
 
 
 def extract_prices(text):
-    """Return (single, intro, offer_label) from HTML-stripped text, keyword-anchored."""
+    """Return (single, intro, offer_label) from HTML-stripped text, keyword-anchored.
+
+    single and intro are (usd, idr_or_None) tuples or None.
+    """
     single = anchored_price(text, SINGLE_TIER1)
     if single is None:
         single = anchored_price(text, SINGLE_TIER2)
+    if single is None:
+        single = anchored_price(text, SINGLE_TIER3, hi=150, take_min=True)
     intro = anchored_price(text, INTRO_KEYWORDS, lo=5)
     offer = extract_intro_offer(text)
     return single, intro, offer
@@ -167,33 +238,65 @@ def scrape_studio(website):
     Returns None when the homepage itself could not be fetched, so the
     caller can leave the studio unmarked and retry on a later run.
     """
-    pages = [website]
     try:
         home_html = fetch(website)
     except Exception:
         return None
     if not home_html:
         return {}
-    pages += pricing_page_urls(website, home_html)
+    pages = [website] + pricing_page_urls(website, home_html)
+
+    # Google often lists a deep page (location subpage + UTM params) that is a
+    # JS shell; prices usually live on the site root or its pricing pages.
+    # Never climb to the root of multi-tenant platforms: linktr.ee/'s root is
+    # Linktree's own marketing page, not the studio's.
+    parsed = urllib.parse.urlparse(website)
+    host = parsed.netloc.lower().removeprefix("www.")
+    is_platform = host in {
+        "linktr.ee", "instagram.com", "facebook.com", "momence.com",
+        "linkin.bio", "taplink.cc", "bio.site", "calendly.com", "wa.me",
+    } or any(host.endswith("." + p) for p in ("glofox.com", "mindbodyonline.com", "bookee.co"))
+    if not is_platform and (parsed.path.strip("/") or parsed.query):
+        root = f"{parsed.scheme}://{parsed.netloc}/"
+        try:
+            root_html = fetch(root)
+        except Exception:
+            root_html = None
+        if root_html:
+            fetched_root = {root: root_html}
+            for url in [root] + pricing_page_urls(root, root_html):
+                if url not in pages:
+                    pages.append(url)
+        else:
+            fetched_root = {}
+    else:
+        fetched_root = {}
 
     best = {}
-    for url in pages:
+    for url in pages[: 2 * MAX_PRICE_PAGES]:
         try:
-            page_html = home_html if url == website else fetch(url)
+            page_html = home_html if url == website else fetched_root.get(url) or fetch(url)
         except Exception:
             continue
         if not page_html:
             continue
         single, intro, offer = extract_prices(strip_tags(page_html))
-        if single and "Price Single" not in best:
-            best["Price Single"] = fmt(single)
+        # "From" price: the cheapest single-class rate anywhere on the site
+        # (e.g. mat 200K vs reformer 225K), not the first page's
+        if single and single[0] < best.get("_single_usd", 10 ** 9):
+            usd, idr = single
+            best["_single_usd"] = usd
+            best["Price Single"] = fmt(usd)
             best["Price Source URL"] = url
+            best["Price Single Local"] = fmt_idr(idr) if idr else None
         if intro and "Price Intro" not in best:
-            best["Price Intro"] = fmt(intro)
+            usd, idr = intro
+            best["Price Intro"] = fmt(usd)
+            if idr:
+                best["Price Intro Local"] = fmt_idr(idr)
         if offer and "Intro Offer" not in best:
             best["Intro Offer"] = offer
-        if "Price Single" in best and "Intro Offer" in best:
-            break
+    best.pop("_single_usd", None)
     return best
 
 
@@ -203,6 +306,7 @@ def main():
     parser.add_argument("--force", action="store_true", help="re-scrape studios already marked as scraped")
     parser.add_argument("--retry-empty", action="store_true",
                         help="also re-scrape studios marked scraped that yielded no price fields (recovers transient fetch failures)")
+    parser.add_argument("--state", help="only process studios in this state/region (e.g. Bali)")
     args = parser.parse_args()
 
     with open(DATA_FILES[0]) as f:
@@ -212,6 +316,8 @@ def main():
         return not (s.get("Price Single") or s.get("Price Intro") or s.get("Intro Offer"))
 
     todo = [s for s in studios if s.get("Website")]
+    if args.state:
+        todo = [s for s in todo if s.get("State") == args.state]
     if not args.force:
         if args.retry_empty:
             todo = [s for s in todo if not s.get("Price Scraped") or is_empty(s)]
@@ -233,9 +339,11 @@ def main():
             if result.get("Price Single"):
                 studio["Price Single"] = result["Price Single"]
                 studio["Price Source URL"] = result.get("Price Source URL")
+                studio["Price Single Local"] = result.get("Price Single Local")
                 found_single += 1
             if result.get("Price Intro"):
                 studio["Price Intro"] = result["Price Intro"]
+                studio["Price Intro Local"] = result.get("Price Intro Local")
                 found_intro += 1
             if result.get("Intro Offer"):
                 studio["Intro Offer"] = result["Intro Offer"]
