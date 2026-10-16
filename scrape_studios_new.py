@@ -137,7 +137,12 @@ def main():
     parser.add_argument("--limit-cities", type=int, default=0)
     parser.add_argument("--chains", action="store_true",
                         help="search KNOWN_CHAINS by name per city instead of the generic pilates query")
+    parser.add_argument("--chain", default=None,
+                        help="with --chains: only search this one chain (e.g. Lagree)")
     args = parser.parse_args()
+    chains = [c for c in KNOWN_CHAINS if not args.chain or c.lower() == args.chain.lower()]
+    if args.chains and not chains:
+        sys.exit(f"Error: --chain {args.chain!r} is not in KNOWN_CHAINS {KNOWN_CHAINS}.")
 
     api_key = load_api_key()
 
@@ -156,7 +161,7 @@ def main():
             try:
                 if args.chains:
                     places = []
-                    for chain in KNOWN_CHAINS:
+                    for chain in chains:
                         chain_token = normalize(chain.split()[0])
                         for p in search_city(api_key, city, state,
                                              query=f"{chain} in {city}, {state}", max_pages=1):
