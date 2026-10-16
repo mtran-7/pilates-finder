@@ -30,6 +30,7 @@ FIELD_MASK = ",".join([
 # Same inference rules as scrape_google_places.py, minus website scraping
 CRITERIA_KEYWORDS = {
     "Reformer": ["reformer", "reformer pilates", "reformer class"],
+    "Lagree": ["lagree"],
     "Mat": ["mat", "mat pilates", "yoga mat"],
     "Barre": ["barre", "barre class", "barre workout"],
     "Online": ["online", "virtual", "live stream"],
@@ -118,6 +119,7 @@ def to_record(place, area):
         "Website": place.get("websiteUri", ""),
         "Photo URL": photo_url(place),
         "Reformer": criteria["Reformer"],
+        "Lagree": criteria["Lagree"],
         "Mat": criteria["Mat"],
         "Barre": criteria["Barre"],
         "Online": criteria["Online"],

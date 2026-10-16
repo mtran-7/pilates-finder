@@ -50,6 +50,7 @@ async function loadStudiosData() {
                 intro_offer: studio["Intro Offer"] || null,
                 criteria: {
                     Reformer: Boolean(studio.Reformer),
+                    Lagree: Boolean(studio.Lagree),
                     Mat: Boolean(studio.Mat),
                     Barre: Boolean(studio.Barre),
                     Online: Boolean(studio.Online),
@@ -244,7 +245,7 @@ function getStudioOffer(studio) {
 // ===== Shared studio card (used on home, browse, city and studio pages) =====
 
 const CRITERIA_EMOJIS = {
-    Reformer: "🏋️‍♀️", Mat: "🟦", Private: "🔒", Group: "👥",
+    Reformer: "🏋️‍♀️", Lagree: "🔥", Mat: "🟦", Private: "🔒", Group: "👥",
     Online: "🌐", Barre: "🩰", Tower: "🗼", Free_Trial: "🎟️"
 };
 

@@ -73,6 +73,7 @@ let allStudiosData = null;
 document.addEventListener("DOMContentLoaded", async () => {
     const criteriaEmojis = {
         Reformer: "🏋️‍♀️",
+        Lagree: "🔥",
         Mat: "🟦",
         Private: "🔒",
         Group: "👥",

@@ -50,6 +50,7 @@ KNOWN_CHAINS = ["solidcore", "SLT pilates", "BODYROK", "Lagree"]
 
 CRITERIA_KEYWORDS = {
     "Reformer": ["reformer"],
+    "Lagree": ["lagree"],
     "Mat": ["mat pilates", "mat class", "mat work"],
     "Barre": ["barre"],
     "Tower": ["tower"],
@@ -62,6 +63,20 @@ CRITERIA_KEYWORDS = {
 ssl_ctx = ssl.create_default_context()
 ssl_ctx.check_hostname = False
 ssl_ctx.verify_mode = ssl.CERT_NONE
+
+
+class _Http308RedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Follow 308 Permanent Redirect (urllib only learned it in Python 3.11)."""
+    def http_error_308(self, req, fp, code, msg, headers):
+        return self.http_error_307(req, fp, code, msg, headers)
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        # Treat 308 like 307 (same semantics minus permanence)
+        return super().redirect_request(req, fp, 307 if code == 308 else code, msg, headers, newurl)
+
+
+opener = urllib.request.build_opener(
+    _Http308RedirectHandler, urllib.request.HTTPSHandler(context=ssl_ctx))
 
 
 def load_api_key():
@@ -123,7 +138,7 @@ def website_criteria(url, name):
     if url:
         try:
             req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "text/html"})
-            with urllib.request.urlopen(req, timeout=10, context=ssl_ctx) as resp:
+            with opener.open(req, timeout=10) as resp:
                 raw = resp.read(800_000).decode("utf-8", errors="replace")
             text += " " + re.sub(r"<[^>]+>", " ", raw).lower()
         except Exception:

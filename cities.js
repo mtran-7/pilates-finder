@@ -2,6 +2,7 @@ import { loadStudiosData, formatCount } from './global.js';
 
 const criteriaEmojis = {
     Reformer: "🏋️‍♀️",
+    Lagree: "🔥",
     Mat: "🟦",
     Private: "🔒",
     Group: "👥",
