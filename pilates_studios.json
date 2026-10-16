@@ -84513,7 +84513,13 @@
         "Group": false,
         "Free Trial": false,
         "Price Scraped": true,
-        "Lagree": true
+        "Lagree": true,
+        "Price Single": 22,
+        "Price Single Local": "Rp 350K",
+        "Price Source URL": "https://momence.com/u/intensity-lagree-PFuzcS",
+        "Price Intro": 56,
+        "Price Intro Local": "Rp 900K",
+        "Intro Offer": "3 classes for Rp 900K"
     },
     {
         "Name": "Eos Lagree",
@@ -84523,7 +84529,7 @@
         "Number of Reviews": 26,
         "Phone": "0823-4250-0302",
         "Opening Hours": "Monday: 7:00\u202fAM\u2009\u2013\u20097:00\u202fPM\nTuesday: 9:00\u202fAM\u2009\u2013\u20097:00\u202fPM\nWednesday: 7:00\u202fAM\u2009\u2013\u20097:00\u202fPM\nThursday: 7:00\u202fAM\u2009\u2013\u20097:00\u202fPM\nFriday: 7:00\u202fAM\u2009\u2013\u20097:00\u202fPM\nSaturday: 7:00\u202fAM\u2009\u2013\u20097:00\u202fPM\nSunday: 7:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-        "Website": "",
+        "Website": "https://bookings.vibefam.com/eoslagree/packages",
         "Photo URL": "/studio-photos/bali-canggu-eos-lagree.jpg",
         "Address": "Jl. Gn. Tangkuban Perahu.130 D, Kerobokan Kelod, Kerobokan, Kec. Kuta Utara, Kabupaten Badung, Bali 80361, Indonesia",
         "Reformer": false,
@@ -84534,7 +84540,14 @@
         "Private": false,
         "Group": false,
         "Free Trial": false,
-        "Lagree": true
+        "Lagree": true,
+        "Price Scraped": true,
+        "Price Single": 20,
+        "Price Single Local": "Rp 320K",
+        "Price Source URL": "https://bookings.vibefam.com/eoslagree/packages",
+        "Price Intro": 16,
+        "Price Intro Local": "Rp 250K",
+        "Intro Offer": "Trial class for Rp 250K"
     },
     {
         "Name": "Tempo 803 Bali | Lagree",
@@ -84544,7 +84557,7 @@
         "Number of Reviews": 33,
         "Phone": "0811-3940-3138",
         "Opening Hours": "",
-        "Website": "",
+        "Website": "https://tempobali.com/",
         "Photo URL": "/studio-photos/bali-canggu-tempo-803-bali-lagree.jpg",
         "Address": "Jl. Raya Bumbak No.156, Kerobokan, Kec. Kuta Utara, Kabupaten Badung, Bali 80361, Indonesia",
         "Reformer": false,
@@ -84555,7 +84568,14 @@
         "Private": false,
         "Group": false,
         "Free Trial": false,
-        "Lagree": true
+        "Lagree": true,
+        "Price Scraped": true,
+        "Price Single": 22,
+        "Price Single Local": "Rp 350K",
+        "Price Source URL": "https://tempobali.com/pricing",
+        "Price Intro": 22,
+        "Price Intro Local": "Rp 350K",
+        "Intro Offer": "2 classes for Rp 350K (intro 2-for-1)"
     },
     {
         "Name": "On Flame Studio - Lagree in Uluwatu",
@@ -84577,7 +84597,13 @@
         "Group": false,
         "Free Trial": false,
         "Price Scraped": true,
-        "Lagree": true
+        "Lagree": true,
+        "Price Single": 22,
+        "Price Single Local": "Rp 350K",
+        "Price Source URL": "https://momence.com/u/on-flame-studio-bgLibo",
+        "Price Intro": 59,
+        "Price Intro Local": "Rp 950K",
+        "Intro Offer": "4 classes for Rp 950K"
     },
     {
         "Name": "Lagree Vibes",
@@ -86958,7 +86984,10 @@
         "Private": false,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "Price Single": 16,
+        "Price Single Local": "Rp 250K",
+        "Price Source URL": "https://www.lumewellnessbali.com/timetable"
     },
     {
         "Name": "The Megaformer Studio",
@@ -88008,6 +88037,9 @@
         "Private": false,
         "Group": true,
         "Free Trial": false,
-        "Price Scraped": true
+        "Price Scraped": true,
+        "Price Single": 20,
+        "Price Single Local": "Rp 320K",
+        "Price Source URL": "https://www.balisocialclub.co/facilities/lagree"
     }
 ]
