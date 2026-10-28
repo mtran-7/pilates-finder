@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
         console.error('Waitlist: VITE_SUPABASE_URL and/or VITE_SUPABASE_ANON_KEY are not set');
         submitBtn.disabled = true;
-        setStatus('Signups are temporarily unavailable — email info@pilatesfinder.org and we\'ll add you.', true);
+        setStatus('Signups are temporarily unavailable — email pilatesfinderinfo@gmail.com and we\'ll add you.', true);
         return;
     }
 

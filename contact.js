@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setStatus("Thanks — your message is on its way. We'll reply within 24-48 hours.");
         } catch (err) {
             console.error('Contact form submission failed', err);
-            setStatus('Something went wrong — please email info@pilatesfinder.org directly.', true);
+            setStatus('Something went wrong — please email pilatesfinderinfo@gmail.com directly.', true);
         } finally {
             submitBtn.disabled = false;
         }
