@@ -3138,15 +3138,23 @@ a.type-card {
     font-family: var(--font-family-main);
 }
 
-.waitlist-status {
+.waitlist-status,
+.form-status {
     min-height: 1.5em;
     margin: 14px 0 0;
     font-weight: 700;
     color: var(--primary-color);
 }
 
-.waitlist-status.error {
+.waitlist-status.error,
+.form-status.error {
     color: #b3261e;
+}
+
+/* Spam honeypot: hidden from people, filled only by bots */
+.honeypot {
+    position: absolute;
+    left: -9999px;
 }
 
 @media (max-width: 600px) {
