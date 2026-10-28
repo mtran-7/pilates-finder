@@ -1,7 +1,7 @@
 // Contact form: submits via FormSubmit's AJAX endpoint, which emails the
 // message to the address in the URL. No API key is needed; the first
 // submission triggers a one-time activation email to that inbox.
-const ENDPOINT = 'https://formsubmit.co/ajax/info@pilatesfinder.org';
+const ENDPOINT = 'https://formsubmit.co/ajax/pilatesfinderinfo@gmail.com';
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contact-form');
